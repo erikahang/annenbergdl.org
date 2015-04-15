@@ -1,0 +1,39 @@
+/*
+Theme Name: USC Digital Lounge Theme 
+Theme URI: 
+Author: Martin Stack
+Author URI: http://martinstack.com
+Description: This is a child theme of twenty fourteen theme. It is based off of Baby Theme of Twenty Fourteen Theme by Paul c.Info can be found here http://pwdtechnology.com Modified by Martin Stack. 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: twentyfourteen
+*/
+
+.clear:before,
+.clear:after, .clear{
+  clear:both;
+  display: table;
+  content: "";
+  height: 0;
+}
+ 
+.home .paging-navigation{display: block; clear:both; border-top: none;}
+.home .paging-navigation .page-numbers {
+    background: #BBBBBB;
+}
+
+/** Fix strangely narrow defaults of 2014 theme. Mainly for use on the "full-width page template- MS"*/ 
+.site-content .entry-header,
+.site-content .entry-content,
+.site-content .entry-summary,
+.site-content .entry-meta,
+.page-content,
+.post-navigation,
+.image-navigation,
+.comments-area {
+max-width: 90%; /** Important do not make larger than 90% because it breaks the full width page template.-MS*/
+}
+
+
+

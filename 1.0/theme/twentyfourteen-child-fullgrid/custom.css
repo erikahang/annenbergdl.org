@@ -1,0 +1,196 @@
+/*
+Custom Css
+*/
+
+
+/*Actives the font for the digital lounge logo*/
+@font-face { 
+	font-family: 'National-ThinItalic';
+	src: url('/wp-content/themes/twentyfourteen-child-fullgrid/fonts/National-ThinItalic.otf') format('opentype');
+	font-weight: 200; 
+}
+
+/* Style the USC logos in the header */
+#site-header .usc-logo-full {
+	position: relative;
+	left: 100%;
+	margin-left: -239px;	width: 239px;
+}
+
+/*Changes color of background in white spots in header and when there are less than 9 squares in the grid- working across all browsers*/
+.blue-background {
+	background-color: #2f3038;
+}
+
+/*Fills in blank parts of site*/
+
+#content {
+	background-color: #FFF;
+}
+
+
+/*Fixes heading on calendar page*/
+#primary {
+	background-color: #FFF;
+}
+
+
+
+#site-header  {
+	background-color:#2f3038;
+	
+}
+/*This styles out the posts in the grid*/
+.grid .featured-content .entry-header, .ie8 .grid .featured-content .entry-header {
+border: 0px;
+padding-left: 15px;
+padding-top:15px;
+background-color: rgba(47, 48, 56, 0.80);
+}
+
+.header-main {
+	clear:both;
+}
+
+h1.site-title a {
+	font-family: 'National-ThinItalic';
+	font-weight: 200;
+	overflow: visible; 
+}
+
+h1.site-title a:hover {
+	overflow: visible;
+}
+@media screen and (max-width: 885px)  {
+
+	h1.site-title a {
+		font-size: 120%;
+	}
+}
+
+
+@media screen and (min-width: 886px) and (max-width: 1008px) {
+
+	h1.site-title a {
+		font-size: 200%;
+		margin-top: -52px;
+		max-width: 800px;
+		position: absolute;
+		height:50px;
+		
+	}
+}
+
+.masthead-fixed h1.site-title a {
+	font-size: 120%;
+	margin-top: 0;
+	height: auto;
+	-webkit-animation: site-title-fade-in 1s 0 1 normal;
+	-moz-animation: site-title-fade-in 1s 0 1 normal;
+	animation: site-title-fade-in 1s 0 1 normal;
+}
+
+/* Animate the site title fading into the fixed header */
+@-webkit-keyframes site-title-fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes site-title-fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes site-title-fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*Desktop ONLY parameters*/
+@media screen and (min-width: 1008px) {
+	h1.site-title a {
+	font-size: 300%;
+	margin-top: -52px;
+	max-width: 800px;
+	position: absolute;
+	height:50px;
+	}	
+	/*This makes the grids in catagory.php-MS, width controls the box sizes-MS, Curently needs a media query to make desktop specific */
+	.featured-content .hentry {
+	color: #fff;
+	margin: 0;
+	max-width: 100%;
+	width: 33%;
+	float: left;
+	height: 100%;
+	}
+
+	/*This is the custom header css styling- Needs to be made desktop specific*/
+	#digital-lounge-header {
+		margin-top: 10px;
+		margin-bottom: -45px;
+	}
+	#tribe-events {
+		margin-top: -50px;
+	}
+	
+}
+
+/*This styles the footer to the National font- Thin Italic
+.site-footer {
+	font-family: National-ThinItalic;
+	font-weight: 200;
+}*/
+
+a.feedback {
+	float:right;
+}
+
+/*This makes the disqus commenting system have a little padding on the sides*/
+
+#disqus_thread {
+		padding: 0px 30px 0px;
+	}
+
+ .tribe-bar-disabled, #tribe-events-bar {
+ 	z-index: 1 !important;
+ }
+
+
+/* Left Sidebar Styling */
+.widget .event-is-recurring .tribe-events-divider,
+.widget .event-is-recurring .recurring-info-tooltip {
+	display: none;
+}
+.widget .type-tribe_events .entry-title {
+	margin: 0;
+	line-height: 1.2;
+}
+.primary-sidebar .widget h1.widget-title {
+	margin-bottom: 6px;
+}
+/* Hide the time range separator, which is not within a container. */
+.widget .type-tribe_events .duration {
+	font-size: 0;
+}
+.widget .type-tribe_events .recurringinfo,
+.widget .type-tribe_events span.date-start.dtstart {
+	font-size: 12px;
+}
+.widget .type-tribe_events span.end-time.dtend {
+	display: none;
+}
+.primary-sidebar .widget h1.widget-title {
+	margin-bottom: 6px;
+}
+.event-is-recurring,
+.event-is-recurring:hover {
+	color: inherit;
+	opacity: .8;
+}
+.widget .recurringinfo .event-is-recurring {
+	color: rgba(255, 255, 255, 0.701961) !important;
+}
+
+/* Certain pages should NOT be full-width */
+.site-content .post-1334 .entry-content { /* staff page */
+	max-width: 474px;
+}

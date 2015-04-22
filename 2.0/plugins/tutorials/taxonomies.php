@@ -5,6 +5,30 @@
 
 add_action( 'init', 'tutorials_register_taxonomies', 11 );
 function tutorials_register_taxonomies() {
+	register_taxonomy( 'tutorial_tag', 'tutorials', array(
+		'hierarchical'      => false,
+		'labels'            => array(
+			'name'                  => __( 'Tags' ),
+			'singular_name'         => __( 'Tag' ),
+			'all_items'             => __( 'All Tags' ),
+			'edit_item'             => __( 'Edit Tag' ),
+			'update_item'           => __( 'Update Tag' ),
+			'add_new_item'          => __( 'Add New Tag' ),
+			'new_item_name'         => __( 'New Tag Name' ),
+			'parent_item'           => __( 'Parent Tag' ),
+			'parent_item_colon'     => __( 'Parent Tag:' ),
+			'search_items'          => __( 'Search Tags' ),
+			'popular_items'         => __( 'Popular Tags' ),
+			'choose_from_most_used' => __( 'Choose from most-used tags' ),
+		),
+		'rewrite'           => array(
+			'slug'         => 'tag',
+			'hierarchical' => false,
+			'with_front'   => false,
+		),
+		'show_admin_column' => true,
+	) );
+
 	register_taxonomy( 'tool', 'tutorials', array(
 		'hierarchical'      => true,
 		'labels'            => array(

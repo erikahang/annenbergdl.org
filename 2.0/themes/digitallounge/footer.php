@@ -11,6 +11,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'digitallounge' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'digitallounge' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

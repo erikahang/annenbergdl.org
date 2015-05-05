@@ -1,0 +1,21 @@
+html .mceContentBody {
+	max-width: 934px;
+}
+
+a {
+	color: #c05300;
+}
+
+a:visited {
+	color: #c05300;
+}
+
+a:active,
+a:hover {
+	color: #dd701d;
+}
+
+
+.mejs-controls .mejs-time-rail .mejs-time-current {
+	background: #ed802d;
+}

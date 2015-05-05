@@ -15,9 +15,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'digitallounge' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'digitallounge' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'digitallounge' ), 'Digital Lounge', '<a href="http://annenbergdl.org/" rel="designer">The Creative Media Team</a>' ); ?>
+			<?php echo get_theme_mod( 'footer_text', '' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

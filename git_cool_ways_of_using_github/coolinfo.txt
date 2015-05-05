@@ -1,0 +1,4 @@
+I thought I would share some simple articles for us to review
+The first is this https://guides.github.com/introduction/flow/index.html. This has a real simple explanation of workflow.
+The next is http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
+

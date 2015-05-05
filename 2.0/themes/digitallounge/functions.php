@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */ // @todo 
+	$content_width = 934; /* pixels */
 }
 
 if ( ! function_exists( 'digitallounge_setup' ) ) :
@@ -34,11 +34,13 @@ function digitallounge_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	 * Enable support for Post Thumbnails on posts, tutorials, and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails', array( 'post', 'tutorial', 'page' ) );
+	set_post_thumbnail_size( 672, 372, true );
+	add_image_size( 'digitallounge-full-width', 1038, 576, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

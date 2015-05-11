@@ -40,6 +40,7 @@ get_header(); ?>
 			<div class="staff-members"></div>
 			<script type="text/html" id="tmpl-single-staff-view">
 				<article class="staff-member" id="staff-member-{{ data.id }}">
+					<div class="staff-background" style="background-image: url('{{ data.background_image }}');"></div>
 					{{{ data.avatar }}}
 					<h2 class="staff-name">{{ data.name }}</h2>
 					<div class="staff-bio">

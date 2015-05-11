@@ -12,6 +12,7 @@ function anndl_load_userdata_ajax() {
 	echo wp_json_encode( array(
 		'id' => $id,
 		'avatar' => get_avatar( $id, 384 ),
+		'background_image' => $data->background_image,
 		'name' => $data->display_name,
 		'description' => $data->description,
 	) );

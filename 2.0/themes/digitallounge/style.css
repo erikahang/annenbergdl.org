@@ -415,6 +415,43 @@ table {
 }
 
 /*--------------------------------------------------------------
+# Base Layouts
+--------------------------------------------------------------*/
+#masthead {
+	height: 64px;
+	width: 100%;
+	overflow: hidden;
+	background: #222;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	z-index: 20;
+}
+
+.admin-bar #masthead {
+	top: 32px;
+}
+
+#content {
+	margin-top: 64px;
+}
+
+#primary {
+	width: 100%;
+	max-width: 998px; /* With padding, results in content width of 934px */
+	padding: 32px;
+	margin: 0 auto;
+}
+
+#colophon {
+	background: #222;
+	color: #fff;
+	padding: 32px 64px;
+	text-align: center;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 button,
@@ -890,3 +927,52 @@ object {
 }
 
 
+/*--------------------------------------------------------------
+## Staff Page
+--------------------------------------------------------------*/
+.staff-summary {
+    float: left;
+    width: calc(33% - 21px);
+    margin-right: 32px;
+    margin-bottom: 32px;
+    position: relative;
+    cursor:  pointer;
+}
+
+.staff-summary:nth-child(3) {
+    margin-right: 0;
+}
+
+.staff-summary .staff-avatar img {
+    border-radius: 100%;
+    transition: .2s ease-in-out opacity;
+}
+
+.staff-summary .staff-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160px;
+    margin-left: -80px;
+    margin-top: -18px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    transition: .2s ease-in-out opacity;
+}
+
+.staff-summary:hover .staff-name,
+.staff-summary:focus .staff-name {
+    opacity: 1;
+}
+
+.staff-avatar {
+    background: #000;
+    border-radius: 100%;
+}
+
+.staff-summary:hover .staff-avatar img,
+.staff-summary:focus .staff-avatar img {
+    opacity: .6;
+}

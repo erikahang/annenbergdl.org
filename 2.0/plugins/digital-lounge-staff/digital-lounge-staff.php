@@ -109,9 +109,27 @@ function anndl_edit_user_expertise_section( $user ) {
 			<th><label for="active"><?php _e( 'Status' ); ?></label></th>
 			<td><label><input type="checkbox" name="active_staff" value="1" <?php echo checked( get_usermeta( $user->ID, 'active_staff' ) ); ?>> Active staff member</label></td>
 		</tr>
+		<tr>
+			<th><label for="background_image"><?php _e( 'Featured Image' ); ?></label></th>
+			<td>
+				<p>This image is displayed on your staff profile page.</p>
+				<button id="dl-staff-featured-image-btn" class="button">Select Image</button><br/>
+				<img src="<?php echo get_usermeta( $user->ID, 'background_image' ); ?>" id="dl-staff-img-preview" style="cursor: pointer; max-width: 600px;"/>
+				<input type="hidden" name="background_image" id="dl-staff-bg-img" value="<?php echo get_usermeta( $user->ID, 'background_image' ); ?>"/>
+			</td>
+		</tr>
 
 	</table>
 <?php }
+
+add_action( 'admin_enqueue_scripts', 'anndl_staff_profile_script' );
+function anndl_staff_profile_script() {
+	// if ( user profile page ) {
+		wp_enqueue_media();
+		wp_enqueue_script( 'staff-page', plugins_url( '/user-image-select.js', __FILE__ ), array( 'jquery' ) );
+	// }
+}
+
 
 /* Filter the 'sanitize_user' to disable username. */
 add_filter( 'sanitize_user', 'anndl_disable_username' );
@@ -153,6 +171,10 @@ function anndl_save_expertise_meta_profile_fields( $user_id ) {
 		$expertise = $_POST['expertise'];
 		$expertise = implode( ',', $expertise );
 		update_usermeta( $user_id, 'expertise', $expertise );
+	}
+	if ( array_key_exists( 'background_image', $_POST ) ) {
+		$bg = esc_url( $_POST['background_image'] );
+		update_usermeta( $user_id, 'background_image', $bg );
 	}
 
 	update_usermeta( $user_id, 'active_staff', $active );

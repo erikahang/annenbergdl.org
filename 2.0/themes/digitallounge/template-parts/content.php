@@ -5,7 +5,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php the_post_thumbnail( 'digitallounge-full-width' ); ?>
 	<header class="entry-header">
+		<div class="entry-meta">
+			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>
+		</div>
+
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
@@ -36,3 +41,5 @@
 		<?php digitallounge_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
+<?php the_post_navigation(); ?>

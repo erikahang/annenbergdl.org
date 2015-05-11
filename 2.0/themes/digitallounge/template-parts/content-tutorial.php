@@ -8,7 +8,7 @@
 	<?php the_post_thumbnail( 'digitallounge-full-width' ); ?>
 	<header class="entry-header">
 		<div class="entry-meta">
-			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>
+			<span class="cat-links"><?php echo get_the_term_list( get_the_ID(), 'tool', '', ', ', '' ); ?></span>
 		</div>
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

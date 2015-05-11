@@ -19,14 +19,17 @@ get_header(); ?>
 		'fields'  => 'ID',
 		'who'     => '',
 	) );
+	$active_contributor_ids = array();
 	foreach ( $contributor_ids as $contributor_id ) :
 		// Skip former staff members.
 		if ( ! get_the_author_meta( 'active_staff', $contributor_id ) ) {
 			continue;
 		}
+
+		$active_contributor_ids[] = $contributor_id;
 		?>
 
-		<div class="staff-summary" tabindex="0">
+		<div class="staff-summary" tabindex="0" data-staff-id="<?php echo $contributor_id; ?>">
 			<div class="staff-avatar"><?php echo get_avatar( $contributor_id, 384 ); ?></div>
 			<div class="staff-name"><?php the_author_meta( 'display_name', $contributor_id ); ?></div>
 		</div>
@@ -34,6 +37,19 @@ get_header(); ?>
 	<?php
 	endforeach;
 ?>
+			<div class="staff-members"></div>
+			<script type="text/html" id="tmpl-single-staff-view">
+				<article class="staff-member" id="staff-member-{{ data.id }}">
+					{{{ data.avatar }}}
+					<h2 class="staff-name">{{ data.name }}</h2>
+					<div class="staff-bio">
+						{{{ data.description }}}
+					</div>
+				</article>
+			</script>
+			<script type="text/javascript">
+				var _anndlAllStaff = <?php echo wp_json_encode( $active_contributor_ids ); ?>;
+			</script>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

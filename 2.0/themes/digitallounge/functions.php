@@ -38,7 +38,7 @@ function digitallounge_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails', array( 'post', 'tutorial', 'page' ) );
+	add_theme_support( 'post-thumbnails', array( 'post', 'tutorials', 'page' ) );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'digitallounge-full-width', 1038, 576, true );
 
@@ -73,6 +73,8 @@ function digitallounge_scripts() {
 
 	wp_enqueue_script( 'digitallounge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
+	wp_enqueue_script( 'digitallounge-staff', get_template_directory_uri() . '/js/staff.js', array( 'jquery', 'wp-util' ), '20150511', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -93,3 +95,8 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * AJAX Actions.
+ */
+require get_template_directory() . '/inc/ajax-actions.php';

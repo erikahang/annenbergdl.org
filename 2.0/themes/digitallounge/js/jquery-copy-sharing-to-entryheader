@@ -1,0 +1,8 @@
+jQuery( document ).ready( function( $ ) {
+    // Relocate Jetpack sharing buttons down into the comments form
+    jQuery( '#sharing' ).html( jQuery( '.sharedaddy' ).detach() );
+} );
+
+
+
+$( '#sharing' ).html( jquery( .clone().appendTo( ".entryheader" );

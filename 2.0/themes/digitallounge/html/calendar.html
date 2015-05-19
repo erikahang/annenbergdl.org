@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css" link="/css/fonts.css"></style>
 <style>
 time.icon
 {
@@ -11,8 +12,20 @@ time.icon
   height: 7em;
   background-color: #fff;
   border-radius: 0.6em;
-  box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+  box-shadow: 0 1px 0 rgb(215,156,173), 0 2px 0 #fff, 0 3px 0 rgb(215,156,173), 0 4px 0 #fff, 0 5px 0 rgb(215,156,173), 0 0 0 1px rgb(215,156,173);
   overflow: hidden;
+  /*This is the start of the speciality type for dl theme*/
+  font-family: National, Helvetica, Sans-serif;
+  /*This is the start of makin the numbers proportional- needs work*/
+  
+  -moz-font-feature-settings: "tnum" 1;
+  -moz-font-feature-settings: "tnum=1" ;
+  -ms-font-feature-settings: "tnum" 1;
+  -o-font-feature-settings:"onum" 1;
+  -webkit-font-feature-settings: "tnum"1;
+  font-feature-settings: "tnum" 1;
+  /*Changes blending mode to the correct opacity*/
+
 }
 
 
@@ -27,26 +40,34 @@ time.icon *
 }
 time.icon strong
 {
+  /*This is the upper month bar*/
   position: absolute;
   top: 0;
   padding: 0.4em 0;
   color: #fff;
-  background-color: #fd9f1b;
-  border-bottom: 1px dashed #f37302;
-  box-shadow: 0 2px 0 #fd9f1b;
+  background-color: rgb(230,195,199);
+  border-bottom: 1px dashed rgb(215,156,173);
+  box-shadow: 0 2px 0 rgb(230,195,199);
 }
 time.icon em
 {
   position: absolute;
   bottom: 0.3em;
-  color: #fd9f1b;
+  color: rgb(215,156,173);
 }
  time.icon span
 {
+  /*This is the main number*/
   font-size: 2.8em;
   letter-spacing: -0.05em;
   padding-top: 0.8em;
-  color: #2f2f2f;
+  color: rgb(176,61,76);
+
+}
+
+body {
+  background-color:rgb(176,61,76);
+  color: 
 }
 </style>
 </head>
@@ -98,7 +119,7 @@ var d = new Date();
       weekday[0] = "Sunday";
       weekday[1] = "Monday";
       weekday[2] = "Tuesday";
-      weekday[3] = "Wednesday";
+      weekday[3] = "Humpday"; //Why Not?
       weekday[4] = "Thursday";
       weekday[5] = "Friday";
       weekday[6] = "Saturday";
@@ -106,15 +127,27 @@ var d = new Date();
       var w = weekday[d.getDay()];
       document.getElementById("dayofweek").innerHTML = w;
   }
+// function getTabNumberNational() {
 
+//     var tabnumber = new Array(7);
+//     tabnumber[0] = "0030";
+//     tabnumber[1] = "0031";
+//     tabnumber[2] = "0032";
+//     tabnumber[3] = "0033";
+//     tabnumber[4] = "0034";
+//     tabnumber[5] = "0035";
+//     tabnumber[6] = "0036";
+
+//     var t = tabnumber[t.getTabNumberNational()];
+//     document
+
+// }
   // Pulls the date numeber in the month 0-31
     function getDayOfMonth() {
       var n = d.getDate()
       document.getElementById("daynumber").innerHTML = n;
   }
 </script>
-
-
 
 </body>
 </html>

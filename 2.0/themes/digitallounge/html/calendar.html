@@ -76,7 +76,7 @@ body {
 <time id="calendaricon" datetime="2014-09-20" class="icon">
   <em id="dayofweek"></em>
   <strong id="month"></strong>
-  <span id="daynumber"></span>
+  <span id="daynumber">&#57</span>
 </time>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
@@ -127,25 +127,25 @@ var d = new Date();
       var w = weekday[d.getDay()];
       document.getElementById("dayofweek").innerHTML = w;
   }
-// function getTabNumberNational() {
+function getUnicodeNational() {
 
-//     var tabnumber = new Array(7);
-//     tabnumber[0] = "0030";
-//     tabnumber[1] = "0031";
-//     tabnumber[2] = "0032";
-//     tabnumber[3] = "0033";
-//     tabnumber[4] = "0034";
-//     tabnumber[5] = "0035";
-//     tabnumber[6] = "0036";
+    var tabnumber = new Array(7);
+    tabnumber[0] = "0030";
+    tabnumber[1] = "0031";
+    tabnumber[2] = "0032";
+    tabnumber[3] = "0033";
+    tabnumber[4] = "0034";
+    tabnumber[5] = "0035";
+    tabnumber[6] = "0036";
 
-//     var t = tabnumber[t.getTabNumberNational()];
-//     document
+  
 
-// }
-  // Pulls the date numeber in the month 0-31
+}
+  Pulls the date numeber in the month 0-31
     function getDayOfMonth() {
       var n = d.getDate()
-      document.getElementById("daynumber").innerHTML = n;
+      document.getElementById("daynumber").innerHTML = u;
+
   }
 </script>
 

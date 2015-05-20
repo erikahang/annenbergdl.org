@@ -1,94 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css" link="/css/fonts.css"></style>
-<style>
-time.icon
-{
-  font-size: 1em; /* change icon size */
-  display: block;
-  position: relative;
-  width: 7em;
-  height: 7em;
-  background-color: #fff;
-  border-radius: 0.6em;
-  box-shadow: 0 1px 0 rgb(215,156,173), 0 2px 0 #fff, 0 3px 0 rgb(215,156,173), 0 4px 0 #fff, 0 5px 0 rgb(215,156,173), 0 0 0 1px rgb(215,156,173);
-  overflow: hidden;
-  /*This is the start of the speciality type for dl theme*/
-  font-family: National, Helvetica, Sans-serif;
-  /*This is the start of makin the numbers proportional- needs work*/
-  
-  -moz-font-feature-settings: "tnum" 1;
-  -moz-font-feature-settings: "tnum=1" ;
-  -ms-font-feature-settings: "tnum" 1;
-  -o-font-feature-settings:"onum" 1;
-  -webkit-font-feature-settings: "tnum"1;
-  font-feature-settings: "tnum" 1;
-  /*Changes blending mode to the correct opacity*/
-
-}
+  <style type="text/css" link="/css/fonts.css"></style>
+  <style type="text/css">
+      time.icon 
+      {
+        font-size: 1em; /* change icon size */
+        display: block;
+        position: relative;
+        width: 7em;
+        height: 7em;
+        background-color: #fff;
+        border-radius: 0.6em;
+        box-shadow: 0 1px 0 rgb(215,156,173), 0 2px 0 #fff, 0 3px 0 rgb(215,156,173), 0 4px 0 #fff, 0 5px 0 rgb(215,156,173), 0 0 0 1px rgb(215,156,173);
+        overflow: hidden;
+        /*This is the start of the speciality type for dl theme*/
+        font-family: National, Helvetica, Sans-serif;
+        /*This is the start of makin the numbers proportional- needs work*/
+        
+       
+        /*Changes blending mode to the correct opacity*/
+      }
 
 
-time.icon *
-{
-  display: block;
-  width: 100%;
-  font-size: 1em;
-  font-weight: bold;
-  font-style: normal;
-  text-align: center;
-}
-time.icon strong
-{
-  /*This is the upper month bar*/
-  position: absolute;
-  top: 0;
-  padding: 0.4em 0;
-  color: #fff;
-  background-color: rgb(230,195,199);
-  border-bottom: 1px dashed rgb(215,156,173);
-  box-shadow: 0 2px 0 rgb(230,195,199);
-}
-time.icon em
-{
-  position: absolute;
-  bottom: 0.3em;
-  color: rgb(215,156,173);
-}
- time.icon span
-{
-  /*This is the main number*/
-  font-size: 2.8em;
-  letter-spacing: -0.05em;
-  padding-top: 0.8em;
-  color: rgb(176,61,76);
+      time.icon *
+      {
+        display: block;
+        width: 100%;
+        font-size: 1em;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+      }
+      time.icon strong
+      {
+        /*This is the upper month bar*/
+        position: absolute;
+        top: 0;
+        padding: 0.4em 0;
+        color: #fff;
+        background-color: rgb(230,195,199);
+        border-bottom: 1px dashed rgb(215,156,173);
+        box-shadow: 0 2px 0 rgb(230,195,199);
+      }
+      time.icon em
+      {
+        position: absolute;
+        bottom: 0.3em;
+        color: rgb(215,156,173);
+      }
+       time.icon span
+      {
+        /*This is the main number*/
+        font-size: 2.8em;
+        letter-spacing: -0.05em;
+        padding-top: 0.8em;
+        color: rgb(176,61,76);
+        font-weight: 800;
+        text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "lnum" 1;
+        -moz-font-feature-settings: "lnum=1";
+        -ms-font-feature-settings: "lnum" 1;
+        -o-font-feature-settings: "lnum" 1;
+        -webkit-font-feature-settings: "lnum" 1;
+        font-feature-settings: "lnum" 1; 
 
-}
+      }
 
-body {
-  background-color:rgb(176,61,76);
-  color: 
-}
-</style>
+      body {
+        background-color:rgb(176,61,76);
+        
+      }
+  </style>
 </head>
 <body>
-
 <time id="calendaricon" datetime="2014-09-20" class="icon">
   <em id="dayofweek"></em>
   <strong id="month"></strong>
-  <span id="daynumber">&#57</span>
+  <span id="daynumber">9, &#50 2&#57</span>
 </time>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 //Makes Calendar Icon Display Current Date- M.Stack 
-
-$(document).ready( function() {
+//$(document).ready( function() {
     //Pulls the Month 
-  //Tells DOM to fire off Calendar Functions
-  getDayOfMonth();
-  getMonthOfYear();
-  getDayOfWeek();
-  } );
+
 
 // Date Variable, all functions below rely on this 
 var d = new Date();
@@ -137,17 +132,17 @@ function getUnicodeNational() {
     tabnumber[4] = "0034";
     tabnumber[5] = "0035";
     tabnumber[6] = "0036";
-
-  
-
 }
-  Pulls the date numeber in the month 0-31
+ // Pulls the date numeber in the month 0-31
     function getDayOfMonth() {
       var n = d.getDate()
-      document.getElementById("daynumber").innerHTML = u;
+      document.getElementById("daynumber").innerHTML = n;
 
   }
+    //Tells DOM to fire off Calendar Functions
+  // getDayOfMonth();
+  getMonthOfYear();
+  getDayOfWeek();
 </script>
-
 </body>
 </html>

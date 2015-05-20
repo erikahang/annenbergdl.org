@@ -67,24 +67,17 @@
 
       }
 
-      body {
-        background-color:rgb(176,61,76);
-        
-      }
+    
   </style>
 </head>
 <body>
 <time id="calendaricon" datetime="2014-09-20" class="icon">
   <em id="dayofweek"></em>
   <strong id="month"></strong>
-  <span id="daynumber">9, &#50 2&#57</span>
+  <span id="daynumber"></span>
 </time>
 <script type="text/javascript">
 //Makes Calendar Icon Display Current Date- M.Stack 
-//$(document).ready( function() {
-    //Pulls the Month 
-
-
 // Date Variable, all functions below rely on this 
 var d = new Date();
 
@@ -122,17 +115,6 @@ var d = new Date();
       var w = weekday[d.getDay()];
       document.getElementById("dayofweek").innerHTML = w;
   }
-function getUnicodeNational() {
-
-    var tabnumber = new Array(7);
-    tabnumber[0] = "0030";
-    tabnumber[1] = "0031";
-    tabnumber[2] = "0032";
-    tabnumber[3] = "0033";
-    tabnumber[4] = "0034";
-    tabnumber[5] = "0035";
-    tabnumber[6] = "0036";
-}
  // Pulls the date numeber in the month 0-31
     function getDayOfMonth() {
       var n = d.getDate()
@@ -140,7 +122,7 @@ function getUnicodeNational() {
 
   }
     //Tells DOM to fire off Calendar Functions
-  // getDayOfMonth();
+  getDayOfMonth();
   getMonthOfYear();
   getDayOfWeek();
 </script>

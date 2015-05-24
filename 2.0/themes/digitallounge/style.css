@@ -668,6 +668,36 @@ Not yet used.
 	width: 50%;
 }
 
+.entry-nav a {
+	display: block;
+	width: 50%;
+	float: left;
+	padding: 16px 32px;
+	background: #222;
+	color: #ccc;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 500;
+	transition: .18s all ease-in-out;
+}
+
+.entry-nav a:hover,
+.entry-nav a:focus {
+	color: #fff;
+	background: #ff2d06;
+}
+
+.entry-nav a span {
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.entry-nav .previous-post-link a {
+	text-align: right;
+}
+
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

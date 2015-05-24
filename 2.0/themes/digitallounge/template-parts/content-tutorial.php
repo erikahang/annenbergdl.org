@@ -36,15 +36,15 @@ global $post;
 </article><!-- #post-## -->
 <nav class="entry-nav">
 	<div class="previous-post-link">
-		<?php if ( get_previous_post( true, '', 'tutorial_tag' ) ) { ?>
-			<?php previous_post_link( '&laquo; %link', '%title', true, '', 'tutorial_tag' ); ?>
-			<span>Previous tutorial in <?php echo wp_get_post_terms( $post->ID, 'tutorial_tag' )[0]->name; ?></span>
-		<?php } ?>
+		<?php if ( get_previous_post( true, '', 'tutorial_tag' ) ) {
+			$span = '<span>Previous tutorial in ' . wp_get_post_terms( $post->ID, 'tutorial_tag' )[0]->name . '</span>';
+			previous_post_link( '%link', '&laquo; %title' . $span, true, '', 'tutorial_tag' );
+		} ?>
 	</div>
 	<div class="next-post-link">
-		<?php if ( get_next_post( true, '', 'tutorial_tag' ) ) { ?>
-			<?php next_post_link( '%link &raquo;', '%title', true, '', 'tutorial_tag' ); ?>
-			<span>Next tutorial in <?php echo wp_get_post_terms( $post->ID, 'tutorial_tag' )[0]->name; ?></span>
-		<?php } ?>
+		<?php if ( get_next_post( true, '', 'tutorial_tag' ) ) {
+			$span = '<span>Next tutorial in ' . wp_get_post_terms( $post->ID, 'tutorial_tag' )[0]->name . '</span>';
+			next_post_link( '%link', '%title &raquo;' . $span, true, '', 'tutorial_tag' );
+		} ?>
 	</div>
 </nav>

@@ -33,4 +33,17 @@
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
-<?php the_post_navigation(); ?>
+<nav class="entry-nav">
+	<div class="previous-post-link">
+		<?php if ( get_previous_post() ) {
+			$span = '<span>Previous post</span>';
+			previous_post_link( '%link', '&laquo; %title' . $span );
+		} ?>
+	</div>
+	<div class="next-post-link">
+		<?php if ( get_next_post() ) {
+			$span = '<span>Next post</span>';
+			next_post_link( '%link', '%title &raquo;' . $span );
+		} ?>
+	</div>
+</nav>

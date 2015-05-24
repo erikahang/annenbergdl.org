@@ -2,6 +2,8 @@
 /**
  * @package Digital Lounge
  */
+
+global $post;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -32,5 +34,17 @@
 		<?php digitallounge_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-
-<?php the_post_navigation(); ?>
+<nav class="entry-nav">
+	<div class="previous-post-link">
+		<?php if ( get_previous_post( true, '', 'tutorial_tag' ) ) { ?>
+			<?php previous_post_link( '&laquo; %link', '%title', true, '', 'tutorial_tag' ); ?>
+			<span>Previous tutorial in <?php echo wp_get_post_terms( $post->ID, 'tutorial_tag' )[0]->name; ?></span>
+		<?php } ?>
+	</div>
+	<div class="next-post-link">
+		<?php if ( get_next_post( true, '', 'tutorial_tag' ) ) { ?>
+			<?php next_post_link( '%link &raquo;', '%title', true, '', 'tutorial_tag' ); ?>
+			<span>Next tutorial in <?php echo wp_get_post_terms( $post->ID, 'tutorial_tag' )[0]->name; ?></span>
+		<?php } ?>
+	</div>
+</nav>

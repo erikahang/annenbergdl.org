@@ -532,17 +532,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
-}
-
-a:visited {
-	color: purple;
+	color: #000;
+	transition: color .18s ease-in-out,
+	            background-color .18s ease-in-out;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #000;
 }
 
 a:focus {
@@ -552,6 +550,16 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+}
+
+.entry-content a {
+	color: #ff2d06;
+	text-decoration: none;
+}
+
+.entry-content a:hover,
+.entry-content a:focus {
+	text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -955,6 +963,55 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+
+/*--------------------------------------------------------------
+## Single Content
+--------------------------------------------------------------*/
+.single #primary {
+	padding-top: 0;
+}
+
+.entry-meta {
+	margin-left: 32px;
+	line-height: 1;
+}
+
+.cat-links a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 14px;
+	color: #555;
+}
+
+.cat-links a:hover, .cat-links a:focus {
+	color: #ff2d06;
+}
+
+h1.entry-title {
+	margin: 16px 0;
+	font-weight: 900;
+	font-size: 48px;
+	color: #ff2d06;
+}
+
+.entry-meta .byline, .entry-meta .posted-on {
+	color: #555;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.entry-meta .byline a,
+.entry-meta .posted-on a {
+	color: #555;
+	text-decoration: none;
+}
+
+.entry-meta a:hover,
+.entry-meta a:focus {
+	color: #ff2d06;
 }
 
 

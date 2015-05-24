@@ -9,6 +9,8 @@
  * @package Digital Lounge
  */
 
+wp_enqueue_script( 'digitallounge-staff', get_template_directory_uri() . '/js/staff.js', array( 'jquery', 'wp-util' ), '20150511', true );
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">

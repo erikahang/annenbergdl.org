@@ -47,7 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
+	font-family: National, Arial, Helvetica, sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -104,7 +104,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dfn {
@@ -270,10 +270,11 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #222;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+	font-weight: 400;
 }
 
 h1,
@@ -327,7 +328,7 @@ var {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted #444;
 	cursor: help;
 }
 
@@ -383,7 +384,7 @@ ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: square;
 }
 
 ol {
@@ -497,7 +498,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: #666;
+	color: #444;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
@@ -1024,7 +1025,7 @@ object {
 	margin: 0;
 	font-size: 60px;
 	line-height: 1;
-	font-weight: 500;
+	font-weight: 200;
 }
 
 .staff-member .staff-bio {

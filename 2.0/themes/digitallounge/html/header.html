@@ -99,41 +99,59 @@
 		text-decoration: none;
 	}
 	header {
-				width: 1280px;
+				width: auto;
 				height: 64px;
 				background-color: rgb(255,165,0);
+				background-image: url("/img/backgroundvector.svg");
+				background-repeat:no-repeat;
+				background-size: auto 62px;
 				text-align: center;
 				vertical-align: middle;
-				display:table; 
-				margin:0 auto;
+				display:block; 
+				margin:0;
 			}
 	header li {
-		list-style-type: none;
-		border: none;
-		text-align: center;
-		display:table-cell;
-		padding: 0px 10px; 
+		display: inline-block;
+		padding-right: 15px;
 
 	}
 	header ul {
+		list-style-type: none;
+	    margin: 0px;
+	    padding: 0px;
+	    overflow: hidden;
 		
+	}
+	.calendaricon {
+		/*-ms-transform: scale(.45,.45); /* IE 9 */
+	    /*-webkit-transform: scale(.45,.45); /* Safari */
+	   /* transform: scale;*/
+	   /*(.45,.45) height: 50px;
+	   */
+
+	    display: inline-block;
+	    overflow: hidden;
+	   	transform:scale(0.45,0.45);
+	   	-webkit-transform:scale(0.45,0.45);
+		-moz-transform:scale(0.45,0.45;
+
+
 	}
 	</style>
 	
 </head>
 <body>
 <header>
-	<ul>
-		<li class="calendaricon">
-			<time id="calendaricon" datetime="2014-09-20" class="icon">
+	<!-- <div class="calendaricon">
+				<time id="calendaricon" datetime="2014-09-20" class="icon ">
 				  <em id="dayofweek"></em>
 				  <strong id="month"></strong>
 				  <span id="daynumber"></span>
 				</time>
-			<!-- Insert calendaricon -->
-		</li>
-		<li class="nextevent">
-			<!-- insert nextevent string -->
+			</div> -->
+	<ul>
+		<li class="nextevent chatwithus">
+			<span>1 PM, Bluehost How To's....</span>
 		</li>
 		<li class="digitalloungetitle">
 			<span>Annenberg Digital Lounge</span>

@@ -8,7 +8,7 @@
 	<style type="text/css">
 		   time.icon 
       {
-        font-size: 1em; /* change icon size */
+        font-size: 1em; /* change icon size  test*/
         display: block;
         position: relative;
         width: 7em;
@@ -92,10 +92,16 @@
 	body {
 		margin: 0px;
 	}
+	/*link style inherit*/
+	a, a:hover, a:visited {
+		color:inherit;
+		text-transform:inherit;
+		text-decoration: none;
+	}
 	header {
 				width: 1280px;
 				height: 64px;
-				background-color: orange;
+				background-color: rgb(255,165,0);
 				text-align: center;
 				vertical-align: middle;
 				display:table; 
@@ -133,13 +139,13 @@
 			<span>Annenberg Digital Lounge</span>
 		</li>
 		<li class="chatwithus">
-			<span>Chat with us<span>
+			<span><a href="#">Chat with us</a><span>
 		</li>
 		<li class="explore">
-			<!-- insert binocular svg -->
+			<a href="#"><img src="..//img/binoc.svg" width="36" height="28"></a>
 		</li>
 		<li class="usclogo">
-			<!-- insert usclogosvg -->
+			<a href="#"><img src="..//img/usclogo.svg" width="34" height="44"></a>
 		</li>
 	</ul>
 </header>

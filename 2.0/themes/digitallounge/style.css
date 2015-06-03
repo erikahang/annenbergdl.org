@@ -89,14 +89,12 @@ template {
 	display: none;
 }
 
-a {
-	background-color: transparent;
-}
-
-a:active,
-a:hover {
-	outline: 0;
-}
+/*link style inherit*/
+	a, a:hover, a:visited {
+		color:inherit;
+		text-transform:inherit;
+		text-decoration: none;
+	}
 
 abbr[title] {
 	border-bottom: 1px dotted;
@@ -528,16 +526,33 @@ table {
 #masthead {
 	height: 64px;
 	width: 100%;
-	overflow: hidden;
 	background-color: rgb(255,165,0);
 	background-image: url("img/backgroundvector.svg");
 	background-repeat:no-repeat;
-	background-size: auto 62px;
+	background-size: cover;
 	color: #fff;
-	position: fixed;
 	top: 0;
+	position: fixed;
 	z-index: 1000;
+	
 }
+.site-title {
+	 font-family : National;
+	  font-weight: 900;
+	  font-size : 24px;
+	  color : #FFFFFF;
+	  color : rgb(255, 255, 255);
+	  text-shadow : 0.25px 0.25px 0px rgba(119, 119, 119, 1);
+	  text-rendering: optimizelegibility;
+	  text-align: center;
+	-moz-font-feature-settings: "ss03" 1;
+	-moz-font-feature-settings: "ss03=1";
+	-ms-font-feature-settings: "ss03" 1;
+	-o-font-feature-settings: "ss03" 1;
+	-webkit-font-feature-settings: "ss03" 1;
+	font-feature-settings: "ss03" 1; 
+}
+
 
 .admin-bar #masthead {
 	top: 32px;
@@ -643,8 +658,7 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	color: #000;
-	transition: color .18s ease-in-out,
-	            background-color .18s ease-in-out;
+	
 }
 
 a:hover,
@@ -654,7 +668,7 @@ a:active {
 }
 
 a:focus {
-	outline: thin dotted;
+	
 }
 
 a:hover,
@@ -671,6 +685,45 @@ a:active {
 .entry-content a:focus {
 	text-decoration: underline;
 }
+#navbuttons{
+width: 245px;
+height: 62px;
+margin-top: 0px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  padding-top: 6px;
+}
+
+#navbuttons ul {
+	list-style-type: none;
+	padding: 0px;
+    margin: 0px;
+
+}
+
+#navbuttons li {
+	display: inline-block;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+
+.chatwithus {
+  margin-top: -25px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+}
+.binoculars {
+  
+}
+	
+.usclogo {
+
+
+
+}
+
 
 /*--------------------------------------------------------------
 ## Menus

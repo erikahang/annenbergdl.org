@@ -752,8 +752,7 @@ a:active {
 }
 #navbuttons{
 width: 245px;
-height: 62px;
-margin-top: 0px;
+height: 64px;
   position: fixed;
   right: 0px;
   top: 0px;
@@ -774,38 +773,38 @@ margin-top: 0px;
 }
 
 #eventreadout {
-	width: auto;
-	height: 62px;
-	margin-top: 0px;
-  position: fixed;
-  left: 100px;
-  top: 0px;
-  padding-top: 6px;
-  border: 1px solid #FFF;
+	
+	height: 64px;
+	position: fixed;
+	left: 100px;
+	top: 0px;
+	line-height: initial;
+	font-weight: 200;
 }
-#eventreadout strong {
-	font-size: 2em;
-	font-weight: 800;
+
+#eventreadout .big {
+	font-size: 3em;
+	font-weight: 900;
+}
+
+#eventreadout .small {
+    font-variant: small-caps;
+    font-weight: 500;
+}
+
+#eventreadout .pipe {
+	margin: 0px 7px;
+}
+#eventreadout .eventheadline {
+	font-size: 1.5em;
+	font-weight: 700;
 	
 }
-#eventreadout sub {
-	vertical-align:normal;
-    font-size: smaller;
-    font-variant: small-caps;
+#eventreadout .smalleritalic{
+	font-weight: 200;
+	font size: .5em;
+	font-style: italic;
 }
-#eventreadout ul {
-	list-style-type: none;
-	padding: 0px;
-    margin: 0px;
-
-}
-
-#eventreadout li {
-	display: inline-block;
-	padding-right: 10px;
-	vertical-align: middle;
-}
-
 
 .chatwithus {
   margin-top: -25px;

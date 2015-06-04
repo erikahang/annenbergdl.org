@@ -36,12 +36,12 @@
 			</time>
 		</div>
 		<div id="eventreadout">
-			<ul>
-				<li><strong>1</strong><sub>pm</sub></li>
-				<li><span>Bluhost Intro<span></li>
-				<li><em>A new look at Wordpre...</em></li>
-			</ul>
-			
+			<span class="big">1</span>
+			<span class="small"> PM </span>
+			<span class="pipe">|</span>
+			<span class="eventheadline">Photoshop</span>
+			<span>,</span>
+			<span class="smalleritalic">How to make a poster...</span>
 		</div>
 		<div class="site-branding">
 			<h1 class="site-title">

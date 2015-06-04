@@ -264,19 +264,19 @@ th {
 # Typography
 --------------------------------------------------------------*/
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Light.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-Light.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Light.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Light.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Light.eot'); src: local(':)'), url('../fonts/NationalWeb-Light.woff') format('woff'), url('../fonts/NationalWeb-Light.ttf') format('truetype'), url('../fonts/NationalWeb-Light.svg') format('svg'); 
 	font-weight: 200; 
 	font-style: normal; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-LightItalic.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-LightItalic.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('../fonts/NationalWeb-LightItalic.woff') format('woff'), url('../fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('../fonts/NationalWeb-LightItalic.svg') format('svg'); 
 	font-weight: 200; 
 	font-style: italic; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Regular.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-Regular.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Regular.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Regular.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Regular.eot'); src: local(':)'), url('../fonts/NationalWeb-Regular.woff') format('woff'), url('../fonts/NationalWeb-Regular.ttf') format('truetype'), url('../fonts/NationalWeb-Regular.svg') format('svg'); 
 	font-weight: 500; 
 	font-style: normal; 
 	text-rendering: optimizelegibility;
@@ -289,7 +289,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Italic.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-Italic.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Italic.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Italic.woff') format('woff'), url('../fonts/NationalWeb-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Italic.svg') format('svg'); 
 	font-weight: 500; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -302,7 +302,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-Semibold.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Semibold.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Semibold.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold.woff') format('woff'), url('../fonts/NationalWeb-Semibold.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold.svg') format('svg'); 
 	font-weight: 700; 
 	font-style: normal; 
 	text-rendering: optimizelegibility;
@@ -315,7 +315,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
 	font-weight: 700; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -328,7 +328,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Bold.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-Bold.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Bold.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Bold.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Bold.eot'); src: local(':)'), url('../fonts/NationalWeb-Bold.woff') format('woff'), url('../fonts/NationalWeb-Bold.ttf') format('truetype'), url('../fonts/NationalWeb-Bold.svg') format('svg'); 
 	font-weight: 800; 
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -341,7 +341,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-Extrabold.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Extrabold.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('../fonts/NationalWeb-Extrabold.woff') format('woff'), url('../fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold.svg') format('svg'); 
 	font-weight: 900; 
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -354,7 +354,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('//www.usc.edu/assets/fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('//www.usc.edu/assets/fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('//www.usc.edu/assets/fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('//www.usc.edu/assets/fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
 	font-weight: 900; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -520,6 +520,71 @@ table {
 	width: 100%;
 }
 
+/*The Calendar CSS*/
+time.icon 
+      {
+	   font-size: 1em;
+	  display: block;
+	  position: absolute;
+	  left: -15px;
+	  top: -25px;
+	  width: 7em;
+	  height: 7em;
+	  background-color: #fff;
+	  border-radius: 0.6em;
+	  box-shadow: 0 1px 0 rgb(215,156,173), 0 2px 0 #fff, 0 3px 0 rgb(215,156,173), 0 4px 0 #fff, 0 5px 0 rgb(215,156,173), 0 0 0 1px rgb(215,156,173);
+	  overflow: hidden;
+	  font-family: National, Helvetica, Sans-serif;
+	  -ms-transform: scale(.45,.45);
+	  -webkit-transform: scale(.45,.45);
+	  transform: scale(.45,.45);
+      }
+
+
+      time.icon *
+      {
+        display: block;
+        width: 100%;
+        font-size: 1em;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+      }
+      time.icon strong
+      {
+        /*This is the upper month bar*/
+         position: absolute;
+		  top: 0;
+	  padding: 0.1em 0;
+	  color: #fff;
+	  background-color: rgb(230,195,199);
+	  border-bottom: 1px dashed rgb(215,156,173);
+	  box-shadow: 0 2px 0 rgb(230,195,199);
+	  font-size: 1.3em;      }
+      time.icon em
+      {
+          position: absolute;
+		  bottom: 0.1em;
+		  color: rgb(215,156,173);
+		  font-size: 1.3em;
+      }
+       time.icon span
+      {
+        /*This is the main number*/
+        font-size: 2.8em;
+        letter-spacing: -0.05em;
+        padding-top: 0.65em;
+        color: rgb(176,61,76);
+        font-weight: 800;
+        text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "lnum" 1;
+        -moz-font-feature-settings: "lnum=1";
+        -ms-font-feature-settings: "lnum" 1;
+        -o-font-feature-settings: "lnum" 1;
+        -webkit-font-feature-settings: "lnum" 1;
+        font-feature-settings: "lnum" 1; 
+
+      }
 /*--------------------------------------------------------------
 # Base Layouts
 --------------------------------------------------------------*/
@@ -707,6 +772,40 @@ margin-top: 0px;
 	padding-right: 10px;
 	vertical-align: middle;
 }
+
+#eventreadout {
+	width: auto;
+	height: 62px;
+	margin-top: 0px;
+  position: fixed;
+  left: 100px;
+  top: 0px;
+  padding-top: 6px;
+  border: 1px solid #FFF;
+}
+#eventreadout strong {
+	font-size: 2em;
+	font-weight: 800;
+	
+}
+#eventreadout sub {
+	vertical-align:normal;
+    font-size: smaller;
+    font-variant: small-caps;
+}
+#eventreadout ul {
+	list-style-type: none;
+	padding: 0px;
+    margin: 0px;
+
+}
+
+#eventreadout li {
+	display: inline-block;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+
 
 .chatwithus {
   margin-top: -25px;

@@ -1,5 +1,5 @@
 /*
-Theme Name: Digital Lounge
+Theme Name: Digital Lounge 2.0
 Theme URI: http://underscores.me/
 Author: The Creative Media Team
 Author URI: http://annenbergdl.org/
@@ -7,7 +7,7 @@ Description: Theme for all presentation aspects of the Annenberg Digital Lounge 
 Version: 0.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: digitallounge
+Text Domain: digitallounge 2.0
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -601,21 +601,25 @@ time.icon
 	z-index: 1000;
 	
 }
+
 .site-title {
-	 font-family : National;
-	  font-weight: 900;
-	  font-size : 24px;
-	  color : #FFFFFF;
-	  color : rgb(255, 255, 255);
-	  text-shadow : 0.25px 0.25px 0px rgba(119, 119, 119, 1);
-	  text-rendering: optimizelegibility;
-	  text-align: center;
+  font-family : National;
+  font-weight: 900;
+  font-size : 24px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+  text-shadow : 0.25px 0.25px 0px rgba(119, 119, 119, 1);
+  text-rendering: optimizelegibility;
+  text-align: center;
 	-moz-font-feature-settings: "ss03" 1;
 	-moz-font-feature-settings: "ss03=1";
 	-ms-font-feature-settings: "ss03" 1;
 	-o-font-feature-settings: "ss03" 1;
 	-webkit-font-feature-settings: "ss03" 1;
 	font-feature-settings: "ss03" 1; 
+	position: absolute;
+	top:0px;
+	left: 42%;
 }
 
 
@@ -635,12 +639,20 @@ time.icon
 }
 
 #colophon {
-	background: #222;
+	background-color: rgb(255,165,0);
+	background-image: url("img/footerbackground.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: #fff;
 	padding: 32px 64px;
 	text-align: center;
 	width: 100%;
+	position: relative;
+	z-index: 3;
+	height: 128px;
 }
+
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -718,37 +730,9 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-	color: #000;
-	
-}
 
-a:hover,
-a:focus,
-a:active {
-	color: #000;
-}
-
-a:focus {
-	
-}
-
-a:hover,
-a:active {
-	outline: 0;
-}
-
-.entry-content a {
-	color: #ff2d06;
-	text-decoration: none;
-}
-
-.entry-content a:hover,
-.entry-content a:focus {
-	text-decoration: underline;
+#masthead a {
+	text-decoration: none; 
 }
 #navbuttons{
 width: 245px;
@@ -775,11 +759,11 @@ height: 64px;
 #eventreadout {
 	
 	height: 64px;
-	position: fixed;
-	left: 100px;
+	margin-left: 100px;
 	top: 0px;
 	line-height: initial;
 	font-weight: 200;
+	width: auto;
 }
 
 #eventreadout .big {
@@ -795,14 +779,16 @@ height: 64px;
 #eventreadout .pipe {
 	margin: 0px 7px;
 }
+
 #eventreadout .eventheadline {
 	font-size: 1.5em;
 	font-weight: 700;
 	
 }
+
 #eventreadout .smalleritalic{
 	font-weight: 200;
-	font size: .5em;
+	font-size: 1em;
 	font-style: italic;
 }
 
@@ -812,14 +798,47 @@ height: 64px;
   font-weight: 600;
 
 }
+
 .binoculars {
   
 }
 	
 .usclogo {
 
+}
 
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: inherit;
+	text-decoration: underline;
+	
+}
 
+a:hover,
+a:focus,
+a:active {
+	color: #000;
+}
+
+a:focus {
+	
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+.entry-content a {
+	color: #ff2d06;
+	text-decoration: none;
+}
+
+.entry-content a:hover,
+.entry-content a:focus {
+	text-decoration: underline;
 }
 
 

@@ -607,8 +607,7 @@ time.icon
   font-weight: 900;
   font-size : 24px;
   color : #FFFFFF;
-  color : rgb(255, 255, 255);
-  text-shadow : 0.25px 0.25px 0px rgba(119, 119, 119, 1);
+  text-shadow : 1px 1px 0px #666;
   text-rendering: optimizelegibility;
   text-align: center;
 	-moz-font-feature-settings: "ss03" 1;
@@ -737,7 +736,7 @@ textarea {
 #navbuttons{
 width: 245px;
 height: 64px;
-  position: fixed;
+  position: absolute;
   right: 0px;
   top: 0px;
   padding-top: 6px;

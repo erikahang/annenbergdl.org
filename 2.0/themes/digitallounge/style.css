@@ -260,76 +260,34 @@ th {
 	padding: 0;
 }
 
+::selection {
+	background: #ff2d06;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: #ff2d06;
+	color: #fff;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Light.eot'); src: local(':)'), url('../fonts/NationalWeb-Light.woff') format('woff'), url('../fonts/NationalWeb-Light.ttf') format('truetype'), url('../fonts/NationalWeb-Light.svg') format('svg'); 
-	font-weight: 200; 
-	font-style: normal; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Light.eot'); src: local(':)'), url('../fonts/NationalWeb-Light.woff') format('woff'), url('../fonts/NationalWeb-Light.ttf') format('truetype'), url('../fonts/NationalWeb-Light.svg') format('svg');
+	font-weight: 200;
+	font-style: normal;
 }
 
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('../fonts/NationalWeb-LightItalic.woff') format('woff'), url('../fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('../fonts/NationalWeb-LightItalic.svg') format('svg'); 
-	font-weight: 200; 
-	font-style: italic; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Regular.eot'); src: local(':)'), url('../fonts/NationalWeb-Regular.woff') format('woff'), url('../fonts/NationalWeb-Regular.ttf') format('truetype'), url('../fonts/NationalWeb-Regular.svg') format('svg'); 
-	font-weight: 500; 
-	font-style: normal; 
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Italic.woff') format('woff'), url('../fonts/NationalWeb-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Italic.svg') format('svg'); 
-	font-weight: 500; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('../fonts/NationalWeb-LightItalic.woff') format('woff'), url('../fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('../fonts/NationalWeb-LightItalic.svg') format('svg');
+	font-weight: 200;
 	font-style: italic;
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1;  
 }
 
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold.woff') format('woff'), url('../fonts/NationalWeb-Semibold.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold.svg') format('svg'); 
-	font-weight: 700; 
-	font-style: normal; 
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
-	font-weight: 700; 
-	font-style: italic;
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1;  
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Bold.eot'); src: local(':)'), url('../fonts/NationalWeb-Bold.woff') format('woff'), url('../fonts/NationalWeb-Bold.ttf') format('truetype'), url('../fonts/NationalWeb-Bold.svg') format('svg'); 
-	font-weight: 800; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Regular.eot'); src: local(':)'), url('../fonts/NationalWeb-Regular.woff') format('woff'), url('../fonts/NationalWeb-Regular.ttf') format('truetype'), url('../fonts/NationalWeb-Regular.svg') format('svg');
+	font-weight: 500;
 	font-style: normal;
 	text-rendering: optimizelegibility;
         -moz-font-feature-settings: "ss03" 1;
@@ -337,25 +295,12 @@ th {
         -ms-font-feature-settings: "ss03" 1;
         -o-font-feature-settings: "ss03" 1;
         -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
+        font-feature-settings: "ss03" 1;
 }
 
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('../fonts/NationalWeb-Extrabold.woff') format('woff'), url('../fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold.svg') format('svg'); 
-	font-weight: 900; 
-	font-style: normal;
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
-	font-weight: 900; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Italic.woff') format('woff'), url('../fonts/NationalWeb-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Italic.svg') format('svg');
+	font-weight: 500;
 	font-style: italic;
 	text-rendering: optimizelegibility;
         -moz-font-feature-settings: "ss03" 1;
@@ -363,12 +308,77 @@ th {
         -ms-font-feature-settings: "ss03" 1;
         -o-font-feature-settings: "ss03" 1;
         -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold.woff') format('woff'), url('../fonts/NationalWeb-Semibold.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold-Italic.svg') format('svg');
+	font-weight: 700;
+	font-style: italic;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Bold.eot'); src: local(':)'), url('../fonts/NationalWeb-Bold.woff') format('woff'), url('../fonts/NationalWeb-Bold.ttf') format('truetype'), url('../fonts/NationalWeb-Bold.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('../fonts/NationalWeb-Extrabold.woff') format('woff'), url('../fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold.svg') format('svg');
+	font-weight: 900;
+	font-style: normal;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold-Italic.svg') format('svg');
+	font-weight: 900;
+	font-style: italic;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
 }
 body {
         font-family: National, Helvetica, Arial, San-Serif;
         font-weight: 500;
-        
+
 }
 body,
 button,
@@ -521,7 +531,7 @@ table {
 }
 
 /*The Calendar CSS*/
-time.icon 
+time.icon
       {
 	   font-size: 1em;
 	  display: block;
@@ -582,7 +592,7 @@ time.icon
         -ms-font-feature-settings: "lnum" 1;
         -o-font-feature-settings: "lnum" 1;
         -webkit-font-feature-settings: "lnum" 1;
-        font-feature-settings: "lnum" 1; 
+        font-feature-settings: "lnum" 1;
 
       }
 /*--------------------------------------------------------------
@@ -599,7 +609,7 @@ time.icon
 	top: 0;
 	position: fixed;
 	z-index: 1000;
-	
+
 }
 
 .site-title {
@@ -615,7 +625,7 @@ time.icon
 	-ms-font-feature-settings: "ss03" 1;
 	-o-font-feature-settings: "ss03" 1;
 	-webkit-font-feature-settings: "ss03" 1;
-	font-feature-settings: "ss03" 1; 
+	font-feature-settings: "ss03" 1;
 	position: absolute;
 	top:0px;
 	left: 42%;
@@ -731,22 +741,22 @@ textarea {
 --------------------------------------------------------------*/
 
 #masthead a {
-	text-decoration: none; 
+	text-decoration: none;
 }
-#navbuttons{
-width: 245px;
-height: 64px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  padding-top: 6px;
+
+#navbuttons {
+	width: 245px;
+	height: 64px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding-top: 6px;
 }
 
 #navbuttons ul {
 	list-style-type: none;
 	padding: 0px;
-    margin: 0px;
-
+	margin: 0px;
 }
 
 #navbuttons li {
@@ -756,7 +766,6 @@ height: 64px;
 }
 
 #eventreadout {
-	
 	height: 64px;
 	margin-left: 100px;
 	top: 0px;
@@ -771,8 +780,8 @@ height: 64px;
 }
 
 #eventreadout .small {
-    font-variant: small-caps;
-    font-weight: 500;
+	font-variant: small-caps;
+	font-weight: 500;
 }
 
 #eventreadout .pipe {
@@ -782,26 +791,25 @@ height: 64px;
 #eventreadout .eventheadline {
 	font-size: 1.5em;
 	font-weight: 700;
-	
+
 }
 
-#eventreadout .smalleritalic{
+#eventreadout .smalleritalic {
 	font-weight: 200;
 	font-size: 1em;
 	font-style: italic;
 }
 
 .chatwithus {
-  margin-top: -25px;
-  text-transform: uppercase;
-  font-weight: 600;
-
+	margin-top: -25px;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 .binoculars {
-  
+
 }
-	
+
 .usclogo {
 
 }
@@ -811,8 +819,7 @@ height: 64px;
 --------------------------------------------------------------*/
 a {
 	color: inherit;
-	text-decoration: underline;
-	
+	text-decoration: none;
 }
 
 a:hover,
@@ -821,8 +828,10 @@ a:active {
 	color: #000;
 }
 
+/* For accessibility */
 a:focus {
-	
+	outline: thin dotted;
+	box-shadow: none; /* override default browser styles */
 }
 
 a:hover,
@@ -830,13 +839,14 @@ a:active {
 	outline: 0;
 }
 
-.entry-content a {
-	color: #ff2d06;
-	text-decoration: none;
+.entry-content a,
+.staff-bio a {
+	text-decoration: underline;
 }
 
 .entry-content a:hover,
 .entry-content a:focus {
+	color: #ff2d06;
 	text-decoration: underline;
 }
 
@@ -1112,7 +1122,6 @@ Not yet used.
 	margin: 0 0 1.5em;
 }
 
-.byline,
 .updated:not(.published) {
 	display: none;
 }
@@ -1258,6 +1267,84 @@ object {
 
 
 /*--------------------------------------------------------------
+## Archive/Grid Views
+--------------------------------------------------------------*/
+
+.home #primary,
+.archive #primary {
+	max-width: 100%;
+	padding: 16px;
+	clear: both;
+	overflow: hidden;
+}
+
+.home .post,
+.home .tutorials,
+.archive .post,
+.archive .tutorials {
+	width: 320px;
+	padding: 0 17px 0 16px;
+	float: left;
+	position: relative;
+	height: 360px;
+	overflow: hidden;
+}
+
+.home .post:after,
+.home .tutorials:after,
+.archive .post:after,
+.archive .tutorials:after {
+	content: "";
+	height: calc(100% - 32px);
+	width: 1px;
+	position: absolute;
+	right: 0;
+	top: 16px;
+	background: #eee;
+}
+
+.home .post:first-child,
+.home .tutorials:first-child,
+.archive .post:first-child,
+.archive .tutorials:first-child {
+	padding-left: 0;
+	width: 304px;
+}
+
+.home .post:last-child:after,
+.home .tutorials:last-child:after,
+.archive .post:last-child:after,
+.archive .tutorials:last-child:after {
+	display: none;
+}
+
+.section-title {
+	margin: 0 0 0 64px;
+	color: #ff2d06;
+}
+
+.home h1.entry-title,
+.archive h1.entry-title {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0;
+	color: #777;
+}
+
+.home .entry-excerpt p,
+.archive .entry-excerpt p {
+	margin: 0;
+	color: #555;
+	font-size: .9em;
+}
+
+.home .entry-meta,
+.archive .entry-meta {
+	padding: 8px 0;
+}
+
+/*--------------------------------------------------------------
 ## Single Content
 --------------------------------------------------------------*/
 .single #primary {
@@ -1277,7 +1364,8 @@ object {
 	color: #555;
 }
 
-.cat-links a:hover, .cat-links a:focus {
+.cat-links a:hover,
+.cat-links a:focus {
 	color: #ff2d06;
 }
 
@@ -1288,10 +1376,12 @@ h1.entry-title {
 	color: #ff2d06;
 }
 
-.entry-meta .byline, .entry-meta .posted-on {
+.entry-meta .byline,
+.entry-meta .posted-on {
 	color: #555;
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 300;
+	text-transform: uppercase;
 }
 
 .entry-meta .byline a,

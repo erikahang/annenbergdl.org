@@ -16,7 +16,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_title( '<h1 class="section-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
@@ -24,17 +24,24 @@ get_header(); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
-				?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark" class="featured-image"><?php the_post_thumbnail(); ?></a>
+					<header class="entry-header">
+						<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+
+						<div class="entry-meta">
+							<?php digitallounge_posted_on(); ?>
+						</div><!-- .entry-meta -->
+					</header><!-- .entry-header -->
+
+					<div class="entry-excerpt">
+						<?php the_excerpt(); ?>
+					</div><!-- .entry-excerpt -->
+				</article><!-- #post-## -->
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php the_posts_navigation(); // @todo infinite scroll instead ?>
 
 		<?php else : ?>
 

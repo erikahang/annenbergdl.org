@@ -1270,15 +1270,21 @@ object {
 }
 
 .home .post,
-.archive.post {
+.home .tutorials,
+.archive .post,
+.archive .tutorials {
 	width: 320px;
 	padding: 0 17px 0 16px;
 	float: left;
 	position: relative;
+	height: 360px;
+	overflow: hidden;
 }
 
 .home .post:after,
-.archive .post:after {
+.home .tutorials:after,
+.archive .post:after,
+.archive .tutorials:after {
 	content: "";
 	height: calc(100% - 32px);
 	width: 1px;
@@ -1289,38 +1295,44 @@ object {
 }
 
 .home .post:first-child,
-.archive .post:first-child {
+.home .tutorials:first-child,
+.archive .post:first-child,
+.archive .tutorials:first-child {
 	padding-left: 0;
 	width: 304px;
 }
 
 .home .post:last-child:after,
-.archive .post:last-child:after {
+.home .tutorials:last-child:after,
+.archive .post:last-child:after,
+.archive .tutorials:last-child:after {
 	display: none;
 }
 
 .section-title {
-    margin: 0 0 0 64px;
-    color: #ff2d06;
+	margin: 0 0 0 64px;
+	color: #ff2d06;
 }
 
-.home h1.entry-title, .archive h1.entry-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0;
-    color: #777;
+.home h1.entry-title,
+.archive h1.entry-title {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0;
+	color: #777;
 }
 
-img.attachment-post-thumbnail.wp-post-image {}
-
-.home .entry-excerpt p, .archive .entry-excerpt p {
-    margin: 0;
-    color: #555;
+.home .entry-excerpt p,
+.archive .entry-excerpt p {
+	margin: 0;
+	color: #555;
+	font-size: .9em;
 }
 
-.home .entry-meta, .archive .entry-meta {
-    padding: 8px 0;
+.home .entry-meta,
+.archive .entry-meta {
+	padding: 8px 0;
 }
 
 /*--------------------------------------------------------------

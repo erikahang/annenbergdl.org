@@ -273,73 +273,21 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Light.eot'); src: local(':)'), url('../fonts/NationalWeb-Light.woff') format('woff'), url('../fonts/NationalWeb-Light.ttf') format('truetype'), url('../fonts/NationalWeb-Light.svg') format('svg'); 
-	font-weight: 200; 
-	font-style: normal; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Light.eot'); src: local(':)'), url('../fonts/NationalWeb-Light.woff') format('woff'), url('../fonts/NationalWeb-Light.ttf') format('truetype'), url('../fonts/NationalWeb-Light.svg') format('svg');
+	font-weight: 200;
+	font-style: normal;
 }
 
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('../fonts/NationalWeb-LightItalic.woff') format('woff'), url('../fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('../fonts/NationalWeb-LightItalic.svg') format('svg'); 
-	font-weight: 200; 
-	font-style: italic; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Regular.eot'); src: local(':)'), url('../fonts/NationalWeb-Regular.woff') format('woff'), url('../fonts/NationalWeb-Regular.ttf') format('truetype'), url('../fonts/NationalWeb-Regular.svg') format('svg'); 
-	font-weight: 500; 
-	font-style: normal; 
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Italic.woff') format('woff'), url('../fonts/NationalWeb-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Italic.svg') format('svg'); 
-	font-weight: 500; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('../fonts/NationalWeb-LightItalic.woff') format('woff'), url('../fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('../fonts/NationalWeb-LightItalic.svg') format('svg');
+	font-weight: 200;
 	font-style: italic;
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1;  
 }
 
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold.woff') format('woff'), url('../fonts/NationalWeb-Semibold.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold.svg') format('svg'); 
-	font-weight: 700; 
-	font-style: normal; 
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
-	font-weight: 700; 
-	font-style: italic;
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1;  
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Bold.eot'); src: local(':)'), url('../fonts/NationalWeb-Bold.woff') format('woff'), url('../fonts/NationalWeb-Bold.ttf') format('truetype'), url('../fonts/NationalWeb-Bold.svg') format('svg'); 
-	font-weight: 800; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Regular.eot'); src: local(':)'), url('../fonts/NationalWeb-Regular.woff') format('woff'), url('../fonts/NationalWeb-Regular.ttf') format('truetype'), url('../fonts/NationalWeb-Regular.svg') format('svg');
+	font-weight: 500;
 	font-style: normal;
 	text-rendering: optimizelegibility;
         -moz-font-feature-settings: "ss03" 1;
@@ -347,25 +295,12 @@ th {
         -ms-font-feature-settings: "ss03" 1;
         -o-font-feature-settings: "ss03" 1;
         -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
+        font-feature-settings: "ss03" 1;
 }
 
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('../fonts/NationalWeb-Extrabold.woff') format('woff'), url('../fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold.svg') format('svg'); 
-	font-weight: 900; 
-	font-style: normal;
-	text-rendering: optimizelegibility;
-        -moz-font-feature-settings: "ss03" 1;
-        -moz-font-feature-settings: "ss03=1";
-        -ms-font-feature-settings: "ss03" 1;
-        -o-font-feature-settings: "ss03" 1;
-        -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
-}
-
-@font-face { 
-	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
-	font-weight: 900; 
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Italic.woff') format('woff'), url('../fonts/NationalWeb-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Italic.svg') format('svg');
+	font-weight: 500;
 	font-style: italic;
 	text-rendering: optimizelegibility;
         -moz-font-feature-settings: "ss03" 1;
@@ -373,12 +308,77 @@ th {
         -ms-font-feature-settings: "ss03" 1;
         -o-font-feature-settings: "ss03" 1;
         -webkit-font-feature-settings: "ss03" 1;
-        font-feature-settings: "ss03" 1; 
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold.woff') format('woff'), url('../fonts/NationalWeb-Semibold.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold-Italic.svg') format('svg');
+	font-weight: 700;
+	font-style: italic;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Bold.eot'); src: local(':)'), url('../fonts/NationalWeb-Bold.woff') format('woff'), url('../fonts/NationalWeb-Bold.ttf') format('truetype'), url('../fonts/NationalWeb-Bold.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('../fonts/NationalWeb-Extrabold.woff') format('woff'), url('../fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold.svg') format('svg');
+	font-weight: 900;
+	font-style: normal;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
+}
+
+@font-face {
+	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold-Italic.svg') format('svg');
+	font-weight: 900;
+	font-style: italic;
+	text-rendering: optimizelegibility;
+        -moz-font-feature-settings: "ss03" 1;
+        -moz-font-feature-settings: "ss03=1";
+        -ms-font-feature-settings: "ss03" 1;
+        -o-font-feature-settings: "ss03" 1;
+        -webkit-font-feature-settings: "ss03" 1;
+        font-feature-settings: "ss03" 1;
 }
 body {
         font-family: National, Helvetica, Arial, San-Serif;
         font-weight: 500;
-        
+
 }
 body,
 button,
@@ -531,7 +531,7 @@ table {
 }
 
 /*The Calendar CSS*/
-time.icon 
+time.icon
       {
 	   font-size: 1em;
 	  display: block;
@@ -592,7 +592,7 @@ time.icon
         -ms-font-feature-settings: "lnum" 1;
         -o-font-feature-settings: "lnum" 1;
         -webkit-font-feature-settings: "lnum" 1;
-        font-feature-settings: "lnum" 1; 
+        font-feature-settings: "lnum" 1;
 
       }
 /*--------------------------------------------------------------
@@ -609,7 +609,7 @@ time.icon
 	top: 0;
 	position: fixed;
 	z-index: 1000;
-	
+
 }
 
 .site-title {
@@ -625,7 +625,7 @@ time.icon
 	-ms-font-feature-settings: "ss03" 1;
 	-o-font-feature-settings: "ss03" 1;
 	-webkit-font-feature-settings: "ss03" 1;
-	font-feature-settings: "ss03" 1; 
+	font-feature-settings: "ss03" 1;
 	position: absolute;
 	top:0px;
 	left: 42%;
@@ -741,22 +741,22 @@ textarea {
 --------------------------------------------------------------*/
 
 #masthead a {
-	text-decoration: none; 
+	text-decoration: none;
 }
-#navbuttons{
-width: 245px;
-height: 64px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  padding-top: 6px;
+
+#navbuttons {
+	width: 245px;
+	height: 64px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding-top: 6px;
 }
 
 #navbuttons ul {
 	list-style-type: none;
 	padding: 0px;
-    margin: 0px;
-
+	margin: 0px;
 }
 
 #navbuttons li {
@@ -766,7 +766,6 @@ height: 64px;
 }
 
 #eventreadout {
-	
 	height: 64px;
 	margin-left: 100px;
 	top: 0px;
@@ -781,8 +780,8 @@ height: 64px;
 }
 
 #eventreadout .small {
-    font-variant: small-caps;
-    font-weight: 500;
+	font-variant: small-caps;
+	font-weight: 500;
 }
 
 #eventreadout .pipe {
@@ -792,26 +791,25 @@ height: 64px;
 #eventreadout .eventheadline {
 	font-size: 1.5em;
 	font-weight: 700;
-	
+
 }
 
-#eventreadout .smalleritalic{
+#eventreadout .smalleritalic {
 	font-weight: 200;
 	font-size: 1em;
 	font-style: italic;
 }
 
 .chatwithus {
-  margin-top: -25px;
-  text-transform: uppercase;
-  font-weight: 600;
-
+	margin-top: -25px;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 .binoculars {
-  
+
 }
-	
+
 .usclogo {
 
 }
@@ -822,7 +820,6 @@ height: 64px;
 a {
 	color: inherit;
 	text-decoration: none;
-	
 }
 
 a:hover,

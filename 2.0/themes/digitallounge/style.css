@@ -821,7 +821,7 @@ height: 64px;
 --------------------------------------------------------------*/
 a {
 	color: inherit;
-	text-decoration: underline;
+	text-decoration: none;
 	
 }
 
@@ -831,8 +831,10 @@ a:active {
 	color: #000;
 }
 
+/* For accessibility */
 a:focus {
-	
+	outline: thin dotted;
+	box-shadow: none; /* override default browser styles */
 }
 
 a:hover,
@@ -840,13 +842,14 @@ a:active {
 	outline: 0;
 }
 
-.entry-content a {
-	color: #ff2d06;
-	text-decoration: none;
+.entry-content a,
+.staff-bio a {
+	text-decoration: underline;
 }
 
 .entry-content a:hover,
 .entry-content a:focus {
+	color: #ff2d06;
 	text-decoration: underline;
 }
 
@@ -1110,7 +1113,6 @@ Not yet used.
 	margin: 0 0 1.5em;
 }
 
-.byline,
 .updated:not(.published) {
 	display: none;
 }
@@ -1256,6 +1258,72 @@ object {
 
 
 /*--------------------------------------------------------------
+## Archive/Grid Views
+--------------------------------------------------------------*/
+
+.home #primary,
+.archive #primary {
+	max-width: 100%;
+	padding: 16px;
+	clear: both;
+	overflow: hidden;
+}
+
+.home .post,
+.archive.post {
+	width: 320px;
+	padding: 0 17px 0 16px;
+	float: left;
+	position: relative;
+}
+
+.home .post:after,
+.archive .post:after {
+	content: "";
+	height: calc(100% - 32px);
+	width: 1px;
+	position: absolute;
+	right: 0;
+	top: 16px;
+	background: #eee;
+}
+
+.home .post:first-child,
+.archive .post:first-child {
+	padding-left: 0;
+	width: 304px;
+}
+
+.home .post:last-child:after,
+.archive .post:last-child:after {
+	display: none;
+}
+
+.section-title {
+    margin: 0 0 0 64px;
+    color: #ff2d06;
+}
+
+.home h1.entry-title, .archive h1.entry-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: #777;
+}
+
+img.attachment-post-thumbnail.wp-post-image {}
+
+.home .entry-excerpt p, .archive .entry-excerpt p {
+    margin: 0;
+    color: #555;
+}
+
+.home .entry-meta, .archive .entry-meta {
+    padding: 8px 0;
+}
+
+/*--------------------------------------------------------------
 ## Single Content
 --------------------------------------------------------------*/
 .single #primary {
@@ -1275,7 +1343,8 @@ object {
 	color: #555;
 }
 
-.cat-links a:hover, .cat-links a:focus {
+.cat-links a:hover,
+.cat-links a:focus {
 	color: #ff2d06;
 }
 
@@ -1286,10 +1355,12 @@ h1.entry-title {
 	color: #ff2d06;
 }
 
-.entry-meta .byline, .entry-meta .posted-on {
+.entry-meta .byline,
+.entry-meta .posted-on {
 	color: #555;
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 300;
+	text-transform: uppercase;
 }
 
 .entry-meta .byline a,

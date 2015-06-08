@@ -274,19 +274,19 @@ th {
 # Typography
 --------------------------------------------------------------*/
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Light.eot'); src: local(':)'), url('../fonts/NationalWeb-Light.woff') format('woff'), url('../fonts/NationalWeb-Light.ttf') format('truetype'), url('../fonts/NationalWeb-Light.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Light.eot'); src: local(':)'), url('fonts/NationalWeb-Light.svg') format('svg');
 	font-weight: 200;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('../fonts/NationalWeb-LightItalic.woff') format('woff'), url('../fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('../fonts/NationalWeb-LightItalic.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('fonts/NationalWeb-LightItalic.svg') format('svg');
 	font-weight: 200;
 	font-style: italic;
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Regular.eot'); src: local(':)'), url('../fonts/NationalWeb-Regular.woff') format('woff'), url('../fonts/NationalWeb-Regular.ttf') format('truetype'), url('../fonts/NationalWeb-Regular.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Regular.eot'); src: local(':)'), url('fonts/NationalWeb-Regular.svg') format('svg');
 	font-weight: 500;
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -299,7 +299,7 @@ th {
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Italic.woff') format('woff'), url('../fonts/NationalWeb-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Italic.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Italic.eot'); src: local(':)'), url('fonts/NationalWeb-Italic.svg') format('svg');
 	font-weight: 500;
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -312,7 +312,7 @@ th {
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold.woff') format('woff'), url('../fonts/NationalWeb-Semibold.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('fonts/NationalWeb-Semibold.svg') format('svg');
 	font-weight: 700;
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -325,7 +325,7 @@ th {
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Semibold-Italic.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('fonts/NationalWeb-Semibold-Italic.svg') format('svg');
 	font-weight: 700;
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -338,7 +338,7 @@ th {
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Bold.eot'); src: local(':)'), url('../fonts/NationalWeb-Bold.woff') format('woff'), url('../fonts/NationalWeb-Bold.ttf') format('truetype'), url('../fonts/NationalWeb-Bold.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Bold.eot'); src: local(':)'), url('fonts/NationalWeb-Bold.svg') format('svg');
 	font-weight: 800;
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -351,7 +351,7 @@ th {
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('../fonts/NationalWeb-Extrabold.woff') format('woff'), url('../fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Extrabold.eot'); src: local(':)'),  url('fonts/NationalWeb-Extrabold.svg') format('svg');
 	font-weight: 900;
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -364,7 +364,7 @@ th {
 }
 
 @font-face {
-	font-family: 'National'; src: url('../fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('../fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('../fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('../fonts/NationalWeb-Extrabold-Italic.svg') format('svg');
+	font-family: 'National'; src: url('fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('fonts/NationalWeb-Extrabold-Italic.svg') format('svg');
 	font-weight: 900;
 	font-style: italic;
 	text-rendering: optimizelegibility;

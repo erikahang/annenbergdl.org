@@ -64,7 +64,7 @@ add_action( 'after_setup_theme', 'digitallounge_setup' );
  */
 function digitallounge_scripts() {
 	wp_enqueue_style( 'digitallounge-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'digitallounge-fonts', get_template_directory_uri() . '/css/fonts.css' );
+	
 
 	wp_enqueue_script( 'digitallounge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

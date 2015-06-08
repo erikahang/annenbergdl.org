@@ -260,6 +260,16 @@ th {
 	padding: 0;
 }
 
+::selection {
+	background: #ff2d06;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: #ff2d06;
+	color: #fff;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/

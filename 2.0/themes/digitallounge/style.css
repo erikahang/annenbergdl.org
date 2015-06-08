@@ -840,6 +840,18 @@ a:active {
 	text-decoration: underline;
 }
 
+#colophon ul {
+	list-style-type: none;
+	padding: 0px;
+    margin: 0px;
+
+}
+
+#colophon li {
+	display: inline-block;
+	padding-right: 10px;
+	vertical-align: middle;
+}
 
 /*--------------------------------------------------------------
 ## Menus

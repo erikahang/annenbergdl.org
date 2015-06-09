@@ -274,19 +274,19 @@ th {
 # Typography
 --------------------------------------------------------------*/
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Light.eot'); src: local(':)'), url('fonts/NationalWeb-Light.woff') format('woff'), url('fonts/NationalWeb-Light.ttf') format('truetype'), url('fonts/NationalWeb-Light.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Light.eot'); src: local(':)'), url('./fonts/NationalWeb-Light.woff') format('woff'), url('./fonts/NationalWeb-Light.ttf') format('truetype'), url('./fonts/NationalWeb-Light.svg') format('svg'); 
 	font-weight: 200; 
 	font-style: normal; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('fonts/NationalWeb-LightItalic.woff') format('woff'), url('fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('fonts/NationalWeb-LightItalic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('./fonts/NationalWeb-LightItalic.woff') format('woff'), url('./fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('./fonts/NationalWeb-LightItalic.svg') format('svg'); 
 	font-weight: 200; 
 	font-style: italic; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Regular.eot'); src: local(':)'), url('fonts/NationalWeb-Regular.woff') format('woff'), url('fonts/NationalWeb-Regular.ttf') format('truetype'), url('fonts/NationalWeb-Regular.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Regular.eot'); src: local(':)'), url('./fonts/NationalWeb-Regular.woff') format('woff'), url('./fonts/NationalWeb-Regular.ttf') format('truetype'), url('./fonts/NationalWeb-Regular.svg') format('svg'); 
 	font-weight: 500; 
 	font-style: normal; 
 	text-rendering: optimizelegibility;
@@ -299,7 +299,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Italic.eot'); src: local(':)'), url('fonts/NationalWeb-Italic.woff') format('woff'), url('fonts/NationalWeb-Italic.ttf') format('truetype'), url('fonts/NationalWeb-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Italic.eot'); src: local(':)'), url('./fonts/NationalWeb-Italic.woff') format('woff'), url('./fonts/NationalWeb-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Italic.svg') format('svg'); 
 	font-weight: 500; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -312,7 +312,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('fonts/NationalWeb-Semibold.woff') format('woff'), url('fonts/NationalWeb-Semibold.ttf') format('truetype'), url('fonts/NationalWeb-Semibold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('./fonts/NationalWeb-Semibold.woff') format('woff'), url('./fonts/NationalWeb-Semibold.ttf') format('truetype'), url('./fonts/NationalWeb-Semibold.svg') format('svg'); 
 	font-weight: 700; 
 	font-style: normal; 
 	text-rendering: optimizelegibility;
@@ -325,7 +325,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('./fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('./fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
 	font-weight: 700; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -338,7 +338,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Bold.eot'); src: local(':)'), url('fonts/NationalWeb-Bold.woff') format('woff'), url('fonts/NationalWeb-Bold.ttf') format('truetype'), url('fonts/NationalWeb-Bold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Bold.eot'); src: local(':)'), url('./fonts/NationalWeb-Bold.woff') format('woff'), url('./fonts/NationalWeb-Bold.ttf') format('truetype'), url('./fonts/NationalWeb-Bold.svg') format('svg'); 
 	font-weight: 800; 
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -351,7 +351,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('fonts/NationalWeb-Extrabold.woff') format('woff'), url('fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('fonts/NationalWeb-Extrabold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('./fonts/NationalWeb-Extrabold.woff') format('woff'), url('./fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold.svg') format('svg'); 
 	font-weight: 900; 
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -364,7 +364,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('./fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('./fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
 	font-weight: 900; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -599,18 +599,23 @@ time.icon
 # Base Layouts
 --------------------------------------------------------------*/
 #masthead {
+	/*background: #FFA500 url("img/vectorsprite.svgz"); These are for the vector sprite sheet
+	background-size: 100vw 64px;*/
+	background: #FFA500 url("img/backgroundvector.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
 	height: 64px;
 	width: 100%;
-	background-color: rgb(255,165,0);
-	background-image: url("img/backgroundvector.svg");
-	background-repeat:no-repeat;
-	background-size: cover;
 	color: #fff;
 	top: 0;
 	position: fixed;
 	z-index: 1000;
 
+
 }
+
+
+
 
 .site-title {
   font-family : National;
@@ -646,6 +651,7 @@ time.icon
 	padding: 32px;
 	margin: 0 auto;
 }
+
 
 #colophon {
 	background-color: rgb(255,165,0);
@@ -1273,7 +1279,7 @@ object {
 .home #primary,
 .archive #primary {
 	max-width: 100%;
-	padding: 16px;
+	padding:  3px 16px 16px 16px;
 	clear: both;
 	overflow: hidden;
 }
@@ -1321,6 +1327,7 @@ object {
 .section-title {
 	margin: 0 0 0 64px;
 	color: #ff2d06;
+	font-weight: 500;
 }
 
 .home h1.entry-title,
@@ -1336,7 +1343,9 @@ object {
 .archive .entry-excerpt p {
 	margin: 0;
 	color: #555;
-	font-size: .9em;
+	font-size: 1em;
+	line-height: 1em;
+	font-weight: 200;
 }
 
 .home .entry-meta,
@@ -1349,11 +1358,12 @@ object {
 --------------------------------------------------------------*/
 .single #primary {
 	padding-top: 0;
+
 }
 
 .entry-meta {
-	margin-left: 32px;
 	line-height: 1;
+	font-weight: 200;
 }
 
 .cat-links a {
@@ -1375,7 +1385,9 @@ h1.entry-title {
 	font-size: 48px;
 	color: #ff2d06;
 }
-
+.entry-header, .entry-excerpt {
+	padding: 0px 1em 0px 1em;
+} 
 .entry-meta .byline,
 .entry-meta .posted-on {
 	color: #555;

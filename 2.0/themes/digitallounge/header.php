@@ -24,7 +24,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php include_once("img/vectorsprit.svgz"); ?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'digitallounge' ); ?></a>
 

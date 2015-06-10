@@ -55,7 +55,7 @@
 			<li><div class="binoculars"><a href="#"><img src="<?php bloginfo('template_directory'); ?>/img/binoc.svg" width="50" height="50"></a>
 			</div></li>
 			<li><div class="usclogo">
-				<a href="#"><img src="<?php bloginfo('template_directory'); ?>/img/usclogo.svg" width="50" height="50"></a>
+				<a href="http://www.usc.edu" alt="usclogo" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/usclogo.svg" width="50" height="50"></a>
 			</div></li>
 			</ul>
 		</div>

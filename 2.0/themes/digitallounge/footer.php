@@ -11,13 +11,14 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<ul>
+			<li><a href="http://www.facebook.com/AnnenbergDL" target="_blank" alt="facebook"><div class="facebook"></div></a></li>
+			<li><a href="http://instagram.com/annenbergdl/" target="_blank" alt="instagram"><div class="instagram"></div></a></li>
+			<li><a href="http://twitter.com/annenbergdl" target="_blank" alt="twitter"><div class="twitter"></div></a></li>
+			<li><a href="#" alt="youtube" target="_blank"><div class="youtube"></div></a></li>
+		</ul> 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<ul>
-			<li class="facebook"><a href="#" alt="facebook"></a></li>
-			<li class="instagram"><a href="#" alt="instagram"></a></li>
-			<li class="twitter"><a href="#" alt="twitter"></a></li>
-			<li class="youtube"><a href="#" alt="youtube"></a></li>
-			</ul> 
+			
 			<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
 
 		</nav><!-- #site-navigation -->

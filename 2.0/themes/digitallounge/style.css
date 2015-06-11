@@ -1309,11 +1309,11 @@ object {
 .home .tutorials,
 .archive .post,
 .archive .tutorials {
-	width: 320px;
-	padding: 0 17px 0 16px;
+	width: 288px;
+	padding: 0 15px 0 15px;
 	float: left;
 	position: relative;
-	height: 360px;
+	height: 288px;
 	overflow: hidden;
 }
 
@@ -1407,7 +1407,7 @@ h1.entry-title {
 	color: #ff2d06;
 }
 .entry-header, .entry-excerpt {
-	padding: 0px 1em 0px 1em;
+	
 } 
 .entry-meta .byline,
 .entry-meta .posted-on {

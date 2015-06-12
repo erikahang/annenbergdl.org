@@ -16,37 +16,37 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<h2 class="section-title">News</h2>
+			<div class="news-collection">
+				<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="featured-image"><?php the_post_thumbnail(); ?></a>
+							<header class="entry-header">
+								<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="featured-image"><?php the_post_thumbnail(); ?></a>
-					<header class="entry-header">
-						<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+								<div class="entry-meta">
+									<?php digitallounge_posted_on(); ?>
+								</div><!-- .entry-meta -->
+							</header><!-- .entry-header -->
 
-						<div class="entry-meta">
-							<?php digitallounge_posted_on(); ?>
-						</div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
+							<div class="entry-excerpt">
+								<?php the_excerpt(); ?>
+							</div><!-- .entry-excerpt -->
+						</article><!-- #post-## -->
 
-					<div class="entry-excerpt">
-						<?php the_excerpt(); ?>
-					</div><!-- .entry-excerpt -->
-				</article><!-- #post-## -->
+					<?php endwhile; ?>
 
-			<?php endwhile; ?>
+					<?php the_posts_navigation(); ?>
 
-			<?php the_posts_navigation(); ?>
+				<?php else : ?>
 
-		<?php else : ?>
+					<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
-
+				<?php endif; ?>
+			</div><!-- .news-collection -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

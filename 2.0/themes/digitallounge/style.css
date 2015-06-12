@@ -55,7 +55,7 @@ body {
 	margin: 0;
 }
 
-article,
+article, /*I turned this off so the news could scroll*/
 aside,
 details,
 figcaption,
@@ -650,7 +650,17 @@ time.icon
 	padding: 32px;
 	margin: 0 auto;
 }
+.news-collection {
+	height: 288px;
+	width: calc(100vw * 2);
+ 	display:inline-block;
+ 	overflow-x: scroll;
 
+}
+div.news > article  {
+/*	display:inline-block; *//* needed to get just news section to scrol*/
+
+}
 
 #colophon {
 	background-color: rgb(255,165,0);
@@ -661,7 +671,6 @@ time.icon
 	padding: 0px 32px 64px;
 	text-align: center;
 	width: 100%;
-	position: relative;
 	z-index: 3;
 	height: 128px;
 }
@@ -1385,6 +1394,9 @@ object {
 .entry-meta {
 	line-height: 1;
 	font-weight: 200;
+	margin-left: 1.5em;
+  	margin-bottom: .1em;
+  	margin-top: .1em;
 }
 
 .cat-links a {
@@ -1401,7 +1413,7 @@ object {
 }
 
 h1.entry-title {
-	margin: 16px 0;
+	margin: -16px 0;
 	font-weight: 900;
 	font-size: 48px;
 	color: #ff2d06;

@@ -7,10 +7,12 @@
  * @package Digital Lounge
  */
 
+wp_enqueue_script( 'digitallounge-infinitescroll', get_template_directory_uri() . '/js/infinite-scroll.js', array( 'jquery', 'wp-util' ), '20150614', true );
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main" data-type="tutorials">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -41,14 +43,27 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); // @todo infinite scroll instead ?>
+			<button class="load-more">Load More</button>
 
 		<?php else : ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
-
+		<script type="text/html" id="tmpl-archive-grid-view">
+			<article id="post-{{ data.id }}" <?php post_class(); ?>>
+				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
+				<header class="entry-header">
+					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
+					<div class="entry-meta">
+						{{{ data.posted_on }}}
+					</div>
+				</header>
+				<div class="entry-excerpt">
+					{{{ data.excerpt }}}
+				</div>
+			</article>
+		</script>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

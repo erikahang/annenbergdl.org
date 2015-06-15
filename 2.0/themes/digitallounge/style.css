@@ -273,19 +273,19 @@ th {
 # Typography
 --------------------------------------------------------------*/
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Light.eot'); src: local(':)'), url('./fonts/NationalWeb-Light.woff') format('woff'), url('./fonts/NationalWeb-Light.ttf') format('truetype'), url('./fonts/NationalWeb-Light.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Light.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Light.woff') format('woff'),*/ url('./fonts/NationalWeb-Light.ttf') format('truetype'), url('./fonts/NationalWeb-Light.svg') format('svg'); 
 	font-weight: 200; 
 	font-style: normal; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('./fonts/NationalWeb-LightItalic.woff') format('woff'), url('./fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('./fonts/NationalWeb-LightItalic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-LightItalic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-LightItalic.woff') format('woff'),*/ url('./fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('./fonts/NationalWeb-LightItalic.svg') format('svg'); 
 	font-weight: 200; 
 	font-style: italic; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Regular.eot'); src: local(':)'), url('./fonts/NationalWeb-Regular.woff') format('woff'), url('./fonts/NationalWeb-Regular.ttf') format('truetype'), url('./fonts/NationalWeb-Regular.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Regular.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Regular.woff') format('woff'),*/ url('./fonts/NationalWeb-Regular.ttf') format('truetype'), url('./fonts/NationalWeb-Regular.svg') format('svg'); 
 	font-weight: 500; 
 	font-style: normal; 
 	text-rendering: optimizelegibility;
@@ -298,7 +298,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Italic.eot'); src: local(':)'), url('./fonts/NationalWeb-Italic.woff') format('woff'), url('./fonts/NationalWeb-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Italic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Italic.woff') format('woff'),*/ url('./fonts/NationalWeb-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Italic.svg') format('svg'); 
 	font-weight: 500; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -311,7 +311,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('./fonts/NationalWeb-Semibold.woff') format('woff'), url('./fonts/NationalWeb-Semibold.ttf') format('truetype'), url('./fonts/NationalWeb-Semibold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Semibold.woff') format('woff'),*/ url('./fonts/NationalWeb-Semibold.ttf') format('truetype'), url('./fonts/NationalWeb-Semibold.svg') format('svg'); 
 	font-weight: 700; 
 	font-style: normal; 
 	text-rendering: optimizelegibility;
@@ -324,7 +324,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), url('./fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('./fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('./fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'),*/ url('./fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
 	font-weight: 700; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -337,7 +337,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Bold.eot'); src: local(':)'), url('./fonts/NationalWeb-Bold.woff') format('woff'), url('./fonts/NationalWeb-Bold.ttf') format('truetype'), url('./fonts/NationalWeb-Bold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Bold.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Bold.woff') format('woff'), url('./fonts/NationalWeb-Bold.ttf') format('truetype'),*/ url('./fonts/NationalWeb-Bold.svg') format('svg'); 
 	font-weight: 800; 
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -350,7 +350,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('./fonts/NationalWeb-Extrabold.woff') format('woff'), url('./fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Extrabold.woff') format('woff'),*/ url('./fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold.svg') format('svg'); 
 	font-weight: 900; 
 	font-style: normal;
 	text-rendering: optimizelegibility;
@@ -363,7 +363,7 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), url('./fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), url('./fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), */url('./fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
 	font-weight: 900; 
 	font-style: italic;
 	text-rendering: optimizelegibility;
@@ -384,7 +384,7 @@ button,
 input,
 select,
 textarea {
-	color: #222;
+	color: #666666;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -654,11 +654,18 @@ time.icon
 	height: 288px;
 	width: calc(100vw * 2);
  	display:inline-block;
- 	overflow-x: scroll;
+ 	
 
 }
-div.news > article  {
-/*	display:inline-block; *//* needed to get just news section to scrol*/
+.news-collection > .entry-meta  {
+
+	line-height: 1;
+	font-weight: 200;
+	margin-left: 1.5em;
+  	margin-bottom: .1em;
+  	margin-top: .1em;
+  	color: honeydew;
+
 
 }
 
@@ -996,8 +1003,8 @@ Not yet used.
 	width: 50%;
 	float: left;
 	padding: 16px 32px;
-	background: #222;
-	color: #ccc;
+	background: #FFF;
+	color: #666666;
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: 500;
@@ -1220,7 +1227,7 @@ object {
 	background-position: -64px 0px;
 }
 .instagram {
-	background-position: ;
+	
 }
 .twitter {
 	  background-position: -128px 0px;
@@ -1399,6 +1406,14 @@ object {
   	margin-top: .1em;
 }
 
+div.news-collection {
+	line-height: 1;
+	font-weight: 200;
+	margin-left: 1.5em;
+  	margin-bottom: .1em;
+  	margin-top: .1em;
+
+}
 .cat-links a {
 	text-decoration: none;
 	text-transform: uppercase;
@@ -1546,4 +1561,27 @@ h1.entry-title {
 	padding: 0 128px;
 	margin: 0;
 }
+/*--------------------------------------------------------------
+## Tablet Friendly Media Queries 
+--------------------------------------------------------------*/
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2) { 
+
+	#eventreadout {
+		display: none;
+
+	}
+	
+	.site-title {
+		left: 30%;
+	}
+
+/* STYLES GO HERE */ }
+
+
+
 

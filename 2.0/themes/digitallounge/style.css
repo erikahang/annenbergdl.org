@@ -650,6 +650,17 @@ time.icon
 	padding: 32px;
 	margin: 0 auto;
 }
+
+.news-title {
+	float: left;
+	width: 100%;
+	
+}
+.news-title a {
+	font-size: 2em;
+	float: right;
+	margin-right: 25px;
+}
 .news-collection {
 	height: 288px;
 	width: calc(100vw * 2);
@@ -1365,6 +1376,8 @@ object {
 	margin: 0 0 0 64px;
 	color: #ff2d06;
 	font-weight: 500;
+	width: 33vw;
+	float: left;
 }
 
 .home h1.entry-title,

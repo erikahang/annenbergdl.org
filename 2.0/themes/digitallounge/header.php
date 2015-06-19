@@ -14,6 +14,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/calendarfunctions.js"></script>
+<link href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	$(document).ready(function(){
     $("button").click(function(){
@@ -50,7 +51,7 @@
 		</div>
 		<div class="site-branding">
 			<h1 class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<a class="animated pulse" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			</h1> 
 			
 		</div><!-- .site-branding -->

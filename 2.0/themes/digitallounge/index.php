@@ -15,8 +15,18 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<h2 class="section-title">News</h2>
-			<div class="news-collection">
+		<div class="news-title"><h2 class="section-title">News</h2> <a href="#">&gt;</a><a href="#">&lt;</a></div>
+		<script type="text/javascript">
+// 			$("#s a").click(function(){
+//    				 $("div.news-collection").css("left", "-150px");
+// });
+// 			$(document).ready(function() {
+//     $("#solTitle a").click(function() {
+//         //Do stuff when clicked
+//     });
+// });
+// 		</script>
+			<div class="news-collection animated slideInRight delay1-2sec">
 				<?php if ( have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>

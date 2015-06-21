@@ -40,15 +40,18 @@ get_header(); ?>
 	endforeach;
 ?>
 			<div class="staff-members"></div>
+			<button type="button" class="back-to-index">X</button>
 			<script type="text/html" id="tmpl-single-staff-view">
 				<article class="staff-member" id="staff-member-{{ data.id }}">
 					<div class="staff-background" style="background-image: url('{{ data.background_image }}');"></div>
 					{{{ data.avatar }}}
 					<div class="staff-content">
+						<button type="button" class="previous"><</button>
 						<h2 class="staff-name">{{ data.name }}</h2>
 						<div class="staff-bio">
 							{{{ data.description }}}
 						</div>
+						<button type="button" class="next">></button>
 					</div>
 				</article>
 			</script>

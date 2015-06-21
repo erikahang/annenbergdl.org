@@ -1525,6 +1525,7 @@ h1.entry-title {
 }
 
 .staff-member {
+	display: none;
 	position: absolute;
 	top: 64px;
 	left: 50%;
@@ -1532,6 +1533,10 @@ h1.entry-title {
 	margin: 0 0 0 -528px;
 	width: 100%;
 	max-width: 1056px;
+}
+
+.staff-member.current {
+	display: block;
 }
 
 .admin-bar .staff-member {
@@ -1579,6 +1584,50 @@ h1.entry-title {
 	padding: 0 128px;
 	margin: 0;
 }
+
+.page-template-staff .back-to-index {
+	display: block;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	color: #fff;
+	font: 64px/1 Arial;
+	font-weight: bold;
+	padding: 8px 16px;
+	margin: 0;
+	position: fixed;
+	top: 96px;
+	right: 32px;
+	z-index: 999999;
+}
+
+.staff-member .next, .staff-member .previous {
+	display: block;
+	position: absolute;
+	top: 160px;
+	left: 32px;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	font: 64px/1 Arial;
+	padding: 64px 32px;
+	color: #ccc;
+	text-shadow: none;
+	transition: color .2s ease-in-out;
+}
+
+.staff-member .next:hover,
+.staff-member .next:focus,
+.staff-member .previous:hover,
+.staff-member .previous:focus {
+	color: #000;
+}
+
+.staff-member button.next {
+	right: 32px;
+	left: auto;
+}
+
 /*--------------------------------------------------------------
 ## Tablet Friendly Media Queries 
 --------------------------------------------------------------*/

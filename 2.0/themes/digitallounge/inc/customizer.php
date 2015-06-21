@@ -33,17 +33,28 @@ function digitallounge_customize_register( $wp_customize ) {
 	) );
 
 	// Add Featured Content setting.
-	$wp_customize->add_setting( 'featured_tutorial_tags', array(
-		'type'                 => 'theme_mod',
-	) );
+	$wp_customize->add_setting( 'featured_tutorial_tags', array() );
 
 	// Add Featured Content control.
 	$wp_customize->add_control( 'featured_tutorial_tags', array(
-		'label'    => __( 'Featured Tutorial Tags' ),
-		'description'     => 'Enter a comma-separated list of tutorial tags to show on the default home page.',
-		'section'  => 'featured_content',
-		'priority' => 20,
+		'label'       => __( 'Featured Tutorial Tags' ),
+		'description' => 'Enter a comma-separated list of tutorial tags to show on the default home page.',
+		'section'     => 'featured_content',
+		'priority'    => 20,
 	) );
+
+	// Staff Page default Background
+	$wp_customize->add_section( 'staff', array( 
+		'title' => 'Staff',
+		'priority' => 135,
+	) );
+	$wp_customize->add_setting( 'default_staff_background', array(
+		'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'default_staff_background', array(
+		'label' => 'Default Staff Background Image',
+		'section' => 'staff',
+	) ) );
 }
 add_action( 'customize_register', 'digitallounge_customize_register' );
 

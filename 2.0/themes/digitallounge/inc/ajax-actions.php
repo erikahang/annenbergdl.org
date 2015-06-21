@@ -7,6 +7,9 @@ function anndl_load_userdata_ajax() {
 	$id = absint( $_POST['user_id'] );
 
 	$data = get_userdata( $id );
+	if ( ! $data->background_image ) {
+		$data->background_image = get_theme_mod( 'default_staff_background', '' );
+	}
 
 	// Output the data for this user.
 	echo wp_json_encode( array(

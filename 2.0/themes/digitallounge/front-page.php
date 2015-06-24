@@ -11,16 +11,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<script type="text/javascript">
-	// 			$("#s a").click(function(){
-	//    				 $("div.news-collection").css("left", "-150px");
-	// });
-	// 			$(document).ready(function() {
-	//     $("#solTitle a").click(function() {
-	//         //Do stuff when clicked
-	//     });
-	// });
-	 		</script>
+		
 			<section class="news-collection animated slideInRight delay1-2sec">
 				<div class="news-title"><h2 class="section-title">News</h2> <a href="#">&gt;</a><a href="#">&lt;</a></div>
 				<?php if ( have_posts() ) : ?>
@@ -76,8 +67,8 @@ get_header(); ?>
 							),
 						) );
 						if ( $posts ) { ?>
-							<section class="<?php echo $term->slug; ?>-collection animated slideInRight delay1-2sec">
-								<div class="<?php echo $term->slug; ?>-title"><h2 class="section-title"><?php echo $term->name; ?></h2> <a href="#">&gt;</a><a href="#">&lt;</a></div>
+							<section class="<?php echo $term->slug; ?> collection animated slideInRight delay1-2sec">
+								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <a href="#">&gt;</a><a href="#">&lt;</a></div>
 								<?php foreach( $posts as $post ) { ?>
 									<article id="tutorial-<?php echo $post->ID; ?>" <?php post_class( null, $post->ID ); ?>>
 										<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" rel="bookmark" class="featured-image"><?php echo get_the_post_thumbnail( $post->ID ); ?></a>

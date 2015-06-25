@@ -663,7 +663,7 @@ time.icon
 }
 .news-collection {
 	height: 288px;
-	width: calc(100vw * 2);
+	width: 100vw;
  	display:inline-block;
  	margin-bottom: 10px;
 
@@ -688,24 +688,29 @@ time.icon
 	margin-right: 25px;
 }
 .collection {
-	height: 288px;
-	width: calc(100vw * 2);
+	height: 380px;
+	width: 200vw;
  	display:inline-block;
  	margin-top: 37px;
+ 	overflow-y: hidden;
 
 }
-.news-collection > .entry-meta  {
 
-	line-height: 1;
-	font-weight: 200;
-	margin-left: 1.5em;
-  	margin-bottom: .1em;
-  	margin-top: .1em;
-  	color: honeydew;
+.collection > h1.entry-title{
+	text-transform: uppercase;
 }
 
-
-
+.collection article {
+  width: 254px;
+  padding: 0 1px 0 1px;
+  float: left;
+/*  position: relative;*/
+  height: 370px;
+  overflow: hidden;
+}
+section.collection > :nth-child(2) {
+	width: 40vw;
+}
 
 
 
@@ -1412,11 +1417,12 @@ object {
 
 .home h1.entry-title,
 .archive h1.entry-title {
-	font-size: 24px;
+	font-size: 1.2em;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;
 	color: #777;
+	text-transform: uppercase;
 }
 
 .home .entry-excerpt p,
@@ -1476,10 +1482,10 @@ div.news-collection {
 }
 
 h1.entry-title {
-	margin: -16px 0;
 	font-weight: 900;
 	font-size: 48px;
 	color: #ff2d06;
+	line-height: 1em;
 }
 .entry-header, .entry-excerpt {
 	

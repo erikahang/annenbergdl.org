@@ -609,8 +609,6 @@ time.icon
 	top: 0;
 	position: fixed;
 	z-index: 1000;
-
-
 }
 
 
@@ -665,7 +663,8 @@ time.icon
 	height: 288px;
 	width: 100vw;
  	display:inline-block;
- 	margin-bottom: 10px;
+ 	margin-bottom: 100px;
+ 	overflow:hidden;
 
 }
 .news-collection > .entry-meta  {
@@ -688,26 +687,30 @@ time.icon
 	margin-right: 25px;
 }
 .collection {
-	height: 380px;
+	height: 420px;
 	width: 200vw;
  	display:inline-block;
- 	margin-top: 37px;
  	overflow-y: hidden;
+ 	padding: 0px 0px 0px 0px;
+ 	margin-bottom: 100px;
+
 
 }
 
 .collection > h1.entry-title{
 	text-transform: uppercase;
+
 }
+
 
 .collection article {
   width: 254px;
-  padding: 0 1px 0 1px;
   float: left;
 /*  position: relative;*/
   height: 370px;
   overflow: hidden;
 }
+/*This makes the first image dispay bigger in the collections*/
 section.collection > :nth-child(2) {
 	width: 40vw;
 }
@@ -1423,6 +1426,8 @@ object {
 	margin: 0;
 	color: #777;
 	text-transform: uppercase;
+	padding: 0px 5px 0 5px;
+
 }
 
 .home .entry-excerpt p,
@@ -1432,6 +1437,7 @@ object {
 	font-size: 1em;
 	line-height: 1em;
 	font-weight: 200;
+	padding: 0px 5px 0px 5px;
 }
 
 .home .entry-meta,

@@ -676,6 +676,14 @@ time.icon
   	color: honeydew;
 }
 
+.collection {
+	height: 418px;
+	width: 100vw;
+ 	display:inline-block;
+ 	overflow-y: hidden;
+ 	padding: 0px 0px 0px 0px;
+ 	margin-bottom: 100px;
+}
 .collection .title {
 	float: left;
 	width: 100%;
@@ -686,16 +694,17 @@ time.icon
 	float: right;
 	margin-right: 25px;
 }
-.collection {
-	height: 420px;
-	width: 200vw;
- 	display:inline-block;
- 	overflow-y: hidden;
- 	padding: 0px 0px 0px 0px;
- 	margin-bottom: 100px;
 
-
+.collection:before {
+  content:""; 
+  background: black; 
+  position: absolute; 
+  top: 0; 
+  right: 25px; 
+  width: 50%; 
+  width: 1px;
 }
+
 
 .collection > h1.entry-title{
 	text-transform: uppercase;
@@ -712,7 +721,7 @@ time.icon
 }
 /*This makes the first image dispay bigger in the collections*/
 section.collection > :nth-child(2) {
-	width: 40vw;
+	width: 575px;
 }
 
 
@@ -1414,7 +1423,6 @@ object {
 	margin: 0 0 0 64px;
 	color: #ff2d06;
 	font-weight: 500;
-	width: 33vw;
 	float: left;
 }
 
@@ -1448,6 +1456,7 @@ object {
 .archive #colophon {
 	position: fixed;
 	bottom: 0;
+	background-attachment: fixed;
 }
 
 /*--------------------------------------------------------------
@@ -1493,7 +1502,9 @@ h1.entry-title {
 	color: #ff2d06;
 	line-height: 1em;
 }
-.entry-header, .entry-excerpt {
+.collection .entry-header, .collection .entry-excerpt {
+	text-align: right;
+	padding:5px 5px 0px 5px;
 	
 } 
 .entry-meta .byline,

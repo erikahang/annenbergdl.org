@@ -9,13 +9,52 @@
 
 wp_enqueue_script( 'digitallounge-infinitescroll', get_template_directory_uri() . '/js/infinite-scroll.js', array( 'jquery', 'wp-util' ), '20150614', true );
 
+// Build data to replicate this query in JS/infinite scroll
+$data = array();
+if ( is_tax() || is_category() || is_tag() ) {
+	$data['type'] = 'taxonomy';
+	$data['taxonomy'] = absint( get_taxonomy( get_queried_object()->taxonomy )->name );
+	$data['term'] = absint( get_queried_object()->term_id );
+}if ( is_tag() ) {
+	$data['type'] = 'taxonomy';
+	$data['taxonomy'] = 'tag';
+	$data['term'] = absint( get_queried_object()->term_id );
+} elseif ( is_category() ) {
+	$data['type'] = 'taxonomy';
+	$data['taxonomy'] = 'category';
+	$data['term'] = absint( get_queried_object()->term_id );
+} elseif ( is_post_type_archive() ) {
+	$data['type'] = 'post_type';
+	$data['post_type'] = esc_attr( get_query_var( 'post_type' ) );
+} elseif ( is_author() ) {
+	$data['type'] = 'author';
+	$data['author_id'] = absint( get_queried_object()->term_id );
+} elseif ( is_year() ) {
+	$data['type'] = 'year';
+	$data['year'] = get_the_date( 'Y' );
+} elseif ( is_month() ) {
+	$data['type'] = 'month';
+	$data['month'] = get_the_date( 'm' );
+	$data['year'] = get_the_date( 'Y' );
+} elseif ( is_day() ) {
+	$data['type'] = 'year';
+	$data['day'] = get_the_date( 'd' );
+	$data['month'] = get_the_date( 'm' );
+	$data['year'] = get_the_date( 'Y' );
+}
+
+$alldata = '';
+foreach ( $data as $attr => $value ) {
+	$alldata .= 'data-' . esc_attr( $attr ) . '="' . esc_attr( $value ) . '" ';
+}
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main" data-type="tutorials">
 
 		<?php if ( have_posts() ) : ?>
-
+			<section class="query-container" <?php echo $alldata; ?>>
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="section-title">', '</h1>' );
@@ -44,7 +83,7 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<button class="load-more">Load More</button>
-
+			</section>
 		<?php else : ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>

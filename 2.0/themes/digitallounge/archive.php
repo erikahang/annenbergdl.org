@@ -11,7 +11,7 @@ wp_enqueue_script( 'digitallounge-infinitescroll', get_template_directory_uri() 
 
 // Build data to replicate this query in JS/infinite scroll
 $data = array();
-if ( is_tax() || is_category() || is_tag() ) {
+if ( is_tax() ) {
 	$data['type'] = 'taxonomy';
 	$data['taxonomy'] = absint( get_taxonomy( get_queried_object()->taxonomy )->name );
 	$data['term'] = absint( get_queried_object()->term_id );
@@ -82,8 +82,8 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<button class="load-more">Load More</button>
 			</section>
+			<button class="load-more">Load More</button>
 		<?php else : ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>

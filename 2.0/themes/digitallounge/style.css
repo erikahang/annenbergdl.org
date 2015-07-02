@@ -1477,7 +1477,7 @@ object {
 }
 
 .archive .load-more:hover,
-.archive .load-more:focus, {
+.archive .load-more:focus {
 	background: #900;
 	color: #fff;
 	box-shadow: none;

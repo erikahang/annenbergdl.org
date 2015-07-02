@@ -32,31 +32,57 @@ add_action( 'wp_ajax_nopriv_anndl-load-userdata', 'anndl_load_userdata_ajax' );
 function anndl_load_archive_pages_ajax() {
 	$page = absint( $_POST['page'] );
 
-	$args = $_POST['args'];
-
 	$args = array(
 		'numberposts'    => 10,
 		'offset'         => 10 * $page,
 		'orderby'        => 'date',
 		'order'          => 'DESC',
-		'post_type'      => 'tutorials',
+		'post_type'      => array( 'tutorials', 'post' ),
 	);
+
+	$passed_args = $_POST['args'];
+	switch ( $passed_args['type'] ) {
+		case 'post_type' :
+			$args['post_type'] = esc_html( $passed_args['post_type'] );
+			break;
+		case 'author' :
+			$args['author'] = absint( $passed_args['author_id'] );
+			break;
+		case 'day' :
+			$args['day'] = absint( $passed_args['day'] );
+		case 'month' :
+			$args['month'] = absint( $passed_args['month'] );
+		case 'year' : 
+			$args['year'] = absint( $passed_args['year'] );
+			break;
+		case 'taxonomy' :
+			$args['post_type'] = esc_html( $passed_args['post_type'] );
+			$args['tax_query'] = array(
+				array(
+					'field'    => 'term_id',
+					'taxonomy' => esc_html( $passed_args['taxonomy'] ),
+					'terms'    => esc_html( $passed_args['term_id'] ),
+				),
+			);
+	}
 	$posts = get_posts( $args );
 	$items = array();
 	foreach ( $posts as $post ) {
+		$content = str_replace( ']]>', ']]&gt;', wpautop( get_post( $post->ID )->post_content ) );
 		$items[] = array(
 			'id'         => $post->ID,
 			'title'      => html_entity_decode( get_the_title( $post ), ENT_HTML401 | ENT_QUOTES, get_bloginfo( 'charset' ) ),
 			'permalink'  => get_the_permalink( $post->ID ),
 			'post_thumbnail' => get_the_post_thumbnail( $post->ID ),
-			'excerpt'     => get_the_excerpt( $post->ID ),
+			'excerpt'     => substr( $content, 0, strpos( $content, '</p>' ) + 4 ) . '</p>',
 		);
 	}
 	
 	// Output the data.
 	echo wp_json_encode( $items );
 
+	// @todo handle silent and non-silent failures, ex. when reaching the last post
 	wp_die();
 }
-add_action( 'wp_ajax_anndl-load-archive-pages', 'anndl_load_archive_pages_ajax' );
-add_action( 'wp_ajax_nopriv_anndl-load-archive-pages', 'anndl_load_archive_pages_ajax' );
+add_action( 'wp_ajax_anndl-load-archive-posts', 'anndl_load_archive_pages_ajax' );
+add_action( 'wp_ajax_nopriv_anndl-load-archive-posts', 'anndl_load_archive_pages_ajax' );

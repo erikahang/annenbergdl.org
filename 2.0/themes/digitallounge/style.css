@@ -663,7 +663,7 @@ time.icon
 	height: 288px;
 	width: 100vw;
  	display:inline-block;
- 	margin-bottom: 100px;
+ 	margin-bottom: 40px;
  	overflow:hidden;
 
 }
@@ -682,7 +682,7 @@ time.icon
  	display:inline-block;
  	overflow-y: hidden;
  	padding: 0px 0px 0px 0px;
- 	margin-bottom: 100px;
+ 	margin-bottom: 40px;
 }
 .collection .title {
 	float: left;
@@ -1685,13 +1685,9 @@ h1.entry-title {
 ## Tablet Friendly Media Queries 
 --------------------------------------------------------------*/
 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait)
-and (-webkit-min-device-pixel-ratio: 2) { 
+@media  (max-width: 1060px) {
 
-	#eventreadout {
+		#eventreadout {
 		display: none;
 
 	}
@@ -1699,6 +1695,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
 	.site-title {
 		left: 30%;
 	}
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)and (-webkit-min-device-pixel-ratio: 2) { 
+
+
 
 /* STYLES GO HERE */ }
 

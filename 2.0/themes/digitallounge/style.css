@@ -1424,6 +1424,7 @@ object {
 	color: #ff2d06;
 	font-weight: 500;
 	float: left;
+	width: 100%;
 }
 
 .home h1.entry-title,
@@ -1458,6 +1459,31 @@ object {
 	bottom: 0;
 	background-attachment: fixed;
 }
+
+.archive #primary {
+	margin-bottom: 128px;
+}
+
+.archive .load-more {
+	width: 256px;
+	background: transparent;
+	box-shadow: none;
+	border: 5px solid #900;
+	color: #900;
+	border-radius: 0;
+	font-size: 32px;
+	line-height: 64px;
+	padding: 16px;
+}
+
+.archive .load-more:hover,
+.archive .load-more:focus, {
+	background: #900;
+	color: #fff;
+	box-shadow: none;
+	border: 5px solid #900;
+}
+
 
 /*--------------------------------------------------------------
 ## Single Content

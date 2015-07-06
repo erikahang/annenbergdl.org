@@ -660,20 +660,15 @@ time.icon
 	margin-right: 25px;
 }
 .news-collection {
-	height: 288px;
+	height: auto;
 	width: 100vw;
  	display:inline-block;
- 	margin-bottom: 40px;
- 	overflow:hidden;
-
 }
-.news-collection > .entry-meta  {
+
+.news-collection  .entry-meta  {
 	line-height: 1;
 	font-weight: 200;
 	margin-left: 1.5em;
-  	margin-bottom: .1em;
-  	margin-top: .1em;
-  	color: honeydew;
 }
 
 .collection {
@@ -1424,7 +1419,7 @@ object {
 	color: #ff2d06;
 	font-weight: 500;
 	float: left;
-	width: 100%;
+	width: auto;
 }
 
 .home h1.entry-title,

@@ -1556,18 +1556,24 @@ h1.entry-title {
 /*--------------------------------------------------------------
 ## Staff Page
 --------------------------------------------------------------*/
-.staff-summary {
-    float: left;
-    width: calc(33% - 21px);
-    margin-right: 32px;
-    margin-bottom: 32px;
-    position: relative;
-    cursor:  pointer;
+.staff-page{
+	width: 90vw;
+	min-height: 75vh;
+	max-width: calc(90% + 256px) !important; /*Overrides so more than 3 tiles can display at once*/
 }
 
-.staff-summary:nth-child(3) {
-    margin-right: 0;
+.staff-summary {
+    float: left;
+	width: 192px;
+	margin-right: 64px;
+	margin-bottom: 64px;
+	position: relative;
+	cursor:  pointer;
 }
+
+/*.staff-summary:nth-child(3) {
+    margin-right: 0;
+}*/
 
 .staff-summary .staff-avatar img {
     border-radius: 100%;
@@ -1575,17 +1581,14 @@ h1.entry-title {
 }
 
 .staff-summary .staff-name {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 160px;
-    margin-left: -80px;
-    margin-top: -18px;
-    text-align: center;
-    font-size: 24px;
-    color: #fff;
-    opacity: 0;
-    transition: .2s ease-in-out opacity;
+	position: absolute;
+	top: 50%;
+	width: inherit;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	opacity: 0;
+	transition: .2s ease-in-out opacity;
 }
 
 .staff-summary:hover .staff-name,
@@ -1593,10 +1596,10 @@ h1.entry-title {
     opacity: 1;
 }
 
-.staff-avatar {
+/*.staff-avatar {
     background: #000;
     border-radius: 100%;
-}
+}*/
 
 .staff-summary:hover .staff-avatar img,
 .staff-summary:focus .staff-avatar img {
@@ -1644,7 +1647,7 @@ h1.entry-title {
 	position: absolute;
 	top: 320px;
 	left: 192px;
-	width: calc(100% - 192px);
+	min-height: 60vh;
 	background: #fff;
 	padding: 32px;
 }
@@ -1670,7 +1673,7 @@ h1.entry-title {
 	border: none;
 	box-shadow: none;
 	color: #fff;
-	font: 64px/1 Arial;
+	font-size: 32px;
 	font-weight: bold;
 	padding: 8px 16px;
 	margin: 0;

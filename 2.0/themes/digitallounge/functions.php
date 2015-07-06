@@ -177,3 +177,5 @@ require get_template_directory() . '/inc/customizer.php';
  * AJAX Actions.
  */
 require get_template_directory() . '/inc/ajax-actions.php';
+
+

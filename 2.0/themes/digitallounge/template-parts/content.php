@@ -5,7 +5,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php the_post_thumbnail( 'digitallounge-full-width' ); ?>
+	<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) {
+	echo the_post_thumbnail( 'digitallounge-full-width' ); 
+	} else{ ?>
+<img src="<?php bloginfo('template_directory'); ?>/img/missing.png" alt="<?php the_title(); ?>" />
+<?php } ?>
 	<header class="entry-header">
 		<div class="entry-meta">
 			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>

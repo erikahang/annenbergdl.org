@@ -1531,7 +1531,7 @@ h1.entry-title {
 .collection .entry-header, .collection .entry-excerpt {
 	text-align: right;
 	padding:5px 5px 0px 5px;
-	
+	border-right: 1px solid #eee;
 } 
 .entry-meta .byline,
 .entry-meta .posted-on {
@@ -1650,6 +1650,7 @@ h1.entry-title {
 	min-height: 60vh;
 	background: #fff;
 	padding: 32px;
+	width: 60vw;
 }
 
 .staff-member .staff-name {

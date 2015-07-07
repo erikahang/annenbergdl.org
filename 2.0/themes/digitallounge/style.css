@@ -646,6 +646,7 @@ time.icon
 	max-width: 998px; /* With padding, results in content width of 934px */
 	padding: 32px;
 	margin: 0 auto;
+	background-color: #f7f7f7;
 }
 
 .news-title {
@@ -664,9 +665,10 @@ time.icon
  	display:inline-block;
  	line-height: 1;
 	font-weight: 200;
-	margin-left: 1.5em;
   	margin-bottom: .1em;
   	margin-top: .1em;
+  	background-color: #fff;
+  	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
 }
 
 .news-collection  .entry-meta  {
@@ -684,6 +686,7 @@ time.icon
  	border-top: 1px solid #eee;
 	border-radius: 1px;
 	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
+	background-color: #fff;
 
 }
 .collection .title {
@@ -717,7 +720,7 @@ time.icon
 .collection article {
   width: 254px;
   float: left;
-  padding: .5px;
+  padding: 1px;
 }
 /*This makes the first image dispay bigger in the collections*/
 
@@ -739,6 +742,7 @@ time.icon
 	width: 100%;
 	z-index: 3;
 	height: 128px;
+	box-shadow: 0px -2.5px 3px -1px rgba(0,0,0,0.4);
 }
 .menu-footer-menu-container {
 	position: relative;
@@ -1452,6 +1456,8 @@ object {
 	line-height: 1em;
 	font-weight: 200;
 	padding: 0px 5px 0px 5px;
+	word-wrap: break-word;
+
 }
 
 .home .entry-meta,

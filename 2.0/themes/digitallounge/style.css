@@ -598,8 +598,6 @@ time.icon
 # Base Layouts
 --------------------------------------------------------------*/
 #masthead {
-	/*background: #FFA500 url("img/vectorsprite.svgz"); These are for the vector sprite sheet
-	background-size: 100vw 64px;*/
 	background: #FFA500 url("img/backgroundvector.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -609,6 +607,7 @@ time.icon
 	top: 0;
 	position: fixed;
 	z-index: 1000;
+	box-shadow: 0px 1.5px 2px 0px rgba(0,0,0,0.4);
 }
 
 
@@ -677,7 +676,11 @@ time.icon
  	display:inline-block;
  	overflow-y: hidden;
  	padding: 0px 0px 0px 0px;
- 	margin-bottom: 40px;
+ 	margin-bottom: 64px;
+ 	border-top: 3px solid #eee;
+	border-radius: 1px;
+	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
+
 }
 .collection .title {
 	float: left;

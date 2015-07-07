@@ -662,6 +662,11 @@ time.icon
 	height: auto;
 	width: 100vw;
  	display:inline-block;
+ 	line-height: 1;
+	font-weight: 200;
+	margin-left: 1.5em;
+  	margin-bottom: .1em;
+  	margin-top: .1em;
 }
 
 .news-collection  .entry-meta  {
@@ -671,11 +676,10 @@ time.icon
 }
 
 .collection {
-	height: 418px;
 	width: 100vw;
  	display:inline-block;
  	overflow-y: hidden;
- 	padding: 0px 0px 0px 0px;
+ 	padding: 0px 0px 15px 0px;
  	margin-bottom: 64px;
  	border-top: 1px solid #eee;
 	border-radius: 1px;
@@ -704,7 +708,7 @@ time.icon
 }
 
 
-.collection > h1.entry-title{
+.collection  h1.entry-title{
 	text-transform: uppercase;
 
 }
@@ -713,17 +717,16 @@ time.icon
 .collection article {
   width: 254px;
   float: left;
-/*  position: relative;*/
-  height: 370px;
-  overflow: hidden;
+  padding: .5px;
 }
 /*This makes the first image dispay bigger in the collections*/
-section.collection > :nth-child(2) {
+
+@media  (min-width: 768px) {
+
+	section.collection > :nth-child(2) {
 	width: 575px;
+	}
 }
-
-
-
 
 #colophon {
 	background-color:  rgb(213,108,74);
@@ -737,7 +740,10 @@ section.collection > :nth-child(2) {
 	z-index: 3;
 	height: 128px;
 }
-
+.menu-footer-menu-container {
+	position: relative;
+	bottom: -25px;
+}
 
 
 /*--------------------------------------------------------------
@@ -1500,14 +1506,7 @@ object {
   	margin-top: .1em;
 }
 
-div.news-collection {
-	line-height: 1;
-	font-weight: 200;
-	margin-left: 1.5em;
-  	margin-bottom: .1em;
-  	margin-top: .1em;
 
-}
 .cat-links a {
 	text-decoration: none;
 	text-transform: uppercase;

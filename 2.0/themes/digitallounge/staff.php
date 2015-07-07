@@ -15,6 +15,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area staff-page">
 		<main id="main" class="site-main" role="main">
+		<h1 class="entry-title">Our Staff</h1>
 
 	<?php 
 	$contributor_ids = get_users( array(
@@ -39,6 +40,7 @@ get_header(); ?>
 	<?php
 	endforeach;
 ?>
+			
 			<div class="staff-members"></div>
 			<button type="button" class="back-to-index">X</button>
 			<script type="text/html" id="tmpl-single-staff-view">

@@ -598,7 +598,7 @@ time.icon
 # Base Layouts
 --------------------------------------------------------------*/
 #masthead {
-	background: #FFA500 url("img/backgroundvector.svg");
+	background: rgb(153,52,57) url("img/backgroundvector.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 64px;
@@ -677,7 +677,7 @@ time.icon
  	overflow-y: hidden;
  	padding: 0px 0px 0px 0px;
  	margin-bottom: 64px;
- 	border-top: 3px solid #eee;
+ 	border-top: 1px solid #eee;
 	border-radius: 1px;
 	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
 
@@ -726,7 +726,7 @@ section.collection > :nth-child(2) {
 
 
 #colophon {
-	background-color: rgb(255,165,0);
+	background-color:  rgb(213,108,74);
 	background-image: url("img/footerbackground.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1418,11 +1418,12 @@ object {
 }
 
 .section-title {
-	margin: 0 0 0 64px;
+	margin: 0 0 0 48px;
 	color: #ff2d06;
 	font-weight: 500;
 	float: left;
 	width: auto;
+	font-size: 2em;
 }
 
 .home h1.entry-title,

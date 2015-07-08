@@ -646,7 +646,6 @@ time.icon
 	max-width: 998px; /* With padding, results in content width of 934px */
 	padding: 32px;
 	margin: 0 auto;
-	background-color: #f7f7f7;
 }
 
 .news-title {
@@ -667,8 +666,6 @@ time.icon
 	font-weight: 200;
   	margin-bottom: .1em;
   	margin-top: .1em;
-  	background-color: #fff;
-  	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
 }
 
 .news-collection  .entry-meta  {
@@ -683,10 +680,6 @@ time.icon
  	overflow-y: hidden;
  	padding: 0px 0px 15px 0px;
  	margin-bottom: 64px;
- 	border-top: 1px solid #eee;
-	border-radius: 1px;
-	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
-	background-color: #fff;
 
 }
 .collection .title {
@@ -748,6 +741,7 @@ time.icon
 	position: relative;
 	bottom: -25px;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -1414,8 +1408,7 @@ object {
 
 .home .post:first-child,
 .home .tutorials:first-child,
-.archive .post:first-child,
-.archive .tutorials:first-child {
+.archive .post:first-child {
 	padding-left: 0;
 	width: 304px;
 }
@@ -1429,10 +1422,11 @@ object {
 
 .section-title {
 	margin: 0 0 0 48px;
-	color: #ff2d06;
-	font-weight: 500;
+	color: rgba(246, 53, 5, 0.75);
+	font-weight: 200;
+	font-style: italic;
 	float: left;
-	width: auto;
+	width: 80vw;
 	font-size: 2em;
 }
 
@@ -1529,7 +1523,7 @@ object {
 h1.entry-title {
 	font-weight: 900;
 	font-size: 48px;
-	color: #ff2d06;
+	color: rgba(246, 53, 5, 0.75);
 	line-height: 1em;
 }
 .collection .entry-header, .collection .entry-excerpt {
@@ -1736,6 +1730,21 @@ h1.entry-title {
 
 
 /* STYLES GO HERE */ }
+/*--------------------------------------------------------------
+## Universal Graphical Styles
+--------------------------------------------------------------*/
+
+.paper-front {
+	border-top: 1px solid #eee;
+	border-radius: 1px;
+	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24);
+	background-color: #fff;
+}
+
+.paper-back {
+		background-color: #f7f7f7;
+}
+
 
 
 

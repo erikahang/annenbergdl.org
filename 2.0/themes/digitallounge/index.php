@@ -16,7 +16,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<div class="news-title"><h2 class="section-title">News</h2> <a href="#">&gt;</a><a href="#">&lt;</a></div>
-			<div class="news-collection animated slideInRight delay1-2sec">
+			<div class="news-collection animated slideInRight delay1-2sec paper-front">
 				<?php if ( have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>

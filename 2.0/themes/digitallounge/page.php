@@ -11,7 +11,8 @@
  */
 
 get_header(); ?>
-
+	
+<div id="page-pre-container">	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -30,5 +31,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div><!-- #page-pre-container" -->
 <?php get_footer(); ?>

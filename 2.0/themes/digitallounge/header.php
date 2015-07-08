@@ -14,6 +14,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/calendarfunctions.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/buttontoggle.js"></script>
 <link 						  href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -58,7 +59,7 @@
 		<div id="navbuttons">
 			<ul>
 			<li><a href="#"><span class="chatwithus">chat with us</span></a></li>
-			<li><div class="binoculars"><a href="#"><img src="<?php bloginfo('template_directory'); ?>/img/binoc.svg" width="50" height="50"></a>
+			<li><div id="binoculars"><a href='javascript:;' onclick="toggleSearch()"><img src="<?php bloginfo('template_directory'); ?>/img/binoc.svg" width="50" height="50"></a>
 			</div></li>
 			<li><div class="usclogo">
 				<a href="http://www.usc.edu" alt="usclogo" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/usclogo.svg" width="50" height="50"></a>

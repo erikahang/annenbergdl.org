@@ -1750,6 +1750,7 @@ h1.entry-title {
 --------------------------------------------------------------*/
 
 #search-window {
+	display: none;
 	width:80vw;
 	height:40vw;
 	background-color: white;

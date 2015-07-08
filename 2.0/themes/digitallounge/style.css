@@ -1745,6 +1745,37 @@ h1.entry-title {
 		background-color: #f7f7f7;
 }
 
+/*--------------------------------------------------------------
+## Search 
+--------------------------------------------------------------*/
+
+#search-window {
+	width:80vw;
+	height:50vw;
+	background-color: red;
+	z-index: 5000;
+	margin-left: -4vw;
+	border: 1px solid #000;
+	position: absolute;
+	top: 20vh;
+	left: 14vw;
+	
+}
+
+.search-title {
+	width:80vw;
+	height:50vw;
+	background-color: #FFF;
+	z-index: 5000;
+	margin-left: -4vw;
+	border: 1px solid #000;
+	position: absolute;
+	top: 20vh;
+	left: 14vw;
+
+
+}
+
 
 
 

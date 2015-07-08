@@ -66,5 +66,8 @@
 			</ul>
 		</div>
 	</header><!-- #masthead -->
+	<div id="search-window" class="">
+		<div class="search-title">Explore</div>
+	</div>
 
 	<div id="content" class="site-content paper-back">

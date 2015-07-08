@@ -1753,7 +1753,7 @@ h1.entry-title {
 	z-index: 5000;
 	margin-left: -4vw;
 	border: 1px solid #000;
-	position: absolute;
+	position: fixed;
 	top: 20vh;
 	left: 14vw;
 }

@@ -1750,10 +1750,9 @@ h1.entry-title {
 --------------------------------------------------------------*/
 
 #search-window {
-	display: none;
 	width:80vw;
-	height:50vw;
-	background-color: red;
+	height:40vw;
+	background-color: white;
 	z-index: 5000;
 	margin-left: -4vw;
 	border: 1px solid #000;
@@ -1764,19 +1763,23 @@ h1.entry-title {
 }
 
 .search-title {
-	width:80vw;
-	height:50vw;
-	background-color: #FFF;
-	z-index: 5000;
-	margin-left: -4vw;
-	border: 1px solid #000;
-	position: absolute;
-	top: 20vh;
-	left: 14vw;
-
-
+	height: 32px;
+	background-color: orange;
+	text-align:	center;
+	padding-top: 2px;
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	font-weight: 600;
+	border-bottom: 1px solid #000;
 }
 
+.search-string {
+	font-size: 3em;
+	text-align: center;
+	position: relative;
+	top: 30%;
+}
 
 
 

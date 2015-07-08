@@ -36,11 +36,13 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div>
+			<a href='javascript:;' onclick="toggleCalendar()">
 			<time id="calendaricon" datetime="2014-09-20" class="icon">
 			  <em id="dayofweek"></em>
 			  <strong id="month"></strong>
 			  <span id="daynumber"></span>
 			</time>
+			</a>
 		</div>
 		<div id="eventreadout">
 			<span class="big">1</span>
@@ -67,9 +69,12 @@
 			</ul>
 		</div>
 	</header><!-- #masthead -->
-	<div id="search-window" class="">
-		<div class="search-title">Explore</div>
+	<div id="search-window" class="window animated fadeIn">
+		<div class="window-title search-title">Explore</div>
 		<div class="search-string">Search</div>
+	</div>
+	<div id="calendar-window" class="window animated fadeIn">
+		<div class="window-title calendar-title">Calendar</div>
 	</div>
 
 	<div id="content" class="site-content paper-back">

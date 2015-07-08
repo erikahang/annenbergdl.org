@@ -1745,11 +1745,7 @@ h1.entry-title {
 		background-color: #f7f7f7;
 }
 
-/*--------------------------------------------------------------
-## Search 
---------------------------------------------------------------*/
-
-#search-window {
+.window {
 	display: none;
 	width:80vw;
 	height:40vw;
@@ -1760,12 +1756,10 @@ h1.entry-title {
 	position: absolute;
 	top: 20vh;
 	left: 14vw;
-	
 }
 
-.search-title {
+.window-title {
 	height: 32px;
-	background-color: orange;
 	text-align:	center;
 	padding-top: 2px;
 	color: white;
@@ -1773,6 +1767,14 @@ h1.entry-title {
 	font-size: 1.2em;
 	font-weight: 600;
 	border-bottom: 1px solid #000;
+}
+/*--------------------------------------------------------------
+## Search 
+--------------------------------------------------------------*/
+
+
+.search-title {
+	background-color: orange;
 }
 
 .search-string {
@@ -1782,6 +1784,8 @@ h1.entry-title {
 	top: 30%;
 }
 
-
+.calendar-title {
+	background-color: rgb(236,120,80);
+}
 
 

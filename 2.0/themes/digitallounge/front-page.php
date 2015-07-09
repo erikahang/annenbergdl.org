@@ -74,7 +74,9 @@ get_header(); ?>
 										<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" rel="bookmark" class="featured-image"><?php echo get_the_post_thumbnail( $post->ID ); ?></a>
 										<header class="entry-header">
 											<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink( $post->ID ) ) ), '</a></h1>' ); ?>
-											
+											<div class="entry-meta">
+												<?php digitallounge_posted_on(); ?>
+											</div><!-- .entry-meta -->
 										</header><!-- .entry-header -->
 										<div class="entry-excerpt">
 											<?php the_excerpt(); ?>

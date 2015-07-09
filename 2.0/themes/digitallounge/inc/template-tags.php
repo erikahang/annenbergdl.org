@@ -113,3 +113,67 @@ function digitallounge_category_transient_flusher() {
 }
 add_action( 'edit_category', 'digitallounge_category_transient_flusher' );
 add_action( 'save_post',     'digitallounge_category_transient_flusher' );
+
+
+/**
+ * Return the post thumbnail if it exists, or otherwise a fallback.
+ *
+ * @since Digital Lounge 1.0
+ */
+function digitallounge_get_the_post_thumbnail( $size = 'post-thumbnail' ) {
+	if ( has_post_thumbnail() ) {
+		return get_the_post_thumbnail();
+	} else {
+		return '<img src="' . digitallounge_get_post_image( $size ) . '" alt="" class="">';
+	}
+}
+
+/**
+ * Get the featured image (post thumbnail) URL, if it exists, or otherwise,
+ * look for another image in the post to use as the featured image.
+ *
+ * Based on lucidus_get_post_image(), from the Lucidus theme by Nick Halsey.
+ * Based on cxnh_quickshare_get_post_image(), from the QuickShare plugin by Nick Halsey.
+ *
+ * @param string $size WordPress image size to get.
+ * @return string $url URL of the post image.
+ *
+ * @since Digital Lounge 1.0
+ */
+function digitallounge_get_post_image( $size = 'post-thumbnail' ) {
+	global $post;
+	$imgdata = array();
+
+	// If there's a featured image, use it.
+	if ( has_post_thumbnail() ) {
+		$imgdata = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size );
+	} elseif ( is_attachment() ) {
+		$imgdata = wp_get_attachment_image_src( $post->ID, $size ); // Attachment post type, so post id is attachment id.
+	} else {
+		// Next, try grabbing first attached image.
+		$args = array(
+			'numberposts' => 1,
+			'post_parent' => $post->ID,
+			'post_type' => 'attachment',
+			'post_mime_type' => 'image'
+		);
+		$attachments = get_children( $args ); // Array is keyed by attachment id.
+		if ( ! empty( $attachments ) ) {
+			$rekeyed_array = array_values( $attachments );
+			$imgdata = wp_get_attachment_image_src( $rekeyed_array[0]->ID , 'post-thumbnail' );
+		} else {
+			// Finally, look for the first img tag brute-force. Presumably if there's a caption or it's a gallery or anything it should have come up as an attachment.
+			$result = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches ); // Find img tags, grab srcs.
+			if ( $result > 0 ) {
+				return $matches[1][0]; // Grab the first img src, no way to select size if we've gotten this deep.
+			}
+		}
+	}
+
+	if ( ! empty( $imgdata ) ) {
+		return $imgdata;
+	} else {
+		// Use the default/fallback post image, if it exists.
+		return get_theme_mod( 'default_image', get_stylesheet_directory_uri() . '/img/missing.png' );
+	}
+}

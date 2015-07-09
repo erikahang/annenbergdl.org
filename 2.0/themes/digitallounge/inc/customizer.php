@@ -43,9 +43,9 @@ function digitallounge_customize_register( $wp_customize ) {
 		'priority'    => 20,
 	) );
 
-	// Staff Page default Background
-	$wp_customize->add_section( 'staff', array( 
-		'title' => 'Staff',
+	// Default images.
+	$wp_customize->add_section( 'images', array( 
+		'title' => 'Images',
 		'priority' => 135,
 	) );
 	$wp_customize->add_setting( 'default_staff_background', array(
@@ -53,7 +53,14 @@ function digitallounge_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'default_staff_background', array(
 		'label' => 'Default Staff Background Image',
-		'section' => 'staff',
+		'section' => 'images',
+	) ) );
+	$wp_customize->add_setting( 'default_image', array(
+		'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'default_image', array(
+		'label' => 'Default Featured Image',
+		'section' => 'images',
 	) ) );
 }
 add_action( 'customize_register', 'digitallounge_customize_register' );

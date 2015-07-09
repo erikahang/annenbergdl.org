@@ -77,9 +77,7 @@ get_header(); ?>
 											
 										</header><!-- .entry-header -->
 										<div class="entry-excerpt">
-											<?php $content = str_replace( ']]>', ']]&gt;', wpautop( get_post( $post->ID )->post_content ) );
-											echo substr( $content, 0, strpos( $content, '</p>' ) + 0 ) . '</p>';
-											?>
+											<?php the_excerpt(); ?>
 										</div><!-- .entry-excerpt -->
 									</article><!-- #tutorial-## -->
 								<?php } ?>

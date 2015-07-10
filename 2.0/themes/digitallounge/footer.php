@@ -11,7 +11,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<ul>
+		<ul class="social-buttons">
 			<li><a href="http://www.facebook.com/AnnenbergDL" target="_blank" alt="facebook"><div class="facebook"></div></a></li>
 			<li><a href="http://instagram.com/annenbergdl/" target="_blank" alt="instagram"><div class="instagram"></div></a></li>
 			<li><a href="http://twitter.com/annenbergdl" target="_blank" alt="twitter"><div class="twitter"></div></a></li>

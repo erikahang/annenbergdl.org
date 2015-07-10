@@ -1274,6 +1274,11 @@ iframe,
 object {
 	max-width: 100%;
 }
+
+.social-buttons {
+
+}
+
 .facebook, .instagram, .twitter, .youtube {
   	background-image: url(img/vectorsprite.svgz);
   	background-repeat: no-repeat;
@@ -1767,6 +1772,16 @@ h1.entry-title {
 	font-size: 1.2em;
 	font-weight: 600;
 	border-bottom: 1px solid #000;
+}
+
+.window-close {
+	float: right;
+  	margin: -16px -16px 0px 0px;
+  	border-radius: 50%;
+  	width: 32px;
+  	height: 32px;
+  	background-color: inherit;
+  	border: 1px solid black;
 }
 /*--------------------------------------------------------------
 ## Search 

@@ -70,11 +70,15 @@
 		</div>
 	</header><!-- #masthead -->
 	<div id="search-window" class="window animated fadeIn">
-		<div class="window-title search-title">Explore</div>
+		<div class="window-title search-title">Explore
+			<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
+		</div>
 		<div class="search-string">Search</div>
 	</div>
 	<div id="calendar-window" class="window animated fadeIn">
-		<div class="window-title calendar-title">Calendar</div>
+		<div class="window-title calendar-title">Calendar
+		<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
+		</div>
 	</div>
 
 	<div id="content" class="site-content paper-back">

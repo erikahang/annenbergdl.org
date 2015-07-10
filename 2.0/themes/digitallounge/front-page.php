@@ -7,13 +7,15 @@
  * @package Digital Lounge
  */
 
+wp_enqueue_script( 'digitallounge-infinitescroll', get_template_directory_uri() . '/js/infinite-scroll.js', array( 'jquery', 'wp-util' ), '20150614', true );
+
 get_header(); ?>
 
 	<div id="primary" class="content-area paper-back">
 		<main id="main" class="site-main" role="main">
 		
-			<section class="news-collection animated slideInLeft delay1-2sec paper-front">
-				<div class="news-title"><h2 class="section-title">News</h2> <a href="#">&gt;</a><a href="#">&lt;</a></div>
+			<section class="query-container news-collection animated slideInLeft delay1-2sec paper-front" data-type="post_type" data-post_type="post" data-page="1">
+				<div class="news-title"><h2 class="section-title">News</h2> <button type="button" class="prev">&gt;</button><button type="button" class="next">&lt;</button></div>
 				<?php if ( have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>
@@ -55,7 +57,7 @@ get_header(); ?>
 					if ( $term ) {
 						// Query for tutorials in this tag.
 						$posts = get_posts( array(
-							'numberposts'      => 12, // @todo ability to load more via ajax
+							'numberposts'      => 4, // @todo probably 8-12 by default
 							'suppress_filters' => false,
 							'post_type'        => 'tutorials',
 							'tax_query'        => array(
@@ -67,8 +69,8 @@ get_header(); ?>
 							),
 						) );
 						if ( $posts ) { ?>
-							<section class="<?php echo $term->slug; ?> collection animated slideInRight delay1-2sec paper-front">
-								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <a href="#">&gt;</a><a href="#">&lt;</a></div>
+							<section class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="tutorial_tag" data-term="<?php echo $term->id; ?>" data-page="1">
+								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <button type="button" class="prev">&gt;</button><button type="button" class="next">&lt;</button></div>
 								<?php foreach( $posts as $post ) { ?>
 									<article class="collection-article" id="tutorial-<?php echo $post->ID; ?>" <?php post_class( null, $post->ID ); ?>>
 										<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" rel="bookmark" class="featured-image"><?php echo get_the_post_thumbnail( $post->ID ); ?></a>
@@ -91,6 +93,48 @@ get_header(); ?>
 			}
 			?>
 		</main><!-- #main -->
+		<script type="text/html" id="tmpl-archive-post">
+			<article id="post-{{ data.id }}" class="post">
+				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
+				<header class="entry-header">
+					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
+					<div class="entry-meta">
+						{{{ data.posted_on }}}
+					</div>
+				</header>
+				<div class="entry-excerpt">
+					{{{ data.excerpt }}}
+				</div>
+			</article>
+		</script>
+		<script type="text/html" id="tmpl-archive-tutorial">
+			<article id="post-{{ data.id }}" class="tutorials">
+				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
+				<header class="entry-header">
+					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
+					<div class="entry-meta">
+						{{{ data.posted_on }}}
+					</div>
+				</header>
+				<div class="entry-excerpt">
+					{{{ data.excerpt }}}
+				</div>
+			</article>
+		</script>
+		<script type="text/html" id="tmpl-archive-grid-view">
+			<article id="post-{{ data.id }}" <?php post_class(); ?>>
+				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
+				<header class="entry-header">
+					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
+					<div class="entry-meta">
+						{{{ data.posted_on }}}
+					</div>
+				</header>
+				<div class="entry-excerpt">
+					{{{ data.excerpt }}}
+				</div>
+			</article>
+		</script>
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

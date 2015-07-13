@@ -230,6 +230,13 @@ input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
+button {
+	-webkit-appearance: none !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
 fieldset {
 	border: 1px solid #c0c0c0;
 	margin: 0 2px;
@@ -534,9 +541,8 @@ time.icon
       {
 	   font-size: 1em;
 	  display: block;
-	  position: absolute;
-	  left: -15px;
-	  top: -25px;
+	  float: left;
+  	  margin: -24px 8px 0px -16px;
 	  width: 7em;
 	  height: 7em;
 	  background-color: #fff;
@@ -653,10 +659,12 @@ time.icon
 	width: 100%;
 	
 }
-.news-title a {
+.news-title a,
+.collection .title a {
 	font-size: 2em;
 	float: right;
-	margin-right: 25px;
+	padding-right: 48px;
+	font-weight: normal;
 }
 .news-collection {
 	height: auto;
@@ -687,11 +695,7 @@ time.icon
 	width: 100%;
 	
 }
-.collection .title a {
-	font-size: 2em;
-	float: right;
-	margin-right: 25px;
-}
+
 
 .collection:before {
   content:""; 
@@ -828,10 +832,8 @@ textarea {
 #navbuttons {
 	width: 245px;
 	height: 64px;
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	padding-top: 6px;
+	float: right;
+  	margin-top: -56px;
 }
 
 #navbuttons ul {

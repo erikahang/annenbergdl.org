@@ -718,6 +718,7 @@ time.icon
   width: 254px;
   float: left;
   padding: 1px;
+  margin-bottom: 10px;
 }
 /*This makes the first image dispay bigger in the collections*/
 
@@ -725,6 +726,12 @@ time.icon
 
 	section.collection > :nth-child(2) {
 	width: 575px;
+	}
+}
+@media  (max-width: 768px) {
+
+	section.collection > :nth-child(2) {
+	width: 254px;
 	}
 }
 
@@ -758,15 +765,15 @@ input[type="submit"] {
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
-	background: #e6e6e6;
+	background:transparent;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	color: #555;
 	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 02rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: 1px 10px 1px 10px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
+	}
 
 button:hover,
 input[type="button"]:hover,
@@ -1433,7 +1440,7 @@ object {
 	font-weight: 200;
 	font-style: italic;
 	float: left;
-	width: 80vw;
+	width: 90vw;
 	font-size: 2em;
 }
 
@@ -1720,23 +1727,82 @@ h1.entry-title {
 ## Tablet Friendly Media Queries 
 --------------------------------------------------------------*/
 
-@media  (max-width: 1060px) {
+/*Ipad*/
+@media  (max-width: 768px) and (min-device-width: 512px) {
 
-		#eventreadout {
+	#eventreadout {
 		display: none;
 
 	}
 	
 	.site-title {
-		left: 30%;
+		left: 20%;
 	}
+
+	
+	#navbuttons {
+		margin-top: 10px;
+	}
+
+	.social-buttons {
+		z-index: 1000;
+		position:relative;	
+	}
+	
+	.collection {
+		width: 95vw;
+	 	display:inline-block;
+	 	
+	 	padding: 0px 0px 15px 0px;
+	 	margin-bottom: 64px;
+ 	]
+
+	.collection article {
+	 	 width: 192px;
+	 	 float: left;
+	 	 padding: 1px;
+	 	 padding-bottom: 32px;
+	}
+
+
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)and (-webkit-min-device-pixel-ratio: 2) { 
+/*Iphone*/
+@media (max-device-width: 512px)  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+	.social-buttons {
+		margin-top: -50px;
+		z-index: 1000;
+		position:relative;
+		top: -64px;
+		display: none;
+	}
+
+	#colophon li {
+		margin-right: 0px;
+	}
+
+	.main-navigation,
+	#calendaricon,
+	#binoculars {
+		display: none;
+	}
+
+	#masthead {
+		
+	}
+	
+	.site-title {
+		left: 0;
+		right:0;
+	}
+
+
+}
 
 
 
-/* STYLES GO HERE */ }
 /*--------------------------------------------------------------
 ## Universal Graphical Styles
 --------------------------------------------------------------*/

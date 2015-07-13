@@ -15,7 +15,7 @@
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/calendarfunctions.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/buttontoggle.js"></script>
-<link 						  href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet" type="text/css">
+<link href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	$(document).ready(function(){
     $("button").click(function(){

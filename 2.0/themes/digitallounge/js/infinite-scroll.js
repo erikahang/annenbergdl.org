@@ -1,12 +1,18 @@
 ( function( $, wp ) {
-	var template, page, container, args;
+	var template = {}, page = {};
 
 	$(document).ready( function() {
 		bindEvents();
-		container = $( '.query-container' );
+//		template['post'] = wp.template( 'archive-post' );
+//		template['tutorials'] = wp.template( 'archive-tutorial' );
+//		template['default'] = wp.template( 'archive-grid-view' );
 		template = wp.template( 'archive-grid-view' );
-		args = {
-			type: container.data( 'type' )
+	});
+
+	function generateArgs( container ) {
+		var args = {
+			type: container.data( 'type' ),
+			page: container.data( 'page' )
 		};
 		switch ( container.data( 'type' ) ) {
 			case 'post_type': 
@@ -35,33 +41,52 @@
 				args.year = container.data( 'year' );
 				break;
 		}
-		page = 1;
-	} );
+		return args;
+	}
 
 	function bindEvents() {
 		// todo base on scrolling/visibility of last loaded item
 		loadedIds = new Array();
 		$( '#primary' ).on( 'click keydown', '.load-more', function( e ) {
-			e.preventDefault();
+		container = $( this ).closest( '.query-container' );
+			container = $( this ).closest( '.query-container' );
 			loadPage();
 		});
+		
+		$( '.query-container' ).on( 'click keydown', '.prev', function( e ) {
+			container = $( this ).closest( '.query-container' );
+			loadPage( container );
+			// @todo previous/next nav and history
+		});
+		
+		$( '.query-container' ).on( 'click keydown', '.next', function( e ) {
+			container = $( this ).closest( '.query-container' );
+			loadPage( container );
+			// @todo previous/next nav and history
+		});
+		
 	}
 
-	function loadPage() {
-		var params;
+	function loadPage( container ) {
+		var params, args = generateArgs( container );
 		container.addClass( 'loading' );
 		params = {
 			'action': 'anndl-load-archive-posts',
-			'page': page,
+			'page': args.page + 1,
 			'args': args
 		}
 		$.post( wp.ajax.settings.url, params, function( data ) {
 			data = $.parseJSON( data );
 			if ( data ) {
+				var type = 'default';
+				if ( typeof args.post_type !== undefined ) {
+					type = args.post_type;
+				}
 				$.each( data, function ( id, post ) {
+					///container.append( template[type]( post ) );
 					container.append( template( post ) );
 				});
-				page = page + 1;
+				container.data( 'page', args.page + 1 );
 				container.removeClass( 'loading' );
 			} else {
 		        alert( 'Failed to load requested page.' );				

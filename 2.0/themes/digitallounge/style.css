@@ -660,6 +660,13 @@ time.icon
 	
 }
 .news-title a,
+	{
+	width: auto;
+}
+.title {
+	width:100vw;
+	height: 48px;
+}
 .collection .title a {
 	font-size: 2em;
 	float: right;
@@ -673,7 +680,7 @@ time.icon
  	line-height: 1;
 	font-weight: 200;
   	margin-bottom: .1em;
-  	margin-top: .1em;
+  	padding-top: .2em;
 }
 
 .news-collection  .entry-meta  {
@@ -690,12 +697,24 @@ time.icon
  	margin-bottom: 64px;
 
 }
-.collection .title {
-	float: left;
-	width: 100%;
-	
-}
 
+.arrow-container {
+	margin: 4px 64px 0px 0px;
+	float: right;
+  	width: auto;
+  	height: auto;
+}
+.arrow-previous, .arrow-next {
+	border: 1px solid #EEE !important; /*borders were shut off for button tags- this turns it back on*/
+	border-radius: 50%;
+  	width: 32px;
+  	height: 32px;
+  	color: #c5c5c5;
+  	font-size: 2em;
+  	line-height: .2em;
+  	margin-left: 8px;
+
+}
 
 .collection:before {
   content:""; 
@@ -720,7 +739,7 @@ time.icon
   padding: 1px;
   margin-bottom: 10px;
 }
-/*This makes the first image dispay bigger in the collections*/
+/*This makes the first image dispay bigger in the collections on screens greater than 768*/
 
 @media  (min-width: 768px) {
 
@@ -728,6 +747,7 @@ time.icon
 	width: 575px;
 	}
 }
+/*This makes the first image dispay normal in the collections on screens less than 768*/
 @media  (max-width: 768px) {
 
 	section.collection > :nth-child(2) {
@@ -1440,7 +1460,7 @@ object {
 	font-weight: 200;
 	font-style: italic;
 	float: left;
-	width: 90vw;
+	width: auto;
 	font-size: 2em;
 }
 
@@ -1544,6 +1564,7 @@ h1.entry-title {
 	text-align: right;
 	padding:5px 5px 0px 5px;
 	border-right: 1px solid #eee;
+
 } 
 .entry-meta .byline,
 .entry-meta .posted-on {

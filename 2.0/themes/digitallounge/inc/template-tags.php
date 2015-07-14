@@ -18,12 +18,21 @@ function digitallounge_posted_on() {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'Y-m-d' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'Y-m-d' ) ),
-		esc_html( get_the_modified_date() )
-	);
+	if ( is_singular() ) {
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+	} else {
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date( 'n/j/Y' ) ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date( 'n/j/Y' ) )
+		);
+	}
 
 	$posted_on = sprintf(
 		_x( '&#44;  %s', 'post date', 'digitallounge' ),
@@ -31,7 +40,7 @@ function digitallounge_posted_on() {
 	);
 
 	$byline = sprintf(
-		_x( 'Author %s', 'post author', 'digitallounge' ),
+		_x( 'By %s', 'post author', 'digitallounge' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

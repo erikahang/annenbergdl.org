@@ -3,7 +3,7 @@
  * Tutorials custom post type.
  */
 
-//Set up custom post types for sheet music
+//Set up custom post type for tutorials
 add_action( 'init', 'tutorials_posts_register', 10 );
 function tutorials_posts_register() {
 	$labels = array(
@@ -66,3 +66,12 @@ function tutorials_activation() {
 	tutorials_posts_register();
 	flush_rewrite_rules();
 }
+
+// Include tutorials in author and date archives. Note that this can't play nicely with other plugins trying to do the same thing.
+function tutorials_include_in_archives( $query ) {
+    if ( $query->is_author() || $query->is_date() ) {
+        $query->set( 'post_type', array( 'tutorials', 'post' ) );
+	}
+    remove_action( 'pre_get_posts', 'tutorials_include_in_archives' );
+}
+add_action( 'pre_get_posts', 'tutorials_include_in_archives' );

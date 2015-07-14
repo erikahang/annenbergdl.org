@@ -57,7 +57,7 @@ get_header(); ?>
 					if ( $term ) {
 						// Query for tutorials in this tag.
 						$posts = get_posts( array(
-							'numberposts'      => 4, // @todo probably 8-12 by default
+							'numberposts'      => 4, // @todo probably 10 by default
 							'suppress_filters' => false,
 							'post_type'        => 'tutorials',
 							'tax_query'        => array(
@@ -73,10 +73,11 @@ get_header(); ?>
 							<section class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="tutorial_tag" data-term="<?php echo $term->id; ?>" data-page="1">
 								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <div class="arrow-container"><button type="button" class="arrow-next">&lt;</button><button type="button" class="arrow-previous">&gt;</button></div></div>
 								<?php foreach( $posts as $post ) { ?>
+									<?php setup_postdata( $post ); // Allows the_* functions to work without passing an ID. ?>
 									<article class="collection-article" id="tutorial-<?php echo $post->ID; ?>" <?php post_class( null, $post->ID ); ?>>
-										<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" rel="bookmark" class="featured-image"><?php echo get_the_post_thumbnail( $post->ID ); ?></a>
+										<a href="<?php the_permalink(); ?>" rel="bookmark" class="featured-image"><?php echo digitallounge_get_the_post_thumbnail(); ?></a>
 										<header class="entry-header">
-											<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink( $post->ID ) ) ), '</a></h1>' ); ?>
+											<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 											<div class="entry-meta">
 												<?php digitallounge_posted_on(); ?>
 											</div><!-- .entry-meta -->

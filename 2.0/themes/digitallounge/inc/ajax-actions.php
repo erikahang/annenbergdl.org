@@ -33,7 +33,7 @@ function anndl_load_archive_pages_ajax() {
 	$page = absint( $_POST['page'] );
 
 	$args = array(
-		'numberposts'    => 4,
+		'numberposts'    => 4, // @todo this MUST match what's initially rendered from the first pageload
 		'offset'         => 4 * $page,
 		'orderby'        => 'date',
 		'order'          => 'DESC',
@@ -68,13 +68,14 @@ function anndl_load_archive_pages_ajax() {
 	$posts = get_posts( $args );
 	$items = array();
 	foreach ( $posts as $post ) {
-		$content = str_replace( ']]>', ']]&gt;', wpautop( get_post( $post->ID )->post_content ) );
+		setup_postdata( $post );
+		//$content = str_replace( ']]>', ']]&gt;', wpautop( get_post( $post->ID )->post_content ) );
 		$items[] = array(
 			'id'         => $post->ID,
 			'title'      => html_entity_decode( get_the_title( $post ), ENT_HTML401 | ENT_QUOTES, get_bloginfo( 'charset' ) ),
-			'permalink'  => get_the_permalink( $post->ID ),
-			'post_thumbnail' => get_the_post_thumbnail( $post->ID ),
-			'excerpt'     => substr( $content, 0, strpos( $content, '</p>' ) + 4 ) . '</p>',
+			'permalink'  => get_the_permalink(),
+			'post_thumbnail' => digitallounge_get_the_post_thumbnail(),
+			'excerpt'     => get_the_excerpt(),//substr( $content, 0, strpos( $content, '</p>' ) + 4 ) . '</p>',
 		);
 	}
 	

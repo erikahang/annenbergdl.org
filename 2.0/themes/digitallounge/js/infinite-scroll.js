@@ -1,5 +1,5 @@
 ( function( $, wp ) {
-	var template = {}, page = {};
+	var template = {}, postsPerPage = 4;
 
 	$(document).ready( function() {
 		bindEvents();
@@ -53,22 +53,27 @@
 			loadPage();
 		});
 		
-		$( '.query-container' ).on( 'click keydown', '.prev', function( e ) {
+		$( '.query-container' ).on( 'click keydown', '.arrow-previous', function( e ) {
 			container = $( this ).closest( '.query-container' );
-			loadPage( container );
+			loadNextPage( container );
 			// @todo previous/next nav and history
 		});
 		
-		$( '.query-container' ).on( 'click keydown', '.next', function( e ) {
+		$( '.query-container' ).on( 'click keydown', '.arrow-next', function( e ) {
 			container = $( this ).closest( '.query-container' );
-			loadPage( container );
+			loadNextPage( container );
 			// @todo previous/next nav and history
 		});
 		
 	}
 
-	function loadPage( container ) {
+	function loadNextPage( container ) {
 		var params, args = generateArgs( container );
+		if ( container.length > args.page * 4 ) {
+			// No need to add more items, change the visible page instead.
+			// @todo
+			return;
+		}
 		container.addClass( 'loading' );
 		params = {
 			'action': 'anndl-load-archive-posts',

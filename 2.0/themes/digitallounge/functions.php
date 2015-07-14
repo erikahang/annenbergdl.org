@@ -84,7 +84,7 @@ function digitallounge_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'digitallounge_excerpt_more' );
 
 function digitallounge_excerpt_length( $length ) {
-	return 18;
+	return 55;
 }
 add_filter( 'excerpt_length', 'digitallounge_excerpt_length' );
 

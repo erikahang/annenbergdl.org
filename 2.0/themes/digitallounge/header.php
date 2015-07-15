@@ -79,6 +79,8 @@
 		<div class="window-title calendar-title">Calendar
 		<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
 		</div>
+		<?php echo do_shortcode("[event_rocket_calendar]"); ?>
+	</div>
 	</div>
 
 	<div id="content" class="site-content paper-back">

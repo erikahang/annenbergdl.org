@@ -80,6 +80,7 @@
 		<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
 		</div>
 		<?php echo do_shortcode("[event_rocket_calendar]"); ?>
+		
 	</div>
 	</div>
 

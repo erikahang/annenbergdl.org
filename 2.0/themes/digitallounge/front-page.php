@@ -70,7 +70,7 @@ get_header(); ?>
 						) );
 						if ( $posts ) { ?>
 
-							<section class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="tutorial_tag" data-term="<?php echo $term->id; ?>" data-page="1">
+							<section class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="tutorial_tag" data-term="<?php echo $term->term_id; ?>" data-post_type="tutorials" data-page="1">
 								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <div class="arrow-container"><button type="button" class="arrow-next">&lt;</button><button type="button" class="arrow-previous">&gt;</button></div></div>
 								<?php foreach( $posts as $post ) { ?>
 									<?php setup_postdata( $post ); // Allows the_* functions to work without passing an ID. ?>

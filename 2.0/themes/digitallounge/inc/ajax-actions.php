@@ -29,7 +29,7 @@ add_action( 'wp_ajax_nopriv_anndl-load-userdata', 'anndl_load_userdata_ajax' );
  * Ajax handler for loading posts on archive pages.
  *
  */
-function anndl_load_archive_pages_ajax() {
+function anndl_load_archive_posts_ajax() {
 	$page = absint( $_POST['page'] );
 
 	$args = array(
@@ -61,20 +61,27 @@ function anndl_load_archive_pages_ajax() {
 				array(
 					'field'    => 'term_id',
 					'taxonomy' => esc_html( $passed_args['taxonomy'] ),
-					'terms'    => esc_html( $passed_args['term_id'] ),
+					'terms'    => esc_html( $passed_args['term'] ),
 				),
 			);
 	}
+
 	$posts = get_posts( $args );
 	$items = array();
+	if ( is_wp_error( $posts ) ) {
+		echo '-1';
+	}
+//	echo var_dump( $args );
+//	echo var_dump( $posts );
 	foreach ( $posts as $post ) {
+//	echo $post->ID . ' ';
 		setup_postdata( $post );
 		//$content = str_replace( ']]>', ']]&gt;', wpautop( get_post( $post->ID )->post_content ) );
 		$items[] = array(
 			'id'         => $post->ID,
 			'title'      => html_entity_decode( get_the_title( $post ), ENT_HTML401 | ENT_QUOTES, get_bloginfo( 'charset' ) ),
 			'permalink'  => get_the_permalink(),
-			'post_thumbnail' => digitallounge_get_the_post_thumbnail(),
+			'post_thumbnail' => get_the_post_thumbnail(),//digitallounge_get_the_post_thumbnail(),
 			'excerpt'     => get_the_excerpt(),//substr( $content, 0, strpos( $content, '</p>' ) + 4 ) . '</p>',
 		);
 	}
@@ -85,5 +92,5 @@ function anndl_load_archive_pages_ajax() {
 	// @todo handle silent and non-silent failures, ex. when reaching the last post
 	wp_die();
 }
-add_action( 'wp_ajax_anndl-load-archive-posts', 'anndl_load_archive_pages_ajax' );
-add_action( 'wp_ajax_nopriv_anndl-load-archive-posts', 'anndl_load_archive_pages_ajax' );
+add_action( 'wp_ajax_anndl-load-archive-posts', 'anndl_load_archive_posts_ajax' );
+add_action( 'wp_ajax_nopriv_anndl-load-archive-posts', 'anndl_load_archive_posts_ajax' );

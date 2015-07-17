@@ -15,17 +15,18 @@
 			page: container.data( 'page' )
 		};
 		switch ( container.data( 'type' ) ) {
-			case 'post_type': 
+			case 'post_type':
 				args.post_type = container.data( 'post_type' );
 				break;
-			case 'taxonomy': 
+			case 'taxonomy':
 				args.taxonomy = container.data( 'taxonomy' );
+				args.post_type = container.data( 'post_type' );
 				args.term = container.data( 'term' );
 				break;
-			case 'post_type': 
+			case 'post_type':
 				args.post_type = container.data( 'post_type' );
 				break;
-			case 'author': 
+			case 'author':
 				args.author_id = container.data( 'author_id' );
 				break;
 			case 'day':
@@ -45,21 +46,20 @@
 	}
 
 	function bindEvents() {
+		var container;
 		// todo base on scrolling/visibility of last loaded item
-		loadedIds = new Array();
-		$( '#primary' ).on( 'click keydown', '.load-more', function( e ) {
-		container = $( this ).closest( '.query-container' );
+		$( '.query-container' ).on( 'click', '.load-more', function( e ) {
 			container = $( this ).closest( '.query-container' );
-			loadPage();
+			loadNextPage( container );
 		});
 		
-		$( '.query-container' ).on( 'click keydown', '.arrow-previous', function( e ) {
+		$( '.query-container' ).on( 'click', '.arrow-previous', function( e ) {
 			container = $( this ).closest( '.query-container' );
 			loadNextPage( container );
 			// @todo previous/next nav and history
 		});
 		
-		$( '.query-container' ).on( 'click keydown', '.arrow-next', function( e ) {
+		$( '.query-container' ).on( 'click', '.arrow-next', function( e ) {
 			container = $( this ).closest( '.query-container' );
 			loadNextPage( container );
 			// @todo previous/next nav and history

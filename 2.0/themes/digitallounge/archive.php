@@ -10,19 +10,24 @@
 wp_enqueue_script( 'digitallounge-infinitescroll', get_template_directory_uri() . '/js/infinite-scroll.js', array( 'jquery', 'wp-util' ), '20150614', true );
 
 // Build data to replicate this query in JS/infinite scroll
-$data = array();
+$data = array(
+	'page' => 1,
+);
 if ( is_tax() ) {
 	$data['type'] = 'taxonomy';
 	$data['taxonomy'] = absint( get_taxonomy( get_queried_object()->taxonomy )->name );
 	$data['term'] = absint( get_queried_object()->term_id );
-}if ( is_tag() ) {
+	$data['post_type'] = esc_attr( get_query_var( 'post_type' ) );
+} elseif ( is_tag() ) {
 	$data['type'] = 'taxonomy';
 	$data['taxonomy'] = 'tag';
 	$data['term'] = absint( get_queried_object()->term_id );
+	$data['post_type'] = 'post';
 } elseif ( is_category() ) {
 	$data['type'] = 'taxonomy';
 	$data['taxonomy'] = 'category';
 	$data['term'] = absint( get_queried_object()->term_id );
+	$data['post_type'] = 'post';
 } elseif ( is_post_type_archive() ) {
 	$data['type'] = 'post_type';
 	$data['post_type'] = esc_attr( get_query_var( 'post_type' ) );
@@ -82,8 +87,8 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
+				<button class="load-more">Load More</button>
 			</section>
-			<button class="load-more">Load More</button>
 		<?php else : ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>

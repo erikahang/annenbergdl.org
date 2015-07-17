@@ -15,7 +15,7 @@ $data = array(
 );
 if ( is_tax() ) {
 	$data['type'] = 'taxonomy';
-	$data['taxonomy'] = absint( get_taxonomy( get_queried_object()->taxonomy )->name );
+	$data['taxonomy'] = get_taxonomy( get_queried_object()->taxonomy )->name;
 	$data['term'] = absint( get_queried_object()->term_id );
 	$data['post_type'] = esc_attr( get_query_var( 'post_type' ) );
 } elseif ( is_tag() ) {

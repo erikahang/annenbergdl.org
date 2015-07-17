@@ -14,7 +14,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area paper-back">
 		<main id="main" class="site-main" role="main">
-			<section class="query-container news-collection animated slideInLeft delay1-2sec paper-front" data-type="post_type" data-post_type="post" data-page="1">
+		<section class="query-container news-collection animated slideInLeft delay1-2sec paper-front" data-type="post_type" data-post_type="post" data-page="1">
 				<div class="news-title"><h2 class="section-title">News</h2> <div class="arrow-container"><button type="button" class="arrow-next">&lt;</button><button type="button" class="arrow-previous">&gt;</button></div></div>
 				<?php if ( have_posts() ) : ?>
 

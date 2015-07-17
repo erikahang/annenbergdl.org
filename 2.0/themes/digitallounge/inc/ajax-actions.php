@@ -34,7 +34,7 @@ function anndl_load_archive_posts_ajax() {
 
 	$args = array(
 		'numberposts'    => 4, // @todo this MUST match what's initially rendered from the first pageload
-		'offset'         => 4 * $page,
+		'offset'         => 4 * $page - 4,
 		'orderby'        => 'date',
 		'order'          => 'DESC',
 		'post_type'      => array( 'tutorials', 'post' ),
@@ -75,14 +75,15 @@ function anndl_load_archive_posts_ajax() {
 //	echo var_dump( $posts );
 	foreach ( $posts as $post ) {
 //	echo $post->ID . ' ';
+		$GLOBALS['post'] = $post;
 		setup_postdata( $post );
-		//$content = str_replace( ']]>', ']]&gt;', wpautop( get_post( $post->ID )->post_content ) );
 		$items[] = array(
 			'id'         => $post->ID,
 			'title'      => html_entity_decode( get_the_title( $post ), ENT_HTML401 | ENT_QUOTES, get_bloginfo( 'charset' ) ),
+			'posted_on'  => digitallounge_get_posted_on(),
 			'permalink'  => get_the_permalink(),
-			'post_thumbnail' => get_the_post_thumbnail(),//digitallounge_get_the_post_thumbnail(),
-			'excerpt'     => get_the_excerpt(),//substr( $content, 0, strpos( $content, '</p>' ) + 4 ) . '</p>',
+			'post_thumbnail' => digitallounge_get_the_post_thumbnail(),
+			'excerpt'     => get_the_excerpt(),
 		);
 	}
 	

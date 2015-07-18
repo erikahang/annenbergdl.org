@@ -16,13 +16,21 @@
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/calendarfunctions.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/buttontoggle.js"></script>
 <link href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet" type="text/css">
+
+<link href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full.min.css" rel="stylesheet" type="text/css">
+
 <script type="text/javascript">
 	$(document).ready(function(){
     $("button").click(function(){
         $("primary").animate({left: '250px'});
     });
 });
-
+</script>
+<script>$( document ).ready(function() {
+  
+      $( "#insert_events_calendar" ).load( "/annenbergdl.org/events/ #tribe-events-content" );
+});
 </script>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -73,15 +81,14 @@
 		<div class="window-title search-title">Explore
 			<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
 		</div>
-		<div class="search-string">Search</div>
+		<div class="search-string">Search
+		</div>
 	</div>
-	<div id="calendar-window" class="window animated fadeIn">
+	<div id="calendar-window" class="window window-calendar animated fadeIn">
 		<div class="window-title calendar-title">Calendar
 		<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
 		</div>
-		<?php echo do_shortcode("[event_rocket_calendar]"); ?>
-		
-	</div>
+		<div id="insert_events_calendar"></div> <!-- This is where the AJAX call will go and grab the calendar from ../events/month -->
 	</div>
 
 	<div id="content" class="site-content paper-back">

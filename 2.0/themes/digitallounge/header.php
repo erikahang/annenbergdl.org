@@ -25,7 +25,7 @@
 });
 </script>
 <script>$( document ).ready(function() {
-  	$( "#insert_events_calendar" ).load( "/annenbergdl.org/events/month #tribe-events-content" );
+  	$( "#insert_events_calendar" ).load( "./events/month #tribe-events-content" );
     
 });
 </script>

@@ -85,8 +85,9 @@
 		</div>
 	</div>
 	<div id="calendar-window" class="window window-calendar animated fadeIn">
-		<div class="window-title calendar-title">Calendar
+		<div class="window-title calendar-title">
 		<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
+		<div id="month_event_calendar"></div>
 		</div>
 		<div id="insert_events_calendar"></div> <!-- This is where the AJAX call will go and grab the calendar from ../events/month -->
 	</div>

@@ -21,6 +21,7 @@ var d = new Date();
 
       var m = month[d.getMonth()];
       document.getElementById("month").innerHTML = m;
+      document.getElementById("month_event_calendar").innerHTML = m;
   }
 
   // Pulls the day of the week Sun-Sat

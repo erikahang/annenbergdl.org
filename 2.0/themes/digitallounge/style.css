@@ -1903,4 +1903,14 @@ h1.entry-title {
 .calendar-title {
 	background-color: rgb(236,120,80);
 }
+/*--------------------------------------------------------------
+## Events Calendar Hacks
+--------------------------------------------------------------*/
 
+.window .tribe-events-page-title, 
+.window #tribe-events-header {
+	display: none;
+}
+.window #tribe-events-content table.tribe-events-calendar{
+	margin:0px;
+}

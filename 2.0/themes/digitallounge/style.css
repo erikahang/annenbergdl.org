@@ -681,7 +681,7 @@ time.icon
 	font-weight: 200;
   	margin-bottom: .1em;
   	padding-top: .2em;
-  	overflow-y: hidden;
+  	overflow: hidden;
 }
 
 .news-collection  .entry-meta  {
@@ -759,8 +759,10 @@ time.icon
 
 .inner-container {
 	position: relative;
-	width: auto;
-	height: 496px;
+	height: 308px;
+	clear: both;
+	width: 99999px;
+	overflow: hidden;
 }
 
 #colophon {

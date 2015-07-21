@@ -1,5 +1,5 @@
 ( function( $, wp ) {
-	var template = {}, postsPerPage = 4, vWidth;
+	var template = {}, postsPerPage = 6, vWidth;
 
 	$(document).ready( function() {
 		bindEvents();
@@ -68,7 +68,7 @@
 
 	function loadNextPage( container ) {
 		var params, args = generateArgs( container );
-		if ( container.length > args.page * 4 ) {
+		if ( container.length > args.page * 6 ) {
 			// No need to add more items, change the visible page instead.
 			setPage( container, args.page + 1 );
 			return;
@@ -88,7 +88,7 @@
 				}
 				$.each( data, function ( id, post ) {
 					///container.append( template[type]( post ) );
-					container.append( template( post ) );
+					container.find( '.inner-container' ).append( template( post ) );
 				});
 				container.removeClass( 'loading' );
 				setPage( container, args.page + 1 );
@@ -102,7 +102,7 @@
 		if ( page < 1 ) {
 			return;
 		}
-		var left = Math.floor( vWidth / 288 ) * 288 * page - 288;
+		var left = Math.floor( vWidth / 288 ) * 288 * ( page - 1 );
 		container.find( '.inner-container' ).css( 'left', left * -1 );
 		container.data( 'page', page );
 	}

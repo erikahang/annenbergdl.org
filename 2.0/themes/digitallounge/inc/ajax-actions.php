@@ -33,8 +33,8 @@ function anndl_load_archive_posts_ajax() {
 	$page = absint( $_POST['page'] );
 
 	$args = array(
-		'numberposts'    => 4, // @todo this MUST match what's initially rendered from the first pageload
-		'offset'         => 4 * $page - 4,
+		'numberposts'    => 6, // This MUST match what's initially rendered from the first pageload
+		'offset'         => 6 * $page - 6,
 		'orderby'        => 'date',
 		'order'          => 'DESC',
 		'post_type'      => array( 'tutorials', 'post' ),

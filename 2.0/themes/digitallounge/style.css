@@ -1883,9 +1883,19 @@ h1.entry-title {
   	border: 1px solid black;
 }
 
-.window-calendar {
 
+.window-calendar {
+	height: 632px;
+	top:10vh;
+	}
+
+@media (max-width:612px) {
+	.window-calendar {
+	height: auto;
+	top:10vh;
+	}
 }
+
 /*--------------------------------------------------------------
 ## Search 
 --------------------------------------------------------------*/
@@ -1906,13 +1916,22 @@ h1.entry-title {
 	background-color: rgb(236,120,80);
 }
 /*--------------------------------------------------------------
-## Events Calendar Hacks
+## Events Calendar Hacks and Styles
 --------------------------------------------------------------*/
+
 
 .window .tribe-events-page-title, 
 .window #tribe-events-header {
 	display: none;
 }
 .window #tribe-events-content table.tribe-events-calendar{
-	margin:0px;
+	margin: 0px;
+	padding-top: 0px;
+}
+.window #tribe-events-content {
+	padding: 0px 0px; 
+
+}
+.window .tribe-events-month {
+	margin-bottom: 0px;
 }

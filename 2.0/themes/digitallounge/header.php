@@ -17,9 +17,6 @@
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/buttontoggle.js"></script>
 <link href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet" type="text/css">
 
-<link href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme.min.css" rel="stylesheet" type="text/css">
-<link href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full.min.css" rel="stylesheet" type="text/css">
-
 <script type="text/javascript">
 	$(document).ready(function(){
     $("button").click(function(){
@@ -28,10 +25,16 @@
 });
 </script>
 <script>$( document ).ready(function() {
-  
-      $( "#insert_events_calendar" ).load( "/annenbergdl.org/events/ #tribe-events-content" );
+  	$( "#insert_events_calendar" ).load( "/annenbergdl.org/events/month #tribe-events-content" );
+    
 });
 </script>
+<link rel='stylesheet' id='tribe-events-bootstrap-datepicker-css-css'  href='./wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/css/datepicker.css?ver=4.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-custom-jquery-styles-css'  href='./wp-content/plugins/the-events-calendar/vendor/jquery/smoothness/jquery-ui-1.8.23.custom.css?ver=4.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-full-calendar-style-css'  href='./wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full.min.css?ver=3.10.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-style-css'  href='./wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme.min.css?ver=3.10.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-full-mobile-style-css'  href='./wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full-mobile.min.css?ver=3.10.1' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='tribe-events-calendar-mobile-style-css'  href='./wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme-mobile.min.css?ver=3.10.1' type='text/css' media='only screen and (max-width: 768px)' />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 

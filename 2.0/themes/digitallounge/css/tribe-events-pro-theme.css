@@ -132,7 +132,7 @@
 .tribe-events-map #tribe-events-header li {
 	display: inline-block;
 	zoom: 1;
-	*display: inline;
+	display: inline;
 }
 
 .tribe-events-map #tribe-events-header li a {

@@ -674,13 +674,14 @@ time.icon
 	font-weight: normal;
 }
 .news-collection {
-	height: auto;
+	height: 352px;
 	width: 100vw;
  	display:inline-block;
  	line-height: 1;
 	font-weight: 200;
   	margin-bottom: .1em;
   	padding-top: .2em;
+  	overflow-y: hidden;
 }
 
 .news-collection  .entry-meta  {
@@ -691,6 +692,7 @@ time.icon
 
 .collection {
 	width: 100vw;
+	height: 500px;
  	display:inline-block;
  	overflow-y: hidden;
  	padding: 0px 0px 15px 0px;

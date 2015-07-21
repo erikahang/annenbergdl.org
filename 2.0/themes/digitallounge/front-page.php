@@ -16,6 +16,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 		<section class="query-container news-collection animated slideInLeft delay1-2sec paper-front" data-type="post_type" data-post_type="post" data-page="1">
 				<div class="news-title"><h2 class="section-title">News</h2> <div class="arrow-container"><button type="button" class="arrow-next">&lt;</button><button type="button" class="arrow-previous">&gt;</button></div></div>
+				<div class="inner-container">
 				<?php if ( have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>
@@ -45,6 +46,7 @@ get_header(); ?>
 					<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 				<?php endif; ?>
+				</div>
 			</section><!-- .news-collection -->
 			<?php /* @todo - this is completely untested pseudo-code, to be implemented when custom homepages are built out
 			if ( is_logged_in_user() && get_usermeta( current_user_id(), 'custom_homepage_terms' ) ) {
@@ -72,6 +74,7 @@ get_header(); ?>
 
 							<section class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="tutorial_tag" data-term="<?php echo $term->term_id; ?>" data-post_type="tutorials" data-page="1">
 								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <div class="arrow-container"><button type="button" class="arrow-next">&lt;</button><button type="button" class="arrow-previous">&gt;</button></div></div>
+								<div class="inner-container">
 								<?php foreach( $posts as $post ) { ?>
 									<?php setup_postdata( $post ); // Allows the_* functions to work without passing an ID. ?>
 									<article class="collection-article" id="tutorial-<?php echo $post->ID; ?>" <?php post_class( null, $post->ID ); ?>>
@@ -87,6 +90,7 @@ get_header(); ?>
 										</div><!-- .entry-excerpt -->
 									</article><!-- #tutorial-## -->
 								<?php } ?>
+								</div>
 							</section>
 							<?php
 						}

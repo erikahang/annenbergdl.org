@@ -1,5 +1,5 @@
 ( function( $, wp ) {
-	var template = {}, postsPerPage = 4;
+	var template = {}, postsPerPage = 4, vWidth;
 
 	$(document).ready( function() {
 		bindEvents();
@@ -7,6 +7,7 @@
 //		template['tutorials'] = wp.template( 'archive-tutorial' );
 //		template['default'] = wp.template( 'archive-grid-view' );
 		template = wp.template( 'archive-grid-view' );
+		vWidth = window.innerWidth;
 	});
 
 	function generateArgs( container ) {
@@ -55,14 +56,12 @@
 		
 		$( '.query-container' ).on( 'click', '.arrow-previous', function( e ) {
 			container = $( this ).closest( '.query-container' );
-			loadNextPage( container );
-			// @todo previous/next nav and history
+			setPage( container, container.data( 'page' ) - 1 );
 		});
 		
 		$( '.query-container' ).on( 'click', '.arrow-next', function( e ) {
 			container = $( this ).closest( '.query-container' );
 			loadNextPage( container );
-			// @todo previous/next nav and history
 		});
 		
 	}
@@ -71,7 +70,7 @@
 		var params, args = generateArgs( container );
 		if ( container.length > args.page * 4 ) {
 			// No need to add more items, change the visible page instead.
-			// @todo
+			setPage( container, args.page + 1 );
 			return;
 		}
 		container.addClass( 'loading' );
@@ -91,12 +90,20 @@
 					///container.append( template[type]( post ) );
 					container.append( template( post ) );
 				});
-				container.data( 'page', args.page + 1 );
 				container.removeClass( 'loading' );
+				setPage( container, args.page + 1 );
 			} else {
 		        alert( 'Failed to load requested page.' );				
 			}
 		});
 	}
 
+	function setPage( container, page ) {
+		if ( page < 1 ) {
+			return;
+		}
+		var left = Math.floor( vWidth / 288 ) * 288 * page - 288;
+		container.find( '.inner-container' ).css( 'left', left * -1 );
+		container.data( 'page', page );
+	}
 } ) ( jQuery, wp );

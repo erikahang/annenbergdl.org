@@ -746,15 +746,21 @@ time.icon
 @media  (min-width: 768px) {
 
 	section.collection > :nth-child(2) {
-	width: 575px;
+		width: 575px;
 	}
 }
 /*This makes the first image dispay normal in the collections on screens less than 768*/
 @media  (max-width: 768px) {
 
 	section.collection > :nth-child(2) {
-	width: 254px;
+		width: 254px;
 	}
+}
+
+.inner-container {
+	position: relative;
+	width: auto;
+	height: 496px;
 }
 
 #colophon {

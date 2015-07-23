@@ -908,7 +908,8 @@ textarea {
 	margin: 0px 7px;
 }
 
-#eventreadout .eventheadline {
+#eventreadout .eventheadline,
+ {
 	font-size: 1.5em;
 	font-weight: 700;
 
@@ -1919,11 +1920,12 @@ h1.entry-title {
 ## Events Calendar Hacks and Styles
 --------------------------------------------------------------*/
 
-
+/*In the calendar button*/
 .window .tribe-events-page-title, 
 .window #tribe-events-header {
 	display: none;
 }
+
 .window #tribe-events-content table.tribe-events-calendar{
 	margin: 0px;
 	padding-top: 0px;
@@ -1935,3 +1937,27 @@ h1.entry-title {
 .window .tribe-events-month {
 	margin-bottom: 0px;
 }
+
+/*In the event readout*/
+.site-header .tribe-mini-calendar-event {
+	overflow: visible;
+	width: auto;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	border-bottom: none;
+
+}
+
+.site-header .tribe-mini-calendar-event .list-date,
+.site-header .tribe-events-widget-link {
+	display: none;
+}
+
+.site-header .tribe-mini-calendar-event .list-info .entry-title {
+	font-size: 2em;
+	font-weight: 700;
+	margin-top: .1em;
+}
+
+
+

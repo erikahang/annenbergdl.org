@@ -55,13 +55,14 @@
 			</time>
 			</a>
 		</div>
-		<div id="eventreadout">
-			<span class="big">1</span>
+		<div id="eventreadout" class="animated fadeInLeft">
+			<?php echo do_shortcode("[tribe_events_list]"); ?>
+		<!-- <span class="big">1</span>
 			<span class="small"> PM </span>
 			<span class="pipe">|</span>
 			<span class="eventheadline">Photoshop</span>
 			<span>,</span>
-			<span class="smalleritalic">How to make a poster...</span>
+			<span class="smalleritalic">How to make a poster...</span> -->
 		</div>
 		<div class="site-branding">
 			<h1 class="site-title">

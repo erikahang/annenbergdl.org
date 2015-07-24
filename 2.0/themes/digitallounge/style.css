@@ -1945,7 +1945,8 @@ h1.entry-title {
 
 /*In the calendar button*/
 .window .tribe-events-page-title, 
-.window #tribe-events-header {
+.window #tribe-events-header,
+.window .tribe-events-month a.tribe-events-ical {
 	display: none;
 }
 
@@ -1981,6 +1982,8 @@ h1.entry-title {
 	font-weight: 700;
 	margin-top: .1em;
 }
+
+
 
 
 

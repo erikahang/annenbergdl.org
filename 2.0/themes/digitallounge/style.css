@@ -1507,7 +1507,7 @@ object {
 .archive #colophon {
 	position: fixed;
 	bottom: 0;
-	background-attachment: fixed;
+	background-attachment: cover;
 }
 
 .archive #primary {

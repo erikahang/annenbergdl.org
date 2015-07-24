@@ -56,7 +56,7 @@
 			</a>
 		</div>
 		<div id="eventreadout" class="animated fadeInLeft">
-		<?php echo do_shortcode("[tribe_events_list]"); ?>
+		<?php echo do_shortcode('[tribe_events_list limit="1"]'); ?>
 		<!-- <span class="big">1</span>
 			<span class="small"> PM </span>
 			<span class="pipe">|</span>

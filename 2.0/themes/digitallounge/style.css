@@ -1267,6 +1267,7 @@ Not yet used.
 ## Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
+.search .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
@@ -1419,6 +1420,7 @@ object {
 --------------------------------------------------------------*/
 
 .home #primary,
+.search #primary,
 .archive #primary {
 	max-width: 100%;
 	padding:  3px 16px 16px 16px;
@@ -1428,6 +1430,9 @@ object {
 
 .home .post,
 .home .tutorials,
+.search .tutorials,
+.search .tribe_events,
+.search .post,
 .archive .post,
 .archive .tutorials {
 	width: 288px;
@@ -1440,6 +1445,9 @@ object {
 
 .home .post:after,
 .home .tutorials:after,
+.search .tutorials:after,
+.search .tribe_events:after,
+.search .post:after,
 .archive .post:after,
 .archive .tutorials:after {
 	content: "";
@@ -1453,6 +1461,10 @@ object {
 
 .home .post:first-child,
 .home .tutorials:first-child,
+.search .tutorials:first-child,
+.search .tribe_events:first-child,
+.search .post:first-child,
+.archive .tutorials:first-child,
 .archive .post:first-child {
 	padding-left: 0;
 	width: 304px;
@@ -1460,6 +1472,9 @@ object {
 
 .home .post:last-child:after,
 .home .tutorials:last-child:after,
+.search .tutorials:last-child:after,
+.search .tribe_events:last-child:after,
+.search .post:last-child:after,
 .archive .post:last-child:after,
 .archive .tutorials:last-child:after {
 	display: none;
@@ -1476,6 +1491,7 @@ object {
 }
 
 .home h1.entry-title,
+.search h1.entry-title,
 .archive h1.entry-title {
 	font-size: 1.2em;
 	font-weight: 700;
@@ -1488,6 +1504,7 @@ object {
 }
 
 .home .entry-excerpt p,
+.search .entry-excerpt p,
 .archive .entry-excerpt p {
 	margin: 0;
 	color: #555;
@@ -1500,20 +1517,24 @@ object {
 }
 
 .home .entry-meta,
+.search .entry-meta,
 .archive .entry-meta {
 	padding: 8px 0;
 }
 
+.search #colophon,
 .archive #colophon {
 	position: fixed;
 	bottom: 0;
 	background-attachment: fixed;
 }
 
+.search #primary,
 .archive #primary {
 	margin-bottom: 128px;
 }
 
+.search .load-more,
 .archive .load-more {
 	width: 256px;
 	background: transparent;
@@ -1526,6 +1547,8 @@ object {
 	padding: 16px;
 }
 
+.search .load-more:hover,
+.search .load-more:focus,
 .archive .load-more:hover,
 .archive .load-more:focus {
 	background: #900;

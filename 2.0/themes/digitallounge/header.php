@@ -85,7 +85,8 @@
 		<div class="window-title search-title">Explore
 			<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
 		</div>
-		<div class="search-string">Search
+		<div class="search-string">
+			<?php get_search_form(); ?>
 		</div>
 	</div>
 	<div id="calendar-window" class="window window-calendar animated fadeIn">

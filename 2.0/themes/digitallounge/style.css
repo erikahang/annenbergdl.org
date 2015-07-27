@@ -1821,7 +1821,11 @@ h1.entry-title {
 
 
 }
-
+@media (max-width:646px) {
+	.chatwithus {
+		visibility: hidden;
+	}
+}
 /*Iphone*/
 @media (max-device-width: 512px)  and (-webkit-min-device-pixel-ratio: 2) {
 

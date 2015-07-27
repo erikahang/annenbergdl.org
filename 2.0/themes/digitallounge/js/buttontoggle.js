@@ -21,19 +21,13 @@ function toggleClose() {
 	$( ".window" ).css( "display", "none" );
 }
 
-//__________________________My workspace below
+function toggleChatWithUs() {
+	var chatwithus = $( ".chatwithus" )
 
-//
-// handles the click event, sends the query
-// var function getOutput() {
-//    $.ajax({
-//       url:'myAjax.php',
-//       complete: function (response) {
-//           $('#calendar-window').html(response.responseText);
-//       },
-//       error: function () {
-//           $('#calendar-window').html('Bummer: there was an error!');
-//       }
-//   });
-//   return false;
-// }
+	chatwithus.style.display == "block" ? chatwithus.style.display = "none" : 
+	chatwithus.style.display = "block";
+}
+
+function toggleCloseChatwithUs () {
+	$( ".chatwithus" ).css( "display", "none");
+}

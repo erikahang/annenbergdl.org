@@ -64,6 +64,12 @@ function anndl_load_archive_posts_ajax() {
 					'terms'    => esc_html( $passed_args['term'] ),
 				),
 			);
+		case 'search' :
+			$args = array(
+				'numberposts' => 6, // This MUST match what's initially rendered from the first pageload
+				'offset'      => 6 * $page - 6,
+				's'           => $passed_args['searchterm'],
+			);
 	}
 
 	$posts = get_posts( $args );
@@ -71,10 +77,8 @@ function anndl_load_archive_posts_ajax() {
 	if ( is_wp_error( $posts ) ) {
 		echo '-1';
 	}
-//	echo var_dump( $args );
-//	echo var_dump( $posts );
+
 	foreach ( $posts as $post ) {
-//	echo $post->ID . ' ';
 		$GLOBALS['post'] = $post;
 		setup_postdata( $post );
 		$items[] = array(

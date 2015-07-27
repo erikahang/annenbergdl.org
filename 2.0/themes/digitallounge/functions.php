@@ -39,8 +39,8 @@ function digitallounge_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails', array( 'post', 'tutorials', 'page' ) );
-	set_post_thumbnail_size( 672, 372, true );
-	add_image_size( 'digitallounge-full-width', 1038, 576, true );
+	set_post_thumbnail_size( 576, 384, true );
+	add_image_size( 'digitallounge-full-width', 934, 623, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

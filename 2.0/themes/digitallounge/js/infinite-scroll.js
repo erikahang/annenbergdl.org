@@ -42,6 +42,9 @@
 			case 'year':
 				args.year = container.data( 'year' );
 				break;
+			case 'search':
+				args.searchterm = container.data( 'searchterm' );
+				break;
 		}
 		return args;
 	}

@@ -15,31 +15,34 @@ get_header(); ?>
 
 	<div id="primary" class="content-area staff-page">
 		<main id="main" class="site-main" role="main">
-		<h1 class="entry-title">Our Staff</h1>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-	<?php 
-	$contributor_ids = get_users( array(
-		'fields'  => 'ID',
-		'who'     => '',
-	) );
-	$active_contributor_ids = array();
-	foreach ( $contributor_ids as $contributor_id ) :
-		// Skip former staff members.
-		if ( ! get_the_author_meta( 'active_staff', $contributor_id ) ) {
-			continue;
-		}
+				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-		$active_contributor_ids[] = $contributor_id;
-		?>
+			<?php endwhile; // end of the loop.
 
-		<div class="staff-summary" tabindex="0" data-staff-id="<?php echo $contributor_id; ?>">
-			<div class="staff-avatar"><?php echo get_avatar( $contributor_id, 384 ); ?></div>
-			<div class="staff-name"><?php the_author_meta( 'display_name', $contributor_id ); ?></div>
-		</div>
+			$contributor_ids = get_users( array(
+				'fields'  => 'ID',
+				'who'     => '',
+			) );
+			$active_contributor_ids = array();
+			foreach ( $contributor_ids as $contributor_id ) :
+				// Skip former staff members.
+				if ( ! get_the_author_meta( 'active_staff', $contributor_id ) ) {
+					continue;
+				}
 
-	<?php
-	endforeach;
-?>
+				$active_contributor_ids[] = $contributor_id;
+				?>
+
+				<div class="staff-summary" tabindex="0" data-staff-id="<?php echo $contributor_id; ?>">
+					<div class="staff-avatar"><?php echo get_avatar( $contributor_id, 384 ); ?></div>
+					<div class="staff-name"><?php the_author_meta( 'display_name', $contributor_id ); ?></div>
+				</div>
+
+			<?php
+			endforeach;
+			?>
 			
 			<div class="staff-members"></div>
 			<button type="button" class="back-to-index">X</button>

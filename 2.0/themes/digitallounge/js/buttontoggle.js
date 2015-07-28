@@ -20,4 +20,3 @@ contentId.style.display = "block";
 function toggleClose() {
 	$( ".window" ).css( "display", "none" );
 }
-

@@ -741,6 +741,19 @@ time.icon
   padding: 1px;
   margin-bottom: 10px;
 }
+
+.home .inner-container {
+	position: relative;
+	height: 308px;
+	clear: both;
+	width: 99999px;
+	overflow: hidden;
+}
+
+
+
+
+
 /*This makes the first image dispay bigger in the collections on screens greater than 768*/
 
 @media  (min-width: 768px) {
@@ -755,14 +768,6 @@ time.icon
 	/*section.collection > :nth-child(2) {
 		width: 254px;*/
 	}
-}
-
-.home .inner-container {
-	position: relative;
-	height: 308px;
-	clear: both;
-	width: 99999px;
-	overflow: hidden;
 }
 
 

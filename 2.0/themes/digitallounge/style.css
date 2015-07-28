@@ -694,7 +694,7 @@ time.icon
 	width: 100vw;
 	height: 496px;
  	display:inline-block;
- 	overflow-y: hidden;
+ 	overflow: hidden;
  	padding: 0px 0px 15px 0px;
  	margin-bottom: 64px;
 
@@ -757,13 +757,15 @@ time.icon
 	}
 }
 
-.inner-container {
+.home .inner-container {
 	position: relative;
 	height: 308px;
 	clear: both;
 	width: 99999px;
 	overflow: hidden;
 }
+
+
 
 #colophon {
 	background-color:  rgb(213,108,74);
@@ -870,7 +872,7 @@ textarea {
 	width: 245px;
 	height: 64px;
 	float: right;
-  	margin-top: -72px;
+  	margin-top: -56px;
 }
 
 #navbuttons ul {
@@ -1817,7 +1819,7 @@ h1.entry-title {
 	.collection {
 		width: 95vw;
 	 	display:inline-block;
-	 	
+	 	overflow: hidden;
 	 	padding: 0px 0px 15px 0px;
 	 	margin-bottom: 64px;
  	}
@@ -1829,6 +1831,9 @@ h1.entry-title {
 	 	 padding-bottom: 32px;
 	}
 
+	.container {
+		overflow:hidden;
+	}
 
 }
 @media (max-width: 646px) {

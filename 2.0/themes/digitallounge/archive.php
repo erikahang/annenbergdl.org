@@ -66,6 +66,7 @@ get_header(); ?>
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
+			<div class="inner-container">
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -81,12 +82,13 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-excerpt">
-						<?php the_excerpt(); ?>
+						<?php echo get_the_excerpt(); ?>
 					</div><!-- .entry-excerpt -->
 				</article><!-- #post-## -->
 
 			<?php endwhile; ?>
 
+				</div><!-- .inner-container -->
 				<button class="load-more">Load More</button>
 			</section>
 		<?php else : ?>

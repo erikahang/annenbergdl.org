@@ -38,3 +38,26 @@ function digitallounge_change_post_object() {
 
 add_action( 'admin_menu', 'digitallounge_change_post_label' );
 add_action( 'init', 'digitallounge_change_post_object' );
+
+/**
+ * Tweak user roles' capability assignments.
+ *
+ * Note that the plugin must be de/re-activated for this code to run, as the results are persisted in the database.
+ */
+function digitallounge_activate_adjust_roles() {
+	// Editors.
+	$editor = get_role( 'editor' );
+	$editor->add_cap( 'list_users' ); // Allow editors to manage users.
+	$editor->add_cap( 'edit_users' ); // Warning: editors can now promote themselves or others to administrators.
+	$editor->add_cap( 'create_users' ); // Editors *must* be trusted like administrators in this environment.
+	$editor->add_cap( 'promote_users' );
+	$editor->add_cap( 'remove_users' );
+	$editor->add_cap( 'delete_users' );
+	$editor->add_cap( 'manage_options' ); // Allow editors to manage options and theme options.
+	$editor->add_cap( 'edit_theme_options' ); // This is most relevant in their ability to make non-breaking changes via the Customizer.
+
+	// Contributor.
+	$contributor = get_role( 'contributor' );
+	$contributor->add_cap( 'upload_files' ); // Allows media to be uploaded (which technically allows them to publish attachment posts).
+}
+register_activation_hook( __FILE__, 'digitallounge_activate_adjust_roles' );

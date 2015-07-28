@@ -135,7 +135,7 @@ add_action( 'save_post',     'digitallounge_category_transient_flusher' );
  */
 function digitallounge_get_the_post_thumbnail( $size = 'post-thumbnail' ) {
 	if ( has_post_thumbnail() ) {
-		return get_the_post_thumbnail();
+		return get_the_post_thumbnail( null, $size );
 	} else {
 		return '<img src="' . digitallounge_get_post_image( $size ) . '" alt="" class="">';
 	}

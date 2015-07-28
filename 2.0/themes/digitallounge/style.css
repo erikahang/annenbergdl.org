@@ -1933,11 +1933,18 @@ h1.entry-title {
 	background-color: orange;
 }
 
-.search-string {
+.window .search-string {
 	font-size: 3em;
 	text-align: center;
-	position: relative;
-	top: 30%;
+	margin-top: 16px;
+}
+.window .search-field {
+	height: 90%;
+	width: 90%;
+	font-size: 500%;
+	border: 0 !important;
+	outline: none;
+
 }
 
 .calendar-title {

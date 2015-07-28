@@ -21,19 +21,3 @@ function toggleClose() {
 	$( ".window" ).css( "display", "none" );
 }
 
-//__________________________My workspace below
-
-//
-// handles the click event, sends the query
-// var function getOutput() {
-//    $.ajax({
-//       url:'myAjax.php',
-//       complete: function (response) {
-//           $('#calendar-window').html(response.responseText);
-//       },
-//       error: function () {
-//           $('#calendar-window').html('Bummer: there was an error!');
-//       }
-//   });
-//   return false;
-// }

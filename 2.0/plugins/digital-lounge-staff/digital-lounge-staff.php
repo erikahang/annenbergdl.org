@@ -57,9 +57,11 @@ add_action( 'manage_users_custom_column', 'anndl_manage_user_expertise_column', 
 function anndl_manage_user_expertise_column( $display, $column, $user_id ) {
 
 	if ( 'expertise' === $column ) {
-		$expertise = get_usermeta( $user_id, 'expertise' );
-		$expertise = explode( ',', $expertise );
-		$expertise = implode( ', ', $expertise );
+		$expertise = get_user_meta( $user_id, 'expertise', true );
+		if ( ! empty( $expertise ) ) {
+			$expertise = explode( ',', $expertise );
+			$expertise = implode( ', ', $expertise );
+		}
 		return $expertise;
 	}
 }
@@ -88,8 +90,10 @@ function anndl_edit_user_expertise_section( $user ) {
 			<th><label><?php _e( 'Expertise' ); ?></label></th>
 
 			<td><?php
-			$expertise = get_usermeta( $user->ID, 'expertise' );
-			$expertise = explode( ',', $expertise );
+			$expertise = get_user_meta( $user->ID, 'expertise', true );
+			if ( ! empty( $expertise ) ) {
+				$expertise = explode( ',', $expertise );
+			}
 
 			/* If there are any position terms, loop through them and display checkboxes. */
 			if ( ! empty( $terms ) ) {
@@ -107,15 +111,15 @@ function anndl_edit_user_expertise_section( $user ) {
 		</tr>
 		<tr>
 			<th><label for="active"><?php _e( 'Status' ); ?></label></th>
-			<td><label><input type="checkbox" name="active_staff" value="1" <?php echo checked( get_usermeta( $user->ID, 'active_staff' ) ); ?>> Active staff member</label></td>
+			<td><label><input type="checkbox" name="active_staff" value="1" <?php echo checked( get_user_meta( $user->ID, 'active_staff', true ) ); ?>> Active staff member</label></td>
 		</tr>
 		<tr>
 			<th><label for="background_image"><?php _e( 'Featured Image' ); ?></label></th>
 			<td>
 				<p>This image is displayed on your staff profile page.</p>
 				<button id="dl-staff-featured-image-btn" class="button">Select Image</button><br/>
-				<img src="<?php echo get_usermeta( $user->ID, 'background_image' ); ?>" id="dl-staff-img-preview" style="cursor: pointer; max-width: 600px;"/>
-				<input type="hidden" name="background_image" id="dl-staff-bg-img" value="<?php echo get_usermeta( $user->ID, 'background_image' ); ?>"/>
+				<img src="<?php echo get_user_meta( $user->ID, 'background_image', true ); ?>" id="dl-staff-img-preview" style="cursor: pointer; max-width: 600px;"/>
+				<input type="hidden" name="background_image" id="dl-staff-bg-img" value="<?php echo get_user_meta( $user->ID, 'background_image', true ); ?>"/>
 			</td>
 		</tr>
 
@@ -135,7 +139,7 @@ function anndl_staff_profile_script() {
 add_filter( 'sanitize_user', 'anndl_disable_username' );
 
 /**
- * Disables the 'position' username when someone registers.  This is to avoid any conflicts with the custom 
+ * Disables the 'expertise' username when someone registers.  This is to avoid any conflicts with the custom 
  * 'author/position' slug used for the 'rewrite' argument when registering the 'position' taxonomy.  This
  * will cause WordPress to output an error that the username is invalid if it matches 'position'.
  *
@@ -150,7 +154,7 @@ function anndl_disable_username( $username ) {
 }
 
 /**
- * Save the taxonomy as a usermeta field.
+ * Save the taxonomy as a user meta field.
  */
 
 add_action( 'personal_options_update', 'anndl_save_expertise_meta_profile_fields' );
@@ -170,13 +174,13 @@ function anndl_save_expertise_meta_profile_fields( $user_id ) {
 	if ( array_key_exists( 'expertise', $_POST ) ) {
 		$expertise = $_POST['expertise'];
 		$expertise = implode( ',', $expertise );
-		update_usermeta( $user_id, 'expertise', $expertise );
+		update_user_meta( $user_id, 'expertise', $expertise );
 	}
 	if ( array_key_exists( 'background_image', $_POST ) ) {
 		$bg = esc_url( $_POST['background_image'] );
-		update_usermeta( $user_id, 'background_image', $bg );
+		update_user_meta( $user_id, 'background_image', $bg );
 	}
 
-	update_usermeta( $user_id, 'active_staff', $active );
+	update_user_meta( $user_id, 'active_staff', $active );
 }
 

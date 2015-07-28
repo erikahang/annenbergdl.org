@@ -1489,6 +1489,16 @@ object {
 	width: auto;
 	font-size: 2em;
 }
+.archive .section-title {
+	width:100%;
+}
+
+.search .inner-container,
+.archive .inner-container {
+    position: initial;
+    width: 100%;
+    overflow: initial;
+}
 
 .home h1.entry-title,
 .search h1.entry-title,
@@ -1552,7 +1562,7 @@ object {
 .archive .load-more:hover,
 .archive .load-more:focus {
 	background: #900;
-	color: #fff;
+	color: black;
 	box-shadow: none;
 	border: 5px solid #900;
 }
@@ -1838,7 +1848,7 @@ h1.entry-title {
 		position: relative;
 		bottom: 32px;
 	}
-	
+
 	.social-buttons {
 	position: relative;
 	top: -64px;

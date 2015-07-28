@@ -33,7 +33,7 @@ get_header(); ?>
 							</header><!-- .entry-header -->
 
 							<div class="entry-excerpt">
-								<?php the_excerpt(); ?>
+								<?php echo get_the_excerpt(); ?>
 							</div><!-- .entry-excerpt -->
 						</article><!-- #post-## -->
 
@@ -84,7 +84,7 @@ get_header(); ?>
 											</div><!-- .entry-meta -->
 										</header><!-- .entry-header -->
 										<div class="entry-excerpt">
-											<?php the_excerpt(); ?>
+											<?php echo get_the_excerpt(); ?>
 										</div><!-- .entry-excerpt -->
 									</article><!-- #tutorial-## -->
 								<?php } ?>

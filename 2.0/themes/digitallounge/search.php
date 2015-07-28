@@ -31,6 +31,7 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'digitallounge' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
+				<div class="inner-container">
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -46,12 +47,13 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-excerpt">
-						<?php the_excerpt(); ?>
+						<?php echo get_the_excerpt(); ?>
 					</div><!-- .entry-excerpt -->
 				</article><!-- #post-## -->
 
 			<?php endwhile; ?>
 
+				</div><!-- .inner-container -->
 				<button class="load-more">Load More</button>
 			</section>
 		<?php else : ?>

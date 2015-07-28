@@ -64,12 +64,15 @@ function anndl_load_archive_posts_ajax() {
 					'terms'    => esc_html( $passed_args['term'] ),
 				),
 			);
+			break;
 		case 'search' :
 			$args = array(
 				'numberposts' => 6, // This MUST match what's initially rendered from the first pageload
 				'offset'      => 6 * $page - 6,
+				'post_type'   => array( 'post', 'page', 'tutorials', 'tribe_events' ),
 				's'           => $passed_args['searchterm'],
 			);
+			break;
 	}
 
 	$posts = get_posts( $args );

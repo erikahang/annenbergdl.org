@@ -33,7 +33,7 @@ if ( is_tax() ) {
 	$data['post_type'] = esc_attr( get_query_var( 'post_type' ) );
 } elseif ( is_author() ) {
 	$data['type'] = 'author';
-	$data['author_id'] = absint( get_queried_object()->term_id );
+	$data['author_id'] = absint( get_the_author_meta( 'ID' ) );
 } elseif ( is_year() ) {
 	$data['type'] = 'year';
 	$data['year'] = get_the_date( 'Y' );

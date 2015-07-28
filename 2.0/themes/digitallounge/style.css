@@ -1821,22 +1821,32 @@ h1.entry-title {
 
 
 }
-@media (max-width:646px) {
+@media (max-width: 646px) {
 	.chatwithus {
 		visibility: hidden;
 	}
-}
-/*Iphone*/
-@media (max-device-width: 512px)  and (-webkit-min-device-pixel-ratio: 2) {
-
 
 	.social-buttons {
-		margin-top: -50px;
-		z-index: 1000;
-		position:relative;
-		top: -64px;
-		display: none;
+	position: relative;
+	top: -64px;
 	}
+	
+}
+@media (max-width: 956px) {
+
+	.menu-footer-menu-container {
+		position: relative;
+		bottom: 32px;
+	}
+	
+	.social-buttons {
+	position: relative;
+	top: -64px;
+	}
+}
+/*Iphone*/
+@media (max-width: 512px) {
+
 
 	#colophon li {
 		margin-right: 0px;

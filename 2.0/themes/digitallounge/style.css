@@ -745,15 +745,15 @@ time.icon
 
 @media  (min-width: 768px) {
 
-	section.collection > :nth-child(2) {
-		width: 575px;
+	/*section.collection > :nth-child(2) {
+		width: 575px;*/
 	}
 }
 /*This makes the first image dispay normal in the collections on screens less than 768*/
 @media  (max-width: 768px) {
 
-	section.collection > :nth-child(2) {
-		width: 254px;
+	/*section.collection > :nth-child(2) {
+		width: 254px;*/
 	}
 }
 
@@ -870,7 +870,7 @@ textarea {
 	width: 245px;
 	height: 64px;
 	float: right;
-  	margin-top: -56px;
+  	margin-top: -72px;
 }
 
 #navbuttons ul {

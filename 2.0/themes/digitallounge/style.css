@@ -1888,6 +1888,7 @@ h1.entry-title {
 	position: fixed;
 	top: 20vh;
 	left: 14vw;
+
 }
 
 .window-title {
@@ -1937,16 +1938,27 @@ h1.entry-title {
 	font-size: 3em;
 	text-align: center;
 	margin-top: 16px;
+	overflow: hidden;
+
 }
 .window .search-field {
-	height: 90%;
+	height: 25vw;
 	width: 90%;
-	font-size: 500%;
+	font-size: 28vh;
 	border: 0 !important;
 	outline: none;
+	background-color: transparent;
+
+	text-align: center;
+	margin-top: 5vw;
+	
+}
+.window .search-string .search-submit {
+	position: absolute;
+	bottom: 15px;
+	left: 45%;
 
 }
-
 .calendar-title {
 	background-color: rgb(236,120,80);
 }

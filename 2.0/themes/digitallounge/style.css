@@ -280,22 +280,22 @@ th {
 # Typography
 --------------------------------------------------------------*/
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Light.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Light.woff') format('woff'),*/ url('./fonts/NationalWeb-Light.ttf') format('truetype'), url('./fonts/NationalWeb-Light.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Light.eot'); src: local(':)'), url('./fonts/NationalWeb-Light.woff') format('woff'); 
 	font-weight: 200; 
 	font-style: normal; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-LightItalic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-LightItalic.woff') format('woff'),*/ url('./fonts/NationalWeb-LightItalic.ttf') format('truetype'), url('./fonts/NationalWeb-LightItalic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-LightItalic.eot'); src: local(':)'), url('./fonts/NationalWeb-LightItalic.woff') format('woff'); 
 	font-weight: 200; 
 	font-style: italic; 
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Regular.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Regular.woff') format('woff'),*/ url('./fonts/NationalWeb-Regular.ttf') format('truetype'), url('./fonts/NationalWeb-Regular.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Regular.eot'); src: local(':)'), url('./fonts/NationalWeb-Regular.woff') format('woff');
 	font-weight: 500; 
 	font-style: normal; 
-	text-rendering: optimizelegibility;
+	text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "ss03" 1;
         -moz-font-feature-settings: "ss03=1";
         -ms-font-feature-settings: "ss03" 1;
@@ -305,10 +305,10 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Italic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Italic.woff') format('woff'),*/ url('./fonts/NationalWeb-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-RegularItalic.eot'); src: local(':)'), url('./fonts/NationalWeb-RegularItalic.woff') format('woff');
 	font-weight: 500; 
 	font-style: italic;
-	text-rendering: optimizelegibility;
+	text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "ss03" 1;
         -moz-font-feature-settings: "ss03=1";
         -ms-font-feature-settings: "ss03" 1;
@@ -318,10 +318,10 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Semibold.woff') format('woff'),*/ url('./fonts/NationalWeb-Semibold.ttf') format('truetype'), url('./fonts/NationalWeb-Semibold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold.eot'); src: local(':)'), url('./fonts/NationalWeb-Semibold.woff') format('woff'); 
 	font-weight: 700; 
 	font-style: normal; 
-	text-rendering: optimizelegibility;
+	text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "ss03" 1;
         -moz-font-feature-settings: "ss03=1";
         -ms-font-feature-settings: "ss03" 1;
@@ -331,10 +331,10 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Semibold-Italic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Semibold-Italic.woff') format('woff'), url('./fonts/NationalWeb-Semibold-Italic.ttf') format('truetype'),*/ url('./fonts/NationalWeb-Semibold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-SemiboldItalic.eot'); src: local(':)'), url('./fonts/NationalWeb-SemiboldItalic.woff');
 	font-weight: 700; 
 	font-style: italic;
-	text-rendering: optimizelegibility;
+	text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "ss03" 1;
         -moz-font-feature-settings: "ss03=1";
         -ms-font-feature-settings: "ss03" 1;
@@ -344,10 +344,10 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Bold.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Bold.woff') format('woff'), url('./fonts/NationalWeb-Bold.ttf') format('truetype'),*/ url('./fonts/NationalWeb-Bold.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-Bold.eot'); src: local(':)'), url('./fonts/NationalWeb-Bold.woff') format('woff'); 
 	font-weight: 800; 
 	font-style: normal;
-	text-rendering: optimizelegibility;
+	text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "ss03" 1;
         -moz-font-feature-settings: "ss03=1";
         -ms-font-feature-settings: "ss03" 1;
@@ -357,10 +357,9 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold.eot'); src: local(':)'), /*url('./fonts/NationalWeb-Extrabold.woff') format('woff'),*/ url('./fonts/NationalWeb-Extrabold.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold.svg') format('svg'); 
-	font-weight: 900; 
-	font-style: normal;
-	text-rendering: optimizelegibility;
+	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold.eot'); src: local(':)'), url('./fonts/NationalWeb-Extrabold.woff') format('woff');
+	font-weight: 900;
+	text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "ss03" 1;
         -moz-font-feature-settings: "ss03=1";
         -ms-font-feature-settings: "ss03" 1;
@@ -370,10 +369,10 @@ th {
 }
 
 @font-face { 
-	font-family: 'National'; src: url('./fonts/NationalWeb-Extrabold-Italic.eot'); src: local(':)'), /*url('./fonts/NationalWeb-ExtraBold-Italic.woff') format('woff'), */url('./fonts/NationalWeb-Extrabold-Italic.ttf') format('truetype'), url('./fonts/NationalWeb-Extrabold-Italic.svg') format('svg'); 
+	font-family: 'National'; src: url('./fonts/NationalWeb-ExtraboldItalic.eot'); src: local(':)'), url('./fonts/NationalWeb-ExtraboldItalic.woff') format('woff');
 	font-weight: 900; 
 	font-style: italic;
-	text-rendering: optimizelegibility;
+	text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "ss03" 1;
         -moz-font-feature-settings: "ss03=1";
         -ms-font-feature-settings: "ss03" 1;
@@ -591,7 +590,7 @@ time.icon
         padding-top: 0.65em;
         color: rgb(176,61,76);
         font-weight: 800;
-        text-rendering: optimizelegibility;
+        text-rendering: optimizeLegibility;
         -moz-font-feature-settings: "lnum" 1;
         -moz-font-feature-settings: "lnum=1";
         -ms-font-feature-settings: "lnum" 1;
@@ -625,7 +624,7 @@ time.icon
   font-size : 24px;
   color : #FFFFFF;
   text-shadow : 1px 1px 0px #666;
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
   text-align: center;
 	-moz-font-feature-settings: "ss03" 1;
 	-moz-font-feature-settings: "ss03=1";
@@ -659,10 +658,10 @@ time.icon
 	width: 100%;
 	
 }
-.news-title a,
-	{
+.news-title a {
 	width: auto;
 }
+
 .title {
 	width:100vw;
 	height: 48px;
@@ -674,7 +673,7 @@ time.icon
 	font-weight: normal;
 }
 .news-collection {
-	height: 352px;
+	height: auto;
 	width: 100vw;
  	display:inline-block;
  	line-height: 1;
@@ -696,26 +695,34 @@ time.icon
  	display:inline-block;
  	overflow: hidden;
  	padding: 0px 0px 15px 0px;
- 	margin-bottom: 64px;
+ 	margin-bottom: 32px;
 
 }
 
 .arrow-container {
-	margin: 4px 64px 0px 0px;
+	margin: 8px 64px 0px 0px;
 	float: right;
   	width: auto;
   	height: auto;
 }
-.arrow-previous, .arrow-next {
-	border: 1px solid #EEE !important; /*borders were shut off for button tags- this turns it back on*/
-	border-radius: 50%;
+
+.arrow-previous {
+	background: url("img/arrow_button_left.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
   	width: 32px;
   	height: 32px;
-  	color: #c5c5c5;
-  	font-size: 2em;
-  	line-height: .2em;
-  	margin-left: 8px;
+  	margin-left: 6px;
 
+}
+
+ .arrow-next {
+	background: url("img/arrow_button_right.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+  	width: 32px;
+  	height: 32px;
+  	margin-left: 6px;
 }
 
 .collection:before {
@@ -744,31 +751,12 @@ time.icon
 
 .home .inner-container {
 	position: relative;
-	height: 308px;
+	height: 412px;
 	clear: both;
 	width: 99999px;
 	overflow: hidden;
 }
 
-
-
-
-
-/*This makes the first image dispay bigger in the collections on screens greater than 768*/
-
-@media  (min-width: 768px) {
-
-	/*section.collection > :nth-child(2) {
-		width: 575px;*/
-	}
-}
-/*This makes the first image dispay normal in the collections on screens less than 768*/
-@media  (max-width: 768px) {
-
-	/*section.collection > :nth-child(2) {
-		width: 254px;*/
-	}
-}
 
 
 
@@ -787,7 +775,7 @@ time.icon
 }
 .menu-footer-menu-container {
 	position: relative;
-	bottom: -4px;
+	bottom: -34px;
 }
 
 
@@ -895,10 +883,10 @@ textarea {
 #eventreadout {
 	height: 64px;
 	margin-left: 100px;
-	top: 0px;
 	line-height: initial;
 	font-weight: 200;
-	width: 33vw;
+	max-width:512px;
+	overflow:hidden;
 }
 
 #eventreadout .big {
@@ -915,11 +903,9 @@ textarea {
 	margin: 0px 7px;
 }
 
-#eventreadout .eventheadline,
- {
+#eventreadout .eventheadline {
 	font-size: 1.5em;
 	font-weight: 700;
-
 }
 
 #eventreadout .smalleritalic {
@@ -993,15 +979,12 @@ a:active {
 
 /*--------------------------------------------------------------
 ## Menus
-Not yet used.
---------------------------------------------------------------/
+--------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	position: relative;
+	bottom: 32px;
 }
-
+/*
 .main-navigation ul {
 	display: none;
 	list-style: none;
@@ -1446,6 +1429,11 @@ object {
 	padding: 0 15px 0 15px;
 	float: left;
 	position: relative;
+	/*height: 288px;
+	overflow: hidden;*/
+}
+.archive .post,
+.archive .tutorials {
 	height: 288px;
 	overflow: hidden;
 }
@@ -1530,6 +1518,7 @@ object {
 	font-weight: 200;
 	padding: 0px 5px 0px 5px;
 	word-wrap: break-word;
+	text-overflow: ellipsis;
 
 }
 
@@ -1543,7 +1532,7 @@ object {
 .archive #colophon {
 	position: fixed;
 	bottom: 0;
-	background-attachment: cover;
+	background-size: cover;
 }
 
 .search #primary,
@@ -1571,9 +1560,13 @@ object {
 	background: #900;
 	color: black;
 	box-shadow: none;
-	border: 5px solid #900;
+	border: 5px solid grey;
 }
 
+.collection-article .entry-header,
+.collection-article .entry-excerpt {
+	border-right: 1px solid #eee;
+} 
 
 /*--------------------------------------------------------------
 ## Single Content
@@ -1611,12 +1604,21 @@ h1.entry-title {
 	color: rgba(246, 53, 5, 0.75);
 	line-height: 1em;
 }
-.collection .entry-header, .collection .entry-excerpt {
+.collection .entry-header,
+.collection .entry-excerpt,
+.news-collection .entry-header,
+.news-collection .entry-excerpt,
+.query-container .entry-excerpt {
 	text-align: right;
 	padding:5px 5px 0px 5px;
-	border-right: 1px solid #eee;
+	line-height: 1.1em;
+	font-weight: 300;
+	text-overflow: ellipsis;
 
 } 
+.collection .inner-container > .collection-article:first-child{
+	width: 512px;
+}
 .entry-meta .byline,
 .entry-meta .posted-on {
 	color: #555;
@@ -1801,11 +1803,144 @@ h1.entry-title {
 }
 
 /*--------------------------------------------------------------
-## Tablet Friendly Media Queries 
+## Events Calendar Hacks and Styles
 --------------------------------------------------------------*/
 
+/*In the calendar button*/
+.window .tribe-events-page-title, 
+.window #tribe-events-header,
+.window .tribe-events-month a.tribe-events-ical {
+	display: none;
+}
+
+.window #tribe-events-content table.tribe-events-calendar{
+	margin: 0px;
+	padding-top: 0px;
+}
+.window #tribe-events-content {
+	padding: 0px 0px; 
+
+}
+.window .tribe-events-month {
+	margin-bottom: 0px;
+}
+
+/*In the event readout*/
+.site-header .tribe-mini-calendar-event {
+	overflow: visible;
+	width: auto;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	border-bottom: none;
+
+}
+
+.site-header .tribe-mini-calendar-event .list-date,
+.site-header .tribe-events-widget-link,
+.window .tribe-events-notices {
+	display: none;
+}
+
+.site-header .tribe-mini-calendar-event .list-info .entry-title {
+	font-size: 2em;
+	font-weight: 700;
+	margin-top: .1em;
+}
+
+
+
+
+/*--------------------------------------------------------------
+## Tablet Friendly Media Queries 
+--------------------------------------------------------------*/
+/*Desktops*/
+@media (max-width:1143px) {
+
+.site-header .tribe-mini-calendar-event .list-info .entry-title {
+
+		font-size: 1.2em;
+		font-weight: 700;
+		margin-top: 0px;
+		
+	}
+
+}
+
+
+/*For 800x600 older or small laptops pcs*/
+@media (max-width: 800px) {
+
+	#eventreadout  {
+		max-width: 240px;
+		left: 38%;
+	}
+	.site-header .tribe-mini-calendar-event .list-info .entry-title {
+
+		font-size: .8em;
+		font-weight: 700;
+		margin-top: 0px;
+		line-height: .8em;
+		
+	}
+	.tribe-mini-calendar-event .list-info {
+	display: inline;
+	line-height: 1em;
+	float: left;
+	width: 80%;
+	}
+	.site-header .tribe-mini-calendar-event .list-info .entry-title {
+
+		font-size: 1em;
+		font-weight: 700;
+		margin-top: 0px;
+		
+	}
+	.site-title {
+		
+		top:13px;
+		left: 40%;
+		font-size: 1em;
+	}
+	.site-info {
+		font-size: .8em;
+		margin-top: -9px;
+		
+	}
+
+	.main-navigation {
+	position: relative;
+	top: -35px;
+	}
+
+	
+
+	.facebook, .instagram, .twitter, .youtube {
+  	background-image: url(img/vectorsprite.svgz);
+  	background-repeat: no-repeat;
+  	background-size: 960px 384px;
+  	width: 48px;
+ 	height: 48px;
+ 	margin-right: 0px;	
+	}
+
+	.facebook { 
+	background-position: -68px 0px;
+	}
+
+	.instagram {
+		background-position:  -8px -7px;
+	}
+
+	.twitter {
+		  background-position: -135px -6px;
+	}
+
+	.youtube {
+		  background-position: -200px -8px;
+	}
+}
 /*Ipad*/
-@media  (max-width: 768px) and (min-device-width: 512px) {
+@media (max-width: 768px) {
 
 	#eventreadout {
 		display: none;
@@ -1813,25 +1948,19 @@ h1.entry-title {
 	}
 	
 	.site-title {
-		left: 20%;
+		left: 35%;
 	}
 
-	
 	#navbuttons {
 		margin-top: 10px;
 	}
 
-	.social-buttons {
-		z-index: 1000;
-		position:relative;	
-	}
-	
 	.collection {
 		width: 95vw;
 	 	display:inline-block;
 	 	overflow: hidden;
 	 	padding: 0px 0px 15px 0px;
-	 	margin-bottom: 64px;
+	 	margin-bottom: 32px;
  	}
 
 	.collection article {
@@ -1846,6 +1975,16 @@ h1.entry-title {
 	}
 
 }
+
+/*Iphone 6,6s sideways*/
+@media (min-width:647px) and (max-width:736px) {
+
+	.chatwithus{
+		visibility: hidden;
+	}
+
+}
+
 @media (max-width: 646px) {
 	.chatwithus {
 		visibility: hidden;
@@ -1857,24 +1996,20 @@ h1.entry-title {
 	}
 	
 }
-@media (max-width: 956px) {
 
-	.menu-footer-menu-container {
-		position: relative;
-		bottom: 32px;
-	}
+/*Iphone 4 sideways*/
+@media (min-width:479px) and (max-width:480px) {
 
-	.social-buttons {
-	position: relative;
-	top: -64px;
+	.site-title {
+		left: 25%;
 	}
 }
-/*Iphone*/
-@media (max-width: 512px) {
 
-
+/*Iphone 6 Plus, 6, 5, 4 verticle*/
+@media (max-width: 414px) {
+	
 	#colophon li {
-		margin-right: 0px;
+	margin-right: 0px;
 	}
 
 	.main-navigation,
@@ -1883,19 +2018,55 @@ h1.entry-title {
 		display: none;
 	}
 
-	#masthead {
-		
+	.usclogo {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}	
+
+	.site-branding {
+		position: absolute;
+		top: -20px;
+		left: -5%;
+		font-size: 1.2em;
+		width: 80vw;
 	}
-	
-	.site-title {
-		left: 0;
-		right:0;
+	.collection .inner-container > .collection-article:first-child {
+		width: 192px;
 	}
 
+	.social-buttons {
+	position: relative;
+	top: -48px;
+	}
+
+	.main-navigation,
+	.site-info {
+		display: none;
+	}
+	.arrow-container {
+	margin: 8px 32px 0px 0px;
+	z-index: 500;
+	float: right;
+  	width: auto;
+  	height: auto;
+}
 
 }
 
 
+/*Iphone 5, 4 verticle*/
+@media (max-width: 320px) {
+
+	.site-branding {
+		position: absolute;
+		top: -15px;
+		left: -5%;
+		font-size: 1.2em;
+		width: 80vw;
+	}
+
+}
 
 /*--------------------------------------------------------------
 ## Universal Graphical Styles
@@ -1949,8 +2120,8 @@ h1.entry-title {
 
 
 .window-calendar {
-	height: 632px;
-	top:10vh;
+	height: 760px;
+	top:5vh;
 	}
 
 @media (max-width:612px) {
@@ -1959,7 +2130,15 @@ h1.entry-title {
 	top:10vh;
 	}
 }
-
+/*To be used when site is under construction*/
+.underconstruction {
+	display: none;
+}
+#insert-events-calendar {
+	height: 725px;
+	overflow: hidden;
+	background-color: white;
+}
 /*--------------------------------------------------------------
 ## Search 
 --------------------------------------------------------------*/
@@ -1992,56 +2171,15 @@ h1.entry-title {
 	position: absolute;
 	bottom: 15px;
 	left: 45%;
+	border: none;
+	font-size: .5em;
 
 }
 .calendar-title {
 	background-color: rgb(236,120,80);
 }
-/*--------------------------------------------------------------
-## Events Calendar Hacks and Styles
---------------------------------------------------------------*/
 
-/*In the calendar button*/
-.window .tribe-events-page-title, 
-.window #tribe-events-header,
-.window .tribe-events-month a.tribe-events-ical {
+#livechat-compact-container{
 	display: none;
 }
-
-.window #tribe-events-content table.tribe-events-calendar{
-	margin: 0px;
-	padding-top: 0px;
-}
-.window #tribe-events-content {
-	padding: 0px 0px; 
-
-}
-.window .tribe-events-month {
-	margin-bottom: 0px;
-}
-
-/*In the event readout*/
-.site-header .tribe-mini-calendar-event {
-	overflow: visible;
-	width: auto;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-	border-bottom: none;
-
-}
-
-.site-header .tribe-mini-calendar-event .list-date,
-.site-header .tribe-events-widget-link {
-	display: none;
-}
-
-.site-header .tribe-mini-calendar-event .list-info .entry-title {
-	font-size: 2em;
-	font-weight: 700;
-	margin-top: .1em;
-}
-
-
-
-
 

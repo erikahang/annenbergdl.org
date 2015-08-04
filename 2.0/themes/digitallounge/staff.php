@@ -53,6 +53,7 @@ get_header(); ?>
 					<div class="staff-content">
 						<button type="button" class="previous"><</button>
 						<h2 class="staff-name">{{ data.name }}</h2>
+						<h5 class="staff-info">{{{ data.info }}}</h5>
 						<div class="staff-bio">
 							{{{ data.description }}}
 						</div>

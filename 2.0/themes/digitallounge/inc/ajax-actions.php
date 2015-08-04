@@ -10,6 +10,19 @@ function anndl_load_userdata_ajax() {
 	if ( ! $data->background_image ) {
 		$data->background_image = get_theme_mod( 'default_staff_background', '' );
 	}
+	$info = '';
+	if ( $data->user_url ) {
+		$info = 'Website: <a href="' . $data->user_url . '">' . $data->user_url . '</a> | ';
+	}
+	$expertise = get_user_meta( $id, 'expertise', true );
+	if ( ! empty( $expertise ) ) {
+		$info .= 'Expertise: ';
+		$expertises = explode( ',', $expertise );
+		foreach ( $expertises as $term ) {
+			$info .= '<a href="' . get_term_link( $term, 'tool' ) . '">' . get_term_by( 'slug', $term, 'tool' )->name . '</a>, ';
+		}
+		$info = substr( $info, 0, -2 ); // Remove trailing comma & space.
+	}
 
 	// Output the data for this user.
 	echo wp_json_encode( array(
@@ -17,6 +30,7 @@ function anndl_load_userdata_ajax() {
 		'avatar' => get_avatar( $id, 384 ),
 		'background_image' => $data->background_image,
 		'name' => $data->display_name,
+		'info' => $info,
 		'description' => $data->description,
 	) );
 

@@ -1655,13 +1655,23 @@ h1.entry-title {
 	cursor:  pointer;
 }
 
-/*.staff-summary:nth-child(3) {
-    margin-right: 0;
-}*/
-
 .staff-summary .staff-avatar img {
     border-radius: 100%;
     transition: .2s ease-in-out opacity;
+}
+
+.staff-info {
+	padding: 0 128px;
+	margin: 0 0 16px 0;
+	font-weight: bold;
+	font-size: 16px;
+	color: #222;
+	text-transform: uppercase;
+}
+
+.staff-info a:hover,
+.staff-info a:focus {
+	color: #ff2d06;
 }
 
 .staff-summary .staff-name {
@@ -1670,7 +1680,7 @@ h1.entry-title {
 	width: inherit;
 	text-align: center;
 	font-size: 24px;
-	color: #fff;
+	color: #000;
 	opacity: 0;
 	transition: .2s ease-in-out opacity;
 }
@@ -1680,14 +1690,9 @@ h1.entry-title {
     opacity: 1;
 }
 
-/*.staff-avatar {
-    background: #000;
-    border-radius: 100%;
-}*/
-
 .staff-summary:hover .staff-avatar img,
 .staff-summary:focus .staff-avatar img {
-    opacity: .6;
+    opacity: .5;
 }
 
 .staff-member {

@@ -1572,8 +1572,7 @@ object {
 ## Single Content
 --------------------------------------------------------------*/
 .single #primary {
-	padding-top: 0;
-
+	padding-top: 16px;
 }
 
 .entry-meta {

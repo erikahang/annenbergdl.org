@@ -2132,7 +2132,6 @@ h1.entry-title {
 }
 /*To be used when site is under construction*/
 .underconstruction {
-	display: none;
 }
 #insert-events-calendar {
 	height: 725px;

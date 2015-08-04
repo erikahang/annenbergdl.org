@@ -61,3 +61,114 @@ function digitallounge_activate_adjust_roles() {
 	$contributor->add_cap( 'upload_files' ); // Allows media to be uploaded (which technically allows them to publish attachment posts).
 }
 register_activation_hook( __FILE__, 'digitallounge_activate_adjust_roles' );
+
+
+/**
+ * Implement reuired publishing checklist items.
+ *
+ */
+function digitallounge_publishing_checklist() {
+	// Featured images.
+	$args = array(
+		'label'           => esc_html__( 'Featured Image', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			return has_post_thumbnail( $post_id );
+		},
+		'explanation'     => esc_html__( 'A featured image is required.', 'digitallounge' ),
+		'post_type'       => array( 'post', 'tutorials' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-featured-image', $args );
+
+	// Post excertps for posts (news).
+	$args = array(
+		'label'           => esc_html__( 'Post Excerpt', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			$obj = get_post( $post_id );
+			if ( ! $obj ) {
+				return false;
+			}
+			return ( '' !== $obj->post_excerpt );
+		},
+		'explanation'     => esc_html__( 'Posts should have hand-crafted excerpts for summary views, rather than displaying the first part of the post contents.', 'digitallounge' ),
+		'post_type'       => array( 'post' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-has-post-excerpt', $args );
+
+	// Post excerpts for tutorials.
+	$args = array(
+		'label'           => esc_html__( 'Tutorial Excerpt', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			$obj = get_post( $post_id );
+			if ( ! $obj ) {
+				return false;
+			}
+			return ( '' !== $obj->post_excerpt );
+		},
+		'explanation'     => esc_html__( 'Tutorials should have hand-crafted excerpts for summary views, rather than displaying the first part of the post contents.', 'digitallounge' ),
+		'post_type'       => array( 'tutorials' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-has-tutorial-excerpt', $args );
+
+	// Tags for posts (news).
+	$args = array(
+		'label'           => esc_html__( 'Tags', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			$obj = wp_get_post_terms( $post_id, 'post_tag', 'ids' );
+			return ( ! empty( $obj ) );
+		},
+		'explanation'     => esc_html__( 'Every news post should have at least one tag.', 'digitallounge' ),
+		'post_type'       => array( 'post' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-has-post-tag', $args );
+
+	// Categories for posts (news).
+	$args = array(
+		'label'           => esc_html__( 'Category', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			$obj = wp_get_post_terms( $post_id, 'category', 'names' );
+			return ( ! empty( $obj ) && 'uncategorized' !== $obj[0] );
+		},
+		'explanation'     => esc_html__( 'Every news post must be in a category, and the "Uncategorized" category should not be used.', 'digitallounge' ),
+		'post_type'       => array( 'post' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-has-category', $args );
+
+	// Tags for tutorials.
+	$args = array(
+		'label'           => esc_html__( 'Tags', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			$obj = wp_get_post_terms( $post_id, 'tutorial_tag', 'ids' );
+			return ( ! empty( $obj ) );
+		},
+		'explanation'     => esc_html__( 'Every tutorial should have at least one tag.', 'digitallounge' ),
+		'post_type'       => array( 'tutorials' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-has-tutorials-tag', $args );
+
+	// Tutorial tools.
+	$args = array(
+		'label'           => esc_html__( 'Tools', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			$obj = wp_get_post_terms( $post_id, 'tool', 'ids' );
+			return ( ! empty( $obj ) );
+		},
+		'explanation'     => esc_html__( 'The Tool that this tutorial is about needs to be specified.', 'digitallounge' ),
+		'post_type'       => array( 'tutorials' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-has-tutorials-tool', $args );
+
+	// Tutorial difficulty.
+	$args = array(
+		'label'           => esc_html__( 'Difficulty', 'digitallounge' ),
+		'callback'        => function ( $post_id, $id ) {
+			$obj = wp_get_post_terms( $post_id, 'difficulty', 'ids' );
+			return ( ! empty( $obj ) );
+		},
+		'explanation'     => esc_html__( 'Please set the difficulty level of this tutorial.', 'digitallounge' ),
+		'post_type'       => array( 'tutorials' ),
+	);
+	Publishing_Checklist()->register_task( 'digitallounge-has-tutorials-difficulty', $args );
+}
+add_action( 'publishing_checklist_init', 'digitallounge_publishing_checklist' );
+
+

@@ -26,22 +26,46 @@ get_header(); ?>
 				'who'     => '',
 			) );
 			$active_contributor_ids = array();
-			foreach ( $contributor_ids as $contributor_id ) :
+			foreach ( $contributor_ids as $contributor_id ) {
 				// Skip former staff members.
 				if ( ! get_the_author_meta( 'active_staff', $contributor_id ) ) {
 					continue;
 				}
 
 				$active_contributor_ids[] = $contributor_id;
-				?>
+			}
 
-				<div class="staff-summary" tabindex="0" data-staff-id="<?php echo $contributor_id; ?>">
-					<div class="staff-avatar"><?php echo get_avatar( $contributor_id, 384 ); ?></div>
-					<div class="staff-name"><?php the_author_meta( 'display_name', $contributor_id ); ?></div>
-				</div>
-
-			<?php
-			endforeach;
+			$types = array(
+				'faculty' => 'Faculty',
+				'staff' => 'Staff',
+				'trainer' => 'Trainers',
+				'student' => 'Student Workers',
+			);
+			foreach ( $types as $type => $label ) {
+				// extra loop to check for any... could probably be improved...
+				$count = false;
+				foreach ( $active_contributor_ids as $contributor_id ) {
+					if ( $type === get_the_author_meta( 'staff_type', $contributor_id ) ) {
+						$count = true;
+						break;
+					}
+				}
+				if ( ! $count ) {
+					continue;
+				}
+				echo '<h2>' . $label . '</h2><div class="staff-collection">';
+				foreach ( $active_contributor_ids as $contributor_id ) {
+					if ( $type === get_the_author_meta( 'staff_type', $contributor_id ) ) {
+					?>
+						<div class="staff-summary" tabindex="0" data-staff-id="<?php echo $contributor_id; ?>">
+							<div class="staff-avatar"><?php echo get_avatar( $contributor_id, 384 ); ?></div>
+							<div class="staff-name"><?php the_author_meta( 'display_name', $contributor_id ); ?></div>
+						</div>
+					<?php
+					}
+				}
+				echo '</div>';
+			}
 			?>
 			
 			<div class="staff-members"></div>

@@ -187,6 +187,10 @@ function digitallounge_get_post_image( $size = 'post-thumbnail' ) {
 		return $imgdata;
 	} else {
 		// Use the default/fallback post image, if it exists.
-		return get_theme_mod( 'default_image', get_stylesheet_directory_uri() . '/img/missing.png' );
+		if ( 'tribe_events' === get_post_type() ) {
+			return get_stylesheet_directory_uri() . '/img/calendar_default_image.svg';
+		} else {
+			return get_theme_mod( 'default_image', get_stylesheet_directory_uri() . '/img/missing.png' );
+		}
 	}
 }

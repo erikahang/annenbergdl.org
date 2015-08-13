@@ -81,6 +81,7 @@
 		container.addClass( 'open' );
 		container.find( '.staff-member' ).removeClass( 'current' );
 		container.find( '#staff-member-' + id ).addClass( 'current' );
+		window.scrollTo( 0, 0 );
 	}
 
 } ) ( jQuery, wp );

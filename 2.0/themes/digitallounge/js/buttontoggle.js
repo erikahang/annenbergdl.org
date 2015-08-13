@@ -1,10 +1,10 @@
 // Makes the search window go on and off
 function toggleSearch() {
-  // Get the DOM reference
-  var contentId = document.getElementById("search-window");
-  // Toggle 
-  contentId.style.display == "block" ? contentId.style.display = "none" : 
-contentId.style.display = "block"; 
+	// Get the DOM reference
+	var contentId = document.getElementById("search-window");
+	// Toggle 
+	contentId.style.display == "block" ? contentId.style.display = "none" : contentId.style.display = "block";
+	$( '#search-window .search-field' ).focus();
 }
 
 function toggleCalendar() {

@@ -755,6 +755,7 @@ time.icon
 	clear: both;
 	width: 99999px;
 	overflow: hidden;
+	transition: .5s ease-in-out left;
 }
 
 

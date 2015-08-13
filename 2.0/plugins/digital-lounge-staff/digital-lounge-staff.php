@@ -39,6 +39,7 @@ add_filter( 'manage_users_columns', 'anndl_manage_expertise_user_column' );
  */
 function anndl_manage_expertise_user_column( $columns ) {
 
+	$columns['staff_type'] = __( 'Staff Type' );
 	$columns['expertise'] = __( 'Expertise' );
 
 	return $columns;
@@ -63,6 +64,13 @@ function anndl_manage_user_expertise_column( $display, $column, $user_id ) {
 			$expertise = implode( ', ', $expertise );
 		}
 		return $expertise;
+	} elseif ( 'staff_type' === $column ) {
+		$type = get_user_meta( $user_id, 'staff_type', true );
+		if ( get_user_meta( $user_id, 'active_staff', true ) ) {
+			return ucfirst( $type );
+		} else {
+			return '<span style="color: #999; font-style: italic;">' . ucfirst( $type ) . ' (inactive)</span>';
+		}
 	}
 }
 
@@ -112,6 +120,15 @@ function anndl_edit_user_expertise_section( $user ) {
 		<tr>
 			<th><label for="active"><?php _e( 'Status' ); ?></label></th>
 			<td><label><input type="checkbox" name="active_staff" value="1" <?php echo checked( get_user_meta( $user->ID, 'active_staff', true ) ); ?>> Active staff member</label></td>
+		</tr>
+		<tr>
+			<th><label for="staff_type"><?php _e( 'Staff Type' ); ?></label></th>
+			<td>
+				<label><input type="radio" name="staff_type" value="faculty" <?php echo checked( 'faculty', get_user_meta( $user->ID, 'staff_type', true ) ); ?>> Faculty</label><br/>
+				<label><input type="radio" name="staff_type" value="staff" <?php echo checked( 'staff', get_user_meta( $user->ID, 'staff_type', true ) ); ?>> Staff</label><br/>
+				<label><input type="radio" name="staff_type" value="trainer" <?php echo checked( 'trainer', get_user_meta( $user->ID, 'staff_type', true ) ); ?>> Trainer</label><br/>
+				<label><input type="radio" name="staff_type" value="student" <?php echo checked( 'student', get_user_meta( $user->ID, 'staff_type', true ) ); ?>> Student Worker</label>
+			</td>
 		</tr>
 		<tr>
 			<th><label for="background_image"><?php _e( 'Featured Image' ); ?></label></th>
@@ -170,6 +187,13 @@ function anndl_save_expertise_meta_profile_fields( $user_id ) {
 		$active = true;
 	} else {
 		$active = false;
+	}
+	if ( array_key_exists( 'staff_type', $_POST ) ) {
+		$type = $_POST['staff_type'];
+		if ( ! in_array( $type, array( 'faculty', 'staff', 'trainer', 'student' ) ) ) {
+			$type = 'student';
+		}
+		update_user_meta( $user_id, 'staff_type', $type );
 	}
 	if ( array_key_exists( 'expertise', $_POST ) ) {
 		$expertise = $_POST['expertise'];

@@ -766,6 +766,7 @@ time.icon
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: #fff;
+	position: relative;
 	padding: 0px 32px 64px;
 	text-align: center;
 	width: 100%;
@@ -1776,6 +1777,10 @@ h1.entry-title {
 
 .page-template-staff .open .back-to-index {
 	display: block;
+}
+
+.page-template-staff #colophon {
+	z-index: 999999;
 }
 
 .staff-member .next, .staff-member .previous {

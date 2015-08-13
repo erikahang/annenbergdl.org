@@ -1759,7 +1759,7 @@ h1.entry-title {
 }
 
 .page-template-staff .back-to-index {
-	display: block;
+	display: none;
 	background: transparent;
 	border: none;
 	box-shadow: none;
@@ -1772,6 +1772,10 @@ h1.entry-title {
 	top: 96px;
 	right: 32px;
 	z-index: 999999;
+}
+
+.page-template-staff .open .back-to-index {
+	display: block;
 }
 
 .staff-member .next, .staff-member .previous {

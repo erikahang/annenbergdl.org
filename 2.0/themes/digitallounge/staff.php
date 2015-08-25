@@ -13,7 +13,7 @@ wp_enqueue_script( 'digitallounge-staff', get_template_directory_uri() . '/js/st
 
 get_header(); ?>
 
-	<div id="primary" class="content-area staff-page">
+	<div id="primary" class="content-area staff-page paper-front">
 		<main id="main" class="site-main" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 

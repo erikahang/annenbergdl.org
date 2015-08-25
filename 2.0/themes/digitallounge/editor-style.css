@@ -361,6 +361,12 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin: 16px 0 32px 0;
+}
+
+h2 {
+	font-size: 32px;
+	margin: 16px 0 32px 0;
 }
 
 p {

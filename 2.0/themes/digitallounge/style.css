@@ -410,6 +410,12 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin: 16px 0 32px 0;
+}
+
+h2 {
+	font-size: 32px;
+	margin: 16px 0 32px 0;
 }
 
 p {
@@ -1679,9 +1685,22 @@ h1.entry-title {
 /*--------------------------------------------------------------
 ## Staff Page
 --------------------------------------------------------------*/
-.staff-page {
-	
-	max-width: calc(90% + 256px) !important; /*Overrides so more than 3 tiles can display at once*/
+.page-template-staff-php #primary {
+	max-width: calc(100% - 128px);
+	margin: 0 64px;
+	padding: 0 32px;
+	overflow: hidden;
+}
+
+.page-template-staff-php h2 {
+	margin-top: -32px;
+}
+
+@media screen and (max-width:976px) {
+	.page-template-staff-php #primary {
+		max-width: calc(100% - 32px);
+		margin: 0 16px;
+	}
 }
 
 .staff-collection {}

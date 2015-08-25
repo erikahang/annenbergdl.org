@@ -49,6 +49,12 @@ html {
 	font-family: National, Arial, Helvetica, sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
+	-moz-font-feature-settings: "ss03" 1;
+	-moz-font-feature-settings: "ss03=1";
+	-ms-font-feature-settings: "ss03" 1;
+	-o-font-feature-settings: "ss03" 1;
+	-webkit-font-feature-settings: "ss03" 1;
+	font-feature-settings: "ss03" 1;
 }
 
 body {
@@ -619,11 +625,11 @@ time.icon
 
 
 .site-title {
-  font-family : National;
+  font-family: National;
   font-weight: 900;
-  font-size : 24px;
-  color : #FFFFFF;
-  text-shadow : 1px 1px 0px #666;
+  font-size: 36px;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px #666;
   text-rendering: optimizeLegibility;
   text-align: center;
 	-moz-font-feature-settings: "ss03" 1;
@@ -633,8 +639,8 @@ time.icon
 	-webkit-font-feature-settings: "ss03" 1;
 	font-feature-settings: "ss03" 1;
 	position: absolute;
-	top:0px;
-	left: 42%;
+	top:-22px;
+	left: 34%;
 }
 
 
@@ -678,7 +684,7 @@ time.icon
  	display:inline-block;
  	line-height: 1;
 	font-weight: 200;
-  	margin-bottom: .1em;
+  	margin-bottom: .8em;
   	padding-top: .2em;
   	overflow: hidden;
 }
@@ -695,15 +701,22 @@ time.icon
  	display:inline-block;
  	overflow: hidden;
  	padding: 0px 0px 15px 0px;
- 	margin-bottom: 32px;
+ 	margin-bottom: .8em;
 
 }
+
+
 
 .arrow-container {
 	margin: 8px 64px 0px 0px;
 	float: right;
   	width: auto;
   	height: auto;
+}
+
+.news-collection .arrow-container {
+	padding-bottom: 6px;
+	margin-top: 6px;
 }
 
 .arrow-previous {
@@ -767,17 +780,16 @@ time.icon
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: #fff;
-	position: relative;
 	padding: 0px 32px 64px;
 	text-align: center;
 	width: 100%;
 	z-index: 3;
 	height: 128px;
 	box-shadow: 0px -2.5px 3px -1px rgba(0,0,0,0.4);
+	position: relative;
 }
 .menu-footer-menu-container {
-	position: relative;
-	bottom: -34px;
+	
 }
 
 
@@ -864,7 +876,7 @@ textarea {
 }
 
 #navbuttons {
-	width: 245px;
+	width: 192px;
 	height: 64px;
 	float: right;
   	margin-top: -56px;
@@ -874,6 +886,11 @@ textarea {
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
 }
 
 #navbuttons li {
@@ -883,8 +900,9 @@ textarea {
 }
 
 #eventreadout {
+	position: relative;
+	left: -25px;
 	height: 64px;
-	margin-left: 100px;
 	line-height: initial;
 	font-weight: 200;
 	max-width:512px;
@@ -983,9 +1001,9 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	position: relative;
-	bottom: 32px;
-}
+	font-size: 1.2rem;
+    font-weight: 800;
+	}
 /*
 .main-navigation ul {
 	display: none;
@@ -1309,29 +1327,30 @@ object {
 }
 
 .social-buttons {
-
+	text-align: center;
 }
 
 .facebook, .instagram, .twitter, .youtube {
-  	background-image: url(img/vectorsprite.svgz);
-  	background-repeat: no-repeat;
-  	background-size: 960px 384px;
-  	width: 64px;
- 	height: 64px;
- 	margin-right: 30px;
+  	background-size: contain;
+  	width: 48px;
+ 	height: 48px;
+ 	margin-right: 10px;
+ 	margin-top: 10px;
+ 	
 }
 
 .facebook { 
-	background-position: -64px 0px;
+	background-image: url(img/facebook.png);
 }
 .instagram {
+	background-image: url(img/instagram.png);
 	
 }
 .twitter {
-	  background-position: -128px 0px;
+	  background-image: url(img/twitter.png);
 }
 .youtube {
-	  background-position: -192px 0px;
+	  background-image: url(img/youtube.png);
 }
 
 
@@ -1420,11 +1439,16 @@ object {
 	overflow: hidden;
 }
 
+.search #primary {
+	background-color: #FFF;
+}
+
 .home .post,
 .home .tutorials,
 .search .tutorials,
 .search .tribe_events,
 .search .post,
+.search .page,
 .archive .post,
 .archive .tutorials {
 	width: 288px;
@@ -1434,9 +1458,15 @@ object {
 	/*height: 288px;
 	overflow: hidden;*/
 }
+
 .archive .post,
-.archive .tutorials {
-	height: 288px;
+.archive .tutorials 
+.archive .tribe_events,
+.search .tribe_events,
+.search .page,
+.search .tutorials,
+.search .post {
+	height: 512px;
 	overflow: hidden;
 }
 
@@ -1617,8 +1647,14 @@ h1.entry-title {
 	text-overflow: ellipsis;
 
 } 
-.collection .inner-container > .collection-article:first-child{
+.collection .inner-container > .collection-article:first-child {
 	width: 512px;
+}
+
+.collection .inner-container > .collection-article:first-child img {
+	max-height: 319px;
+	overflow: hidden; 
+
 }
 .entry-meta .byline,
 .entry-meta .posted-on {
@@ -1643,11 +1679,12 @@ h1.entry-title {
 /*--------------------------------------------------------------
 ## Staff Page
 --------------------------------------------------------------*/
-.staff-page{
-	width: 90vw;
-	min-height: 75vh;
+.staff-page {
+	
 	max-width: calc(90% + 256px) !important; /*Overrides so more than 3 tiles can display at once*/
 }
+
+.staff-collection {}
 
 .staff-summary {
     float: left;
@@ -1760,6 +1797,10 @@ h1.entry-title {
 	margin: 0;
 }
 
+.page-template-staff #colophon {
+	z-index: 999999;
+}
+
 .page-template-staff .back-to-index {
 	display: none;
 	background: transparent;
@@ -1778,10 +1819,6 @@ h1.entry-title {
 
 .page-template-staff .open .back-to-index {
 	display: block;
-}
-
-.page-template-staff #colophon {
-	z-index: 999999;
 }
 
 .staff-member .next, .staff-member .previous {
@@ -1815,6 +1852,10 @@ h1.entry-title {
 ## Events Calendar Hacks and Styles
 --------------------------------------------------------------*/
 
+.tribe-events-page-template .site #colophon {
+	position: initial;
+}
+
 /*In the calendar button*/
 .window .tribe-events-page-title, 
 .window #tribe-events-header,
@@ -1836,12 +1877,16 @@ h1.entry-title {
 
 /*In the event readout*/
 .site-header .tribe-mini-calendar-event {
+	
 	overflow: visible;
 	width: auto;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 	border-bottom: none;
 
+}
+.site-header td {
+	height: 90px ;
 }
 
 .site-header .tribe-mini-calendar-event .list-date,
@@ -1851,9 +1896,11 @@ h1.entry-title {
 }
 
 .site-header .tribe-mini-calendar-event .list-info .entry-title {
-	font-size: 2em;
+	
+	font-size: 1.4em;
 	font-weight: 700;
 	margin-top: .1em;
+	line-height: 12px;
 }
 
 
@@ -1877,76 +1924,58 @@ h1.entry-title {
 
 
 /*For 800x600 older or small laptops pcs*/
-@media (max-width: 800px) {
+@media (max-width:900px) {
+
+	.site-title {
+		font-size: 1.3em;
+		top: 4px;
+		left: 37%;
+	}
+
+	.site-info {
+		font-size: .8em;
+	
+	}
+
+}
+
+
+
+@media (max-width: 799px) {
 
 	#eventreadout  {
 		max-width: 240px;
-		left: 38%;
+		
 	}
 	.site-header .tribe-mini-calendar-event .list-info .entry-title {
 
 		font-size: .8em;
 		font-weight: 700;
 		margin-top: 0px;
-		line-height: .8em;
-		
+		line-height: .8em;	
 	}
+
 	.tribe-mini-calendar-event .list-info {
-	display: inline;
-	line-height: 1em;
-	float: left;
-	width: 80%;
+	
+		display: inline;
+		line-height: 1em;
+		float: left;
+		width: 80%;
 	}
-	.site-header .tribe-mini-calendar-event .list-info .entry-title {
 
+	.site-header .tribe-mini-calendar-event .list-info .entry-title {
 		font-size: 1em;
 		font-weight: 700;
 		margin-top: 0px;
-		
-	}
-	.site-title {
-		
-		top:13px;
-		left: 40%;
-		font-size: 1em;
-	}
-	.site-info {
-		font-size: .8em;
-		margin-top: -9px;
-		
 	}
 
-	.main-navigation {
-	position: relative;
-	top: -35px;
+	.site-title {	
+		top:13px;
+		
+		font-size: 1em;
 	}
 
 	
-
-	.facebook, .instagram, .twitter, .youtube {
-  	background-image: url(img/vectorsprite.svgz);
-  	background-repeat: no-repeat;
-  	background-size: 960px 384px;
-  	width: 48px;
- 	height: 48px;
- 	margin-right: 0px;	
-	}
-
-	.facebook { 
-	background-position: -68px 0px;
-	}
-
-	.instagram {
-		background-position:  -8px -7px;
-	}
-
-	.twitter {
-		  background-position: -135px -6px;
-	}
-
-	.youtube {
-		  background-position: -200px -8px;
-	}
 }
 /*Ipad*/
 @media (max-width: 768px) {
@@ -1983,48 +2012,140 @@ h1.entry-title {
 		overflow:hidden;
 	}
 
+
+
 }
 
-/*Iphone 6,6s sideways*/
-@media (min-width:647px) and (max-width:736px) {
+/*Iphone 6s sideways*/
+@media (max-width:736px) {
 
-	.chatwithus{
+	.main-navigation {
+	position: relative;
+	top: -35px;
+	}
+	.chatwithus {
 		visibility: hidden;
+	}
+	.site-title {
+		font-size: 1.4em;
+		top: 0px;
+		left: 250px;
+	}
+	.single .site-footer {
+		margin-top: 128px;
+	}
+
+	.social-buttons {
+		width: 100%;
+		text-align: center;
+	}
+	.facebook, .instagram, .twitter, .youtube {
+  		width: 48px;
+ 		height: 48px;
+ 		background-repeat: no-repeat;
+ 		margin-top: 64px;
+	}
+	
+	.main-navigation {
+		top: -96px;
+	}
+
+	#binoculars {
+		visibility: hidden;
+	}
+
+	#menu-item-3107 {
+		display: none !important /*This disables the staff page on mobile*/; 
+
+	}
+	#colophon {
+		background-position-x: -550px;
+		height: 192px;
+	}
+
+	.site-footer .menu li {
+		
+		text-decoration: underline;
+		color: #FFF;
+
+	}
+	#footerbranding{
+		display: none;
 	}
 
 }
 
-@media (max-width: 646px) {
+/*Iphone 6 sideways*/
+@media (max-width:667px) {
+	
 	.chatwithus {
 		visibility: hidden;
 	}
 
-	.social-buttons {
-	position: relative;
-	top: -64px;
+	.site-title {
+		left: 200px;
+		font-size: 1.4em;
+		top:0px;
 	}
 	
+
+	
+}
+@media (max-width:568px) {
+
+	.site-title {
+		left: 150px;
+	}
 }
 
 /*Iphone 4 sideways*/
-@media (min-width:479px) and (max-width:480px) {
+@media (max-width:480px) {
 
 	.site-title {
-		left: 25%;
+		left: 18%;
+
 	}
 }
 
-/*Iphone 6 Plus, 6, 5, 4 verticle*/
+/*Iphone 6 Plus, 6 verticle*/
 @media (max-width: 414px) {
 	
+	body {
+		line-height: 1em;
+	}
+
+	ul,
+	ol {
+		margin: 0 0 .5em .5em;
+	}
+
+	.home #primary{
+		padding: 0px 0px 24px 0px;
+	}
+	.collection,
+	.news-collection {
+		width: 100vw;
+	}
+	.section-title {
+		margin: 13px 0 0 8px;
+	}
+
+	.news-collection .section-title {
+		margin: 2px 0 0 8px;
+	}
+
 	#colophon li {
 	margin-right: 0px;
 	}
 
-	.main-navigation,
-	#calendaricon,
-	#binoculars {
-		display: none;
+
+	time.icon{
+		margin: -24px 8px 0px -26px;
+		transform: scale(.35, .35);
+	}
+
+	#daynumber {
+		font-size: 4em;
 	}
 
 	.usclogo {
@@ -2033,46 +2154,71 @@ h1.entry-title {
 		right: 10px;
 	}	
 
-	.site-branding {
-		position: absolute;
-		top: -20px;
-		left: -5%;
-		font-size: 1.2em;
-		width: 80vw;
+	.main-navigation {
+		top: -43px;
+	}
+	.site-title {
+		font-size: 1.3em;
+		left: 90px;
+		top: 11px;
 	}
 	.collection .inner-container > .collection-article:first-child {
 		width: 192px;
 	}
 
-	.social-buttons {
-	position: relative;
-	top: -48px;
-	}
 
-	.main-navigation,
-	.site-info {
-		display: none;
-	}
 	.arrow-container {
 	margin: 8px 32px 0px 0px;
 	z-index: 500;
 	float: right;
   	width: auto;
   	height: auto;
-}
+	}
+
+
+	.facebook, .instagram, .twitter, .youtube {
+
+		margin-top: 35px;
+	}
+
+	.social-buttons {
+		width: 100%;
+		text-align: center;
+		position: relative;
+		bottom: -53px;
+		}
+
+	.site-info {
+		position: relative;
+		top: 57px;
+	}
 
 }
 
+/*Iphone 6 verticle*/
+
+@media (max-width: 375px) {
+	.site-title {
+		left: 70px;
+	}
+}
 
 /*Iphone 5, 4 verticle*/
 @media (max-width: 320px) {
 
 	.site-branding {
-		position: absolute;
-		top: -15px;
-		left: -5%;
-		font-size: 1.2em;
-		width: 80vw;
+		position: relative;
+		top: 2px;
+		left: -5px;
+		font-size: .8em;
+		
+	}
+	.section-title{
+	font-size: 1.1em;
+	}
+	.facebook, .instagram, .twitter, .youtube {
+		margin-right: -1px;
+		margin-top: 20px;
 	}
 
 }
@@ -2089,7 +2235,7 @@ h1.entry-title {
 }
 
 .paper-back {
-		background-color: #f7f7f7;
+		background-color: rgb(233,233,233);
 }
 
 .window {
@@ -2129,7 +2275,7 @@ h1.entry-title {
 
 
 .window-calendar {
-	height: 760px;
+	height: 644px;
 	top:5vh;
 	}
 
@@ -2147,13 +2293,29 @@ h1.entry-title {
 	overflow: hidden;
 	background-color: white;
 }
+
+#footerbranding {
+	width: 192px;
+	height: 96px;
+	position: absolute;
+	left: 10px;
+	bottom: 6px;
+	background-image: url("img/usclogo_alone.svg");
+}
+
+.archive #footerbranding,
+.single-tribe_events #footerbranding {
+	position: relative;
+	left: 10px;
+	top: -87px;
+}
 /*--------------------------------------------------------------
 ## Search 
 --------------------------------------------------------------*/
 
 
 .search-title {
-	background-color: orange;
+	background-color: rgb(245, 136, 34);
 }
 
 .window .search-string {
@@ -2166,21 +2328,24 @@ h1.entry-title {
 .window .search-field {
 	height: 25vw;
 	width: 90%;
-	font-size: 28vh;
+	font-size: 200%;
 	border: 0 !important;
 	outline: none;
 	background-color: transparent;
-
 	text-align: center;
 	margin-top: 5vw;
 	
 }
 .window .search-string .search-submit {
 	position: absolute;
-	bottom: 15px;
-	left: 45%;
-	border: none;
-	font-size: .5em;
+    bottom: 15px;
+    left: 45%;
+    border: none;
+    font-size: .3em;
+    border-bottom: 0px;
+    background-color: transparent;
+    font-style: italic;
+    font-weight: 100;
 
 }
 .calendar-title {
@@ -2189,5 +2354,23 @@ h1.entry-title {
 
 #livechat-compact-container{
 	display: none;
+}
+
+/*--------------------------------------------------------------
+## Print Media Query
+--------------------------------------------------------------*/
+
+
+@media print {
+  body {
+    width: 100%;
+  }
+  .site-header,
+  .site-footer {
+  	display: none;
+  }
+
+
+
 }
 

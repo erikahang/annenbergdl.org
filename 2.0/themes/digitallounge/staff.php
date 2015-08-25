@@ -39,7 +39,7 @@ get_header(); ?>
 				'faculty' => 'Faculty',
 				'staff' => 'Staff',
 				'trainer' => 'Trainers',
-				'student' => 'Student Workers',
+				'student' => 'Crew',
 			);
 			foreach ( $types as $type => $label ) {
 				// extra loop to check for any... could probably be improved...

@@ -12,10 +12,10 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<ul class="social-buttons">
-			<li><a href="http://www.facebook.com/AnnenbergDL" target="_blank" alt="facebook"><div class="facebook"></div></a></li>
-			<li><a href="http://instagram.com/annenbergdl/" target="_blank" alt="instagram"><div class="instagram"></div></a></li>
-			<li><a href="http://twitter.com/annenbergdl" target="_blank" alt="twitter"><div class="twitter"></div></a></li>
-			<li><a href="#" alt="youtube" target="_blank"><div class="youtube"></div></a></li>
+			<li><a href="http://www.facebook.com/AnnenbergDL"  alt="facebook"><div class="facebook"></div></a></li>
+			<li><a href="http://instagram.com/annenbergdl/"  alt="instagram"><div class="instagram"></div></a></li>
+			<li><a href="http://twitter.com/annenbergdl"  alt="twitter"><div class="twitter"></div></a></li>
+			<li><a href="#" alt="youtube" ><div class="youtube"></div></a></li>
 		</ul> 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			
@@ -25,6 +25,7 @@
 		<div class="site-info">
 			<?php echo get_theme_mod( 'footer_text', '' ); ?>
 		</div><!-- .site-info -->
+		<div id="footerbranding"></div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

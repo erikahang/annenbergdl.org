@@ -54,6 +54,9 @@ function digitallounge_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
+
+	// Add styles to the visual editor from editor-style.css.
+	add_editor_style();
 }
 endif; // digitallounge_setup
 add_action( 'after_setup_theme', 'digitallounge_setup' );

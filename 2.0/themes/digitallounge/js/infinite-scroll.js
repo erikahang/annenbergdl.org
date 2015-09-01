@@ -1,5 +1,5 @@
 ( function( $, wp ) {
-	var template = {}, postsPerPage = 6, vWidth;
+	var template = {}, postsPerPage = 6, vWidth, totalItems;
 
 	$(document).ready( function() {
 		bindEvents();
@@ -8,6 +8,7 @@
 //		template['default'] = wp.template( 'archive-grid-view' );
 		template = wp.template( 'archive-grid-view' );
 		vWidth = window.innerWidth;
+//		totalItems = 0; @todo
 	});
 
 	function generateArgs( container ) {
@@ -94,6 +95,7 @@
 					container.find( '.inner-container' ).append( template( post ) );
 				});
 				container.removeClass( 'loading' );
+				totalItems = totalItems + data.length;
 				setPage( container, args.page + 1 );
 			} else {
 		        alert( 'Failed to load requested page.' );				
@@ -106,6 +108,10 @@
 			return;
 		}
 		var left = Math.floor( vWidth / 288 ) * 288 * ( page - 1 );
+		// Don't switch to an empty page.
+		if ( 288 * totalItems < left ) {
+			return;
+		}
 		container.find( '.inner-container' ).css( 'left', left * -1 );
 		container.data( 'page', page );
 	}

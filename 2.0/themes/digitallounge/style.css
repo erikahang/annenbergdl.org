@@ -645,7 +645,7 @@ time.icon
 	-webkit-font-feature-settings: "ss03" 1;
 	font-feature-settings: "ss03" 1;
 	position: absolute;
-	top:-22px;
+	top:-12px;
 	left: 34%;
 }
 
@@ -882,10 +882,10 @@ textarea {
 }
 
 #navbuttons {
-	width: 192px;
+	width: 213px;
 	height: 64px;
 	float: right;
-  	margin-top: -56px;
+  	margin-top: -46px;
 }
 
 #navbuttons ul {
@@ -1989,9 +1989,8 @@ h1.entry-title {
 	}
 
 	.site-title {	
-		top:13px;
-		
-		font-size: 1em;
+		margin-top:13px;
+		font-size: 1.4em;
 	}
 
 	
@@ -2000,7 +1999,7 @@ h1.entry-title {
 @media (max-width: 768px) {
 
 	#eventreadout {
-		display: none;
+		
 
 	}
 	
@@ -2009,7 +2008,7 @@ h1.entry-title {
 	}
 
 	#navbuttons {
-		margin-top: 10px;
+		margin-bottom: 18px;
 	}
 
 	.collection {
@@ -2038,6 +2037,9 @@ h1.entry-title {
 /*Iphone 6s sideways*/
 @media (max-width:736px) {
 
+	#eventreadout {
+		visibility: hidden;
+	}
 	.main-navigation {
 	position: relative;
 	top: -35px;
@@ -2171,6 +2173,7 @@ h1.entry-title {
 		position: absolute;
 		top: 10px;
 		right: 10px;
+		width: 60px;
 	}	
 
 	.main-navigation {
@@ -2225,6 +2228,9 @@ h1.entry-title {
 /*Iphone 5, 4 verticle*/
 @media (max-width: 320px) {
 
+	#eventreadout {
+		display: none;
+	}
 	.site-branding {
 		position: relative;
 		top: 2px;

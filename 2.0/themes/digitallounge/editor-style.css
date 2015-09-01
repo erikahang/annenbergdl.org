@@ -10,8 +10,7 @@
 --------------------------------------------------------------*/
 body {
 	width: 100%;
-	max-width: 998px; /* With padding, results in content width of 934px */
-	padding: 32px;
+	max-width: 934px; /* With padding, theme max-width of 998px results in content width of 934px */
 	margin: 0 auto;
 }
 

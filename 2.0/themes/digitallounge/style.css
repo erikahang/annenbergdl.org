@@ -725,6 +725,16 @@ time.icon
 	margin-top: 6px;
 }
 
+.arrow-container .spinner {
+	display: none;
+}
+
+.loading .arrow-container .spinner {
+	display: inline-block;
+	position: relative;
+	top: -4px;
+}
+
 .arrow-previous {
 	background: url("img/arrow_button_left.svg");
 	background-size: cover;

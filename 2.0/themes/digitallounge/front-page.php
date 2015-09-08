@@ -15,7 +15,7 @@ get_header(); ?>
 	<div id="primary" class="content-area paper-back">
 		<main id="main" class="site-main" role="main">
 		<section class="query-container news-collection animated slideInLeft delay1-2sec paper-front" data-type="post_type" data-post_type="post" data-page="1">
-				<div class="news-title"><h2 class="section-title">News</h2> <div class="arrow-container"><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button></div></div>
+				<div class="news-title"><h2 class="section-title">News</h2> <div class="arrow-container"><img src="/wp-includes/images/spinner.gif" class="spinner"/><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button></div></div>
 				<div class="inner-container">
 				<?php if ( have_posts() ) : ?>
 
@@ -71,7 +71,7 @@ get_header(); ?>
 						if ( $posts ) { ?>
 
 							<section class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="tutorial_tag" data-term="<?php echo $term->term_id; ?>" data-post_type="tutorials" data-page="1">
-								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <div class="arrow-container"><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button></div></div>
+								<div class="<?php echo $term->slug; ?> title"><h2 class="section-title"><?php echo $term->name; ?></h2> <div class="arrow-container"><img src="/wp-includes/images/spinner.gif" class="spinner"/><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button></div></div>
 								<div class="inner-container">
 								<?php foreach( $posts as $post ) { ?>
 									<?php setup_postdata( $post ); // Allows the_* functions to work without passing an ID. ?>

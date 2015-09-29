@@ -1826,6 +1826,42 @@ h1.entry-title {
 	margin: 0;
 }
 
+.staff-recent-content {
+	width: 192px;
+	float: right;
+	margin: 0 128px 0 16px;
+}
+
+.staff-recent-content h5 {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1;
+	margin: 0 0 4px 0;
+	color: #222;
+	text-transform: uppercase;
+}
+
+.staff-recent-content p {
+	margin: 0 0 16px 16px;
+}
+
+.staff-recent-content h4 {
+	font-size: 24px;
+	color: #666;
+	margin: 0 0 16px 0;
+	line-height: 1;
+	border-bottom: 3px solid #666;
+}
+
+.staff-recent-content a:hover {
+	color: #ff2d06;
+	border-bottom-color: #ff2d06;
+}
+
+.staff-recent-content p a {
+	border-bottom: 1px solid #ccc;
+}
+
 .page-template-staff #colophon {
 	z-index: 999999;
 }

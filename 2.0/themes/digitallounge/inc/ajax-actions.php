@@ -23,6 +23,51 @@ function anndl_load_userdata_ajax() {
 		}
 		$info = substr( $info, 0, -2 ); // Remove trailing comma & space.
 	}
+	$args = array(
+		'author' => $id,
+		'numberposts' => 1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post_type' => 'post',
+	);
+	$post_query = get_posts( $args );
+	$post_query ? $has_posts = true : $has_posts = false;
+	$posts = array();
+	if ( $has_posts ) {
+		foreach( $post_query as $post ) {
+			if ( 'post' !== $post->post_type ) {
+				//continue;
+			}
+			$posts[] = array(
+				'id' => $post->ID,
+				'title' => $post->post_title,
+				'date' => get_the_date( 'n/j/Y', $post->ID ),
+				'url' => get_permalink( $post->ID ),
+			);
+		}
+	}
+
+	$args['numberposts'] = 3;
+	$args['post_type'] = 'tutorials';
+	$tutorials_query = get_posts( $args );
+	$tutorials_query ? $has_tutorials = true : $has_tutorials = false;
+	$tutorials = array();
+	if ( $has_tutorials ) {
+		foreach( $tutorials_query as $tutorial ) {
+			$terms = get_the_terms( $tutorial->ID, 'tutorial_tag' );
+			if ( ! is_wp_error( $terms ) ) {
+				$tags = 'in <a href="' . get_term_link( $terms[0]->term_id, 'tutorial_tag' ) . '">' . $terms[0]->name . '</a>';				
+			} else {
+				$tags = '';
+			}
+			$tutorials[] = array(
+				'id' => $tutorial->ID,
+				'title' => $tutorial->post_title,
+				'tags' => $tags,
+				'url' => get_permalink( $tutorial->ID ),
+			);
+		}
+	}
 
 	// Output the data for this user.
 	echo wp_json_encode( array(
@@ -32,6 +77,10 @@ function anndl_load_userdata_ajax() {
 		'name' => $data->display_name,
 		'info' => $info,
 		'description' => $data->description,
+		'hasPosts' => $has_posts,
+		'hasTutorials' => $has_tutorials,
+		'posts' => $posts,
+		'tutorials' => $tutorials,
 	) );
 
 	wp_die();
@@ -107,7 +156,7 @@ function anndl_load_archive_posts_ajax() {
 			'excerpt'     => get_the_excerpt(),
 		);
 	}
-	
+
 	// Output the data.
 	echo wp_json_encode( $items );
 

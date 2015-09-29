@@ -79,6 +79,21 @@ get_header(); ?>
 						<button type="button" class="previous"><</button>
 						<h2 class="staff-name">{{ data.name }}</h2>
 						<h5 class="staff-info">{{{ data.info }}}</h5>
+						<aside class="staff-recent-content">
+							<# if ( data.hasPosts ) { #>
+								<h4>Recent News</h4>
+								<# for ( var i = 0; i < data.posts.length; i++ ) { #> 
+									<h5><a href="{{ data.posts[i].url }}">{{ data.posts[i].title }}</a></h5>
+									<p>{{ data.posts[i].date }}</p>
+								<# } #>
+							<# } if ( data.hasTutorials ) { #>
+								<h4>Latest Tutorials</h4>
+								<# for ( var i = 0; i < data.tutorials.length; i++ ) { #> 
+									<h5><a href="{{ data.tutorials[i].url }}">{{ data.tutorials[i].title }}</a></h5>
+									<p>{{{ data.tutorials[i].tags }}}</p>
+								<# } #>
+							<# } #>
+						</aside>
 						<div class="staff-bio">
 							{{{ data.description }}}
 						</div>

@@ -1,5 +1,5 @@
 ( function( $, wp ) {
-	var template = {}, postsPerPage = 6, vWidth, totalItems;
+	var template = {}, postsPerPage = 6, vWidth, totalItems, loading;
 
 	$(document).ready( function() {
 		bindEvents();
@@ -8,6 +8,7 @@
 //		template['default'] = wp.template( 'archive-grid-view' );
 		template = wp.template( 'archive-grid-view' );
 		vWidth = window.innerWidth;
+		loading = false;
 //		totalItems = 0; @todo
 	});
 
@@ -51,32 +52,47 @@
 	}
 
 	function bindEvents() {
-		var container;
+		var container, more;
 		// todo base on scrolling/visibility of last loaded item
 		$( '.query-container' ).on( 'click', '.load-more', function( e ) {
 			container = $( this ).closest( '.query-container' );
 			loadNextPage( container );
 		});
-		
+
 		$( '.query-container' ).on( 'click', '.arrow-previous', function( e ) {
 			container = $( this ).closest( '.query-container' );
-			setPage( container, container.data( 'page' ) - 1 );
+			showPage( container, container.data( 'visible_page' ) - 1 );
 		});
-		
+
 		$( '.query-container' ).on( 'click', '.arrow-next', function( e ) {
 			container = $( this ).closest( '.query-container' );
-			loadNextPage( container );
+			showPage( container, container.data( 'visible_page' ) + 1 );
 		});
-		
+		if ( $( 'body' ).hasClass( 'archive' ) || $( 'body' ).hasClass( 'search' ) ) {
+			$( window ).scroll( function() {
+				more = $( '.load-more' );
+				if ( more.visible( true ) && ! loading ) { // Note: uses juqery.visible plugin
+					loading = true;
+					container = $( '.query-container' ); // should only be one on archive pages
+					var args = generateArgs( container );
+					if ( container.length > args.page * 6 ) {
+						more.hide();
+						loading = false;
+					} else {
+						loadNextPage( container );
+					}
+				}
+			});
+		}
 	}
 
 	function loadNextPage( container ) {
 		var params, args = generateArgs( container );
-		if ( container.length > args.page * 6 ) {
+		//if ( container.length > args.page * 6 + 1 ) {
 			// No need to add more items, change the visible page instead.
-			setPage( container, args.page + 1 );
-			return;
-		}
+		//	setPage( container, args.page + 1 );
+		//	return;
+		//}
 		container.addClass( 'loading' );
 		params = {
 			'action': 'anndl-load-archive-posts',
@@ -97,22 +113,60 @@
 				container.removeClass( 'loading' );
 				totalItems = totalItems + data.length;
 				setPage( container, args.page + 1 );
+				if ( $( 'body' ).hasClass( 'home' ) ) {
+					updateContentSize( container );
+				}
+				loading = false;
 			} else {
-		        alert( 'Failed to load requested page.' );				
+		        alert( 'Failed to load requested content.' );
 			}
 		});
 	}
 
+	function updateContentSize( container ) {
+		var width = 0;
+		container.find( '.inner-container' ).find( 'article' ).each( function() {
+			width = width + $( this ).outerWidth();
+		});
+		container.data( 'content_size', width );
+	}
+	
+	function maybeLoadMore( container ) {
+		if ( $( 'body' ).hasClass( 'home' ) ) {
+			var size = container.data( 'content_size' ),
+				visible_page = container.data( 'visible_page' );
+			if ( size < visible_page * window.innerWidth ) {
+				loading = true;
+				var args = generateArgs( container );
+				if ( container.length > args.page * 6 + 1 ) {
+					loading = false;
+				} else {
+					loadNextPage( container );
+				}
+			}
+		}
+	}
+	
 	function setPage( container, page ) {
 		if ( page < 1 ) {
 			return;
 		}
-		var left = Math.floor( vWidth / 288 ) * 288 * ( page - 1 );
+		//var left = Math.floor( vWidth / 288 ) * 288 * ( page - 1 );
 		// Don't switch to an empty page.
-		if ( 288 * totalItems < left ) {
+		// rather than totalItems, try container.find( '.inner-container > article' ).length
+		//if ( 288 * totalItems < left ) {
+		//	return;
+		//}
+		//container.find( '.inner-container' ).css( 'left', left * -1 );
+		container.data( 'page', page );
+	}
+	
+	function showPage( container, page ) {
+		if ( page < 1 ){
 			return;
 		}
-		container.find( '.inner-container' ).css( 'left', left * -1 );
-		container.data( 'page', page );
+		container.find( '.inner-container' ).css( 'left', (page - 1) * -100 + '%');
+		container.data( 'visible_page', page );
+		maybeLoadMore( container );
 	}
 } ) ( jQuery, wp );

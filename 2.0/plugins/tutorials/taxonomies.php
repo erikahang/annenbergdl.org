@@ -76,4 +76,79 @@ function tutorials_register_taxonomies() {
 		),
 		'show_admin_column' => true,
 	) );
+	
+	// Register Term Meta
+	register_meta( 'term', 'icon', 'esc_url' );
 }
+
+// Term meta
+add_action( 'admin_enqueue_scripts', 'anndl_tool_icon_script' );
+function anndl_tool_icon_script() {
+	// if ( add/edit tool page ) {
+		wp_enqueue_media();
+		wp_enqueue_script( 'tool-icons', plugins_url( '/user-image-select.js', __FILE__ ), array( 'jquery', 'media-views' ) );
+	// }
+}
+
+add_action( 'tool_add_form_fields', 'anndl_tool_icon_field' );
+function anndl_tool_icon_field() {
+	wp_enqueue_media();
+	wp_nonce_field( basename( __FILE__ ), 'anndl_tool_icon_nonce' ); ?>
+	<div class="form-field jt-term-color-wrap">
+		<label for="tool_icon"><?php _e( 'Tool Icon' ); ?></label>
+		<button id="dl-tool-icon-btn" class="button">Select Image</button><br/>
+		<img src="" id="dl-tool-icon-preview" style="cursor: pointer; max-width: 384px; margin-top: 18px;"/>
+		<input type="hidden" name="tool_icon" id="dl-tool-icon-img" value=""/>
+	</div>
+<?php }
+
+add_action( 'tool_edit_form_fields', 'anndl_tool_icon_field_edit' );
+function anndl_tool_icon_field_edit( $term ) {
+	wp_enqueue_media();
+	wp_nonce_field( basename( __FILE__ ), 'anndl_tool_icon_nonce' ); 
+	$img = esc_url( get_term_meta( $term->term_id, 'tool_icon', true ) );
+	?>
+	<tr class="form-field jt-term-color-wrap">
+		<th scope="row"><label for="tool_icon"><?php _e( 'Tool Icon' ); ?></label></th>
+		<td>
+			<button id="dl-tool-icon-btn" class="button">Select Image</button><br/>
+			<img src="<?php echo $img; ?>" id="dl-tool-icon-preview" style="cursor: pointer; max-width: 384px; margin-top: 18px;"/>
+			<input type="hidden" name="tool_icon" id="dl-tool-icon-img" value="<?php echo $img; ?>"/>
+		</td>
+	</tr>
+<?php }
+
+add_action( 'edit_tool',   'anndl_save_tool_icon' );
+add_action( 'create_tool', 'anndl_save_tool_icon' );
+
+function anndl_save_tool_icon( $term_id ) {
+
+	if ( ! isset( $_POST['anndl_tool_icon_nonce'] ) || ! wp_verify_nonce( $_POST['anndl_tool_icon_nonce'], basename( __FILE__ ) ) ) {
+		return;
+	}
+
+	$new_icon = isset( $_POST['tool_icon'] ) ? esc_url( $_POST['tool_icon'] ) : '';
+	update_term_meta( $term_id, 'tool_icon', $new_icon );
+}
+
+add_filter( 'manage_edit-tool_columns', 'anndl_edit_tool_columns' );
+function anndl_edit_tool_columns( $columns ) {
+
+    $columns['icon'] = __( 'Icon' );
+
+    return $columns;
+}
+
+add_filter( 'manage_tool_custom_column', 'anndl_manage_tool_custom_column', 10, 3 );
+function anndl_manage_tool_custom_column( $out, $column, $term_id ) {
+	if ( 'icon' === $column ) {
+		$icon = get_term_meta( $term_id, 'tool_icon', true );
+		if ( ! $icon ) {
+			$out = '';
+		} else {
+			$out = sprintf( '<img src="%s" height="48"/>', esc_url( $icon ) );
+		}
+	}
+	return $out;
+}
+

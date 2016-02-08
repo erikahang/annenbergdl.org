@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="viewport" content="width=device-width">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/calendarfunctions.js"></script>
@@ -62,7 +62,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div>
-			<a id="calendarhref" href='javascript:;' onclick="toggleCalendar()">
+			<a id="calendarhref" href="<?php echo esc_url( home_url( '/events/' ) ); ?>">
 			<time id="calendaricon" datetime="2014-09-20" class="icon">
 			  <em id="dayofweek"></em>
 			  <strong id="month"></strong>
@@ -87,7 +87,6 @@
 		</div><!-- .site-branding -->
 		<div id="navbuttons">
 			<ul>
-			<li><a href='javascript:;' onclick="toggleChat()"><span class="chatwithus">chat</span></a></li>
 			<li><div id="binoculars"><a href='javascript:;' onclick="toggleSearch()"><img src="<?php bloginfo('template_directory'); ?>/img/binoc.svg" width="50" height="50"></a>
 			</div></li>
 			<li><div class="usclogo">
@@ -113,4 +112,3 @@
 	</div>
 
 	<div id="content" class="site-content paper-back">
-		<div class="underconstruction"style="width:100%; background-color:orange; color: white; height:24px; postion:relative; bottom:0px; text-align:center; display:none;"><span>This website is currently under construction for Fall 2015.</span></div>

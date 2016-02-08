@@ -8,6 +8,9 @@
 	<?php echo digitallounge_get_the_post_thumbnail( 'digitallounge-full-width' ); ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
+			<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
+		</a>
 		<div class="entry-meta">
 			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span> 
 		</div>

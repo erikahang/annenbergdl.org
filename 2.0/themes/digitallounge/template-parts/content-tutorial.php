@@ -11,6 +11,10 @@ global $post;
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<div class="entry-meta">
+			<?php $tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id ); ?>
+			<a href="<?php echo get_term_link( $tool_id, 'tool' ) ?>">
+				<img src="<?php echo get_term_meta( $tool_id, 'tool_icon', true ); ?>" class="tool-icon"/>
+			</a>
 			<span class="cat-links"><?php echo get_the_term_list( get_the_ID(), 'tool', '', ', ', '' ); ?></span>
 		</div>
 		<div class="entry-meta">

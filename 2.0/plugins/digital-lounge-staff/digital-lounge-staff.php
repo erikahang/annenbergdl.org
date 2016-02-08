@@ -86,6 +86,7 @@ add_action( 'edit_user_profile', 'anndl_edit_user_expertise_section' );
  * @param object $user The user object currently being edited.
  */
 function anndl_edit_user_expertise_section( $user ) {
+	wp_enqueue_media();
 
 	/* Get the terms of the 'tool' taxonomy. */
 	$terms = get_terms( 'tool', array( 'hide_empty' => false, 'hierarchical' => false ) ); ?>
@@ -147,7 +148,7 @@ add_action( 'admin_enqueue_scripts', 'anndl_staff_profile_script' );
 function anndl_staff_profile_script() {
 	// if ( user profile page ) {
 		wp_enqueue_media();
-		wp_enqueue_script( 'staff-page', plugins_url( '/user-image-select.js', __FILE__ ), array( 'jquery' ) );
+		wp_enqueue_script( 'staff-page', plugins_url( '/user-image-select.js', __FILE__ ), array( 'jquery', 'media-views' ) );
 	// }
 }
 

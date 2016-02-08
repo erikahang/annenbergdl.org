@@ -7,7 +7,8 @@
  * @package Digital Lounge
  */
 
-wp_enqueue_script( 'digitallounge-infinitescroll', get_template_directory_uri() . '/js/infinite-scroll.js', array( 'jquery', 'wp-util' ), '20150614', true );
+wp_enqueue_script( 'digitallounge-jquery-visible', get_template_directory_uri() . '/js/jquery.visible.js', array( 'jquery' ), '20151103', true );
+wp_enqueue_script( 'digitallounge-infinitescroll', get_template_directory_uri() . '/js/infinite-scroll.js', array( 'jquery', 'digitallounge-jquery-visible', 'wp-util' ), '20151103', true );
 
 // Build data to replicate this query in JS/infinite scroll
 $data = array(
@@ -27,7 +28,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main" data-type="tutorials">
 
 		<?php if ( have_posts() ) : ?>
-			<section class="query-container" <?php echo $alldata; ?>>
+			<section class="query-container paper-front" <?php echo $alldata; ?>>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'digitallounge' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->

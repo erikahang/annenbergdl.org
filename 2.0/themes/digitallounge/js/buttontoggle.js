@@ -22,14 +22,14 @@ function toggleClose() {
 	$( ".window" ).css( "display", "none" );
 }
 
-
+/*
 function toggleChat() {
 	  var contentId = document.getElementById("livechat-compact-container");
   // Toggle 
   contentId.style.display == "block" ? contentId.style.display = "none" : 
 contentId.style.display = "block";
 } 
-
+*/
 //Changes the lightbox window to anchor 
 $(window).load(function(){
 	if ($(window).width() <= 736){

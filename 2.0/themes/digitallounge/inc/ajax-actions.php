@@ -38,6 +38,9 @@ function anndl_load_userdata_ajax() {
 			if ( 'post' !== $post->post_type ) {
 				//continue;
 			}
+			if ( 'private' === get_post_status( $post->ID ) ) {
+				continue;
+			}
 			$posts[] = array(
 				'id' => $post->ID,
 				'title' => $post->post_title,
@@ -54,6 +57,9 @@ function anndl_load_userdata_ajax() {
 	$tutorials = array();
 	if ( $has_tutorials ) {
 		foreach( $tutorials_query as $tutorial ) {
+			if ( 'private' === get_post_status( $tutorial->ID ) ) {
+				continue;
+			}
 			$terms = get_the_terms( $tutorial->ID, 'tutorial_tag' );
 			if ( ! is_wp_error( $terms ) ) {
 				$tags = 'in <a href="' . get_term_link( $terms[0]->term_id, 'tutorial_tag' ) . '">' . $terms[0]->name . '</a>';				
@@ -145,16 +151,24 @@ function anndl_load_archive_posts_ajax() {
 	}
 
 	foreach ( $posts as $post ) {
+		if ( 'private' === get_post_status( $post->ID ) ) {
+			continue;
+		}
 		$GLOBALS['post'] = $post;
 		setup_postdata( $post );
-		$items[] = array(
+		$items[$post->ID] = array(
 			'id'         => $post->ID,
 			'title'      => html_entity_decode( get_the_title( $post ), ENT_HTML401 | ENT_QUOTES, get_bloginfo( 'charset' ) ),
 			'posted_on'  => digitallounge_get_posted_on(),
 			'permalink'  => get_the_permalink(),
 			'post_thumbnail' => digitallounge_get_the_post_thumbnail(),
 			'excerpt'     => get_the_excerpt(),
+			'icon'        => false,
 		);
+		if ( 'tutorials' === $post->post_type ) {
+			$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
+			$items[$post->ID]['icon'] = '<a href="' . get_term_link( $tool_id, 'tool' ) . '"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
+		}
 	}
 
 	// Output the data.

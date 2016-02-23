@@ -39,6 +39,11 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="featured-image"><?php echo digitallounge_get_the_post_thumbnail(); ?></a>
+					<?php if ( 'tutorials' === $post->post_type ) {
+						$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
+						if ( $tool_id )
+							echo '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
+					} ?>
 					<header class="entry-header">
 						<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
@@ -62,37 +67,10 @@ get_header(); ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
-		<script type="text/html" id="tmpl-archive-post">
-			<article id="post-{{ data.id }}" class="post">
-				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
-				<header class="entry-header">
-					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
-					<div class="entry-meta">
-						{{{ data.posted_on }}}
-					</div>
-				</header>
-				<div class="entry-excerpt">
-					{{{ data.excerpt }}}
-				</div>
-			</article>
-		</script>
-		<script type="text/html" id="tmpl-archive-tutorial">
-			<article id="post-{{ data.id }}" class="tutorials">
-				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
-				<header class="entry-header">
-					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
-					<div class="entry-meta">
-						{{{ data.posted_on }}}
-					</div>
-				</header>
-				<div class="entry-excerpt">
-					{{{ data.excerpt }}}
-				</div>
-			</article>
-		</script>
 		<script type="text/html" id="tmpl-archive-grid-view">
 			<article id="post-{{ data.id }}" <?php post_class(); ?>>
 				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
+				<# if ( data.icon ) { #> {{{ data.icon }}} <# } #>
 				<header class="entry-header">
 					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
 					<div class="entry-meta">

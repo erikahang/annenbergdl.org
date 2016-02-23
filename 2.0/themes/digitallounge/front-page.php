@@ -97,6 +97,11 @@ get_header(); ?>
 									<?php setup_postdata( $post ); // Allows the_* functions to work without passing an ID. ?>
 									<article class="collection-article" id="tutorial-<?php echo $post->ID; ?>" <?php post_class( null, $post->ID ); ?>>
 										<a href="<?php the_permalink(); ?>" rel="bookmark" class="featured-image"><?php echo digitallounge_get_the_post_thumbnail(); ?></a>
+										<?php if ( 'tutorials' === $post->post_type ) {
+											$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
+											if ( $tool_id )
+												echo '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
+										} ?>
 										<header class="entry-header">
 											<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 											<div class="entry-meta">
@@ -120,6 +125,7 @@ get_header(); ?>
 		<script type="text/html" id="tmpl-archive-grid-view">
 			<article id="post-{{ data.id }}" <?php post_class(); ?>>
 				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
+				<# if ( data.icon ) { #> {{{ data.icon }}} <# } #>
 				<header class="entry-header">
 					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
 					<div class="entry-meta">

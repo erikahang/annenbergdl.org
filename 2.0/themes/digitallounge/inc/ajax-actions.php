@@ -167,7 +167,7 @@ function anndl_load_archive_posts_ajax() {
 		);
 		if ( 'tutorials' === $post->post_type ) {
 			$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
-			$items[$post->ID]['icon'] = '<a href="' . get_term_link( $tool_id, 'tool' ) . '"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
+			$items[$post->ID]['icon'] = '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
 		}
 	}
 

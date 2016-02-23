@@ -190,6 +190,7 @@ get_header(); ?>
 		<script type="text/html" id="tmpl-archive-grid-view">
 			<article id="post-{{ data.id }}" <?php post_class(); ?>>
 				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
+				<# if ( data.icon ) { #> {{{ data.icon }}} <# } #>
 				<header class="entry-header">
 					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
 					<div class="entry-meta">

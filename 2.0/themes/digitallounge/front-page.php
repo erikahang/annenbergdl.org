@@ -117,34 +117,6 @@ get_header(); ?>
 			}
 			?>
 		</main><!-- #main -->
-		<script type="text/html" id="tmpl-archive-post">
-			<article id="post-{{ data.id }}" class="post">
-				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
-				<header class="entry-header">
-					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
-					<div class="entry-meta">
-						{{{ data.posted_on }}}
-					</div>
-				</header>
-				<div class="entry-excerpt">
-					{{{ data.excerpt }}}
-				</div>
-			</article>
-		</script>
-		<script type="text/html" id="tmpl-archive-tutorial">
-			<article id="post-{{ data.id }}" class="tutorials">
-				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>
-				<header class="entry-header">
-					<h1 class="entry-title"><a href="{{ data.permalink }}" rel="bookmark">{{ data.title }}</a></h1>
-					<div class="entry-meta">
-						{{{ data.posted_on }}}
-					</div>
-				</header>
-				<div class="entry-excerpt">
-					{{{ data.excerpt }}}
-				</div>
-			</article>
-		</script>
 		<script type="text/html" id="tmpl-archive-grid-view">
 			<article id="post-{{ data.id }}" <?php post_class(); ?>>
 				<a href="{{ data.permalink }}" rel="bookmark" class="featured-image">{{{ data.post_thumbnail }}}</a>

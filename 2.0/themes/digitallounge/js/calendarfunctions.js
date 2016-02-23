@@ -46,10 +46,14 @@ var d = new Date();
   }
     //Tells DOM to fire off Calendar Functions after DOM is ready, uses Jquery
 
-    $( document ).ready(function() {
-  
-      getDayOfMonth();
-      getMonthOfYear();
-      getDayOfWeek();
-});
+	$( document ).ready(function() {
+
+		getDayOfMonth();
+		getMonthOfYear();
+		getDayOfWeek();
+		
+		// Prevent tribe events plugin from attaching events to the links - the in-page loading does not work, so let the link be a link. $.off() doesn't work alone.
+		$( '#tribe-events-footer .tribe-events-nav-previous a' ).off().appendTo( '#tribe-events-footer' );
+		$( '#tribe-events-footer .tribe-events-nav-next a' ).off().appendTo( '#tribe-events-footer' );
+	});
  

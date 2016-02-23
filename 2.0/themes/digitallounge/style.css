@@ -2854,6 +2854,15 @@ a.post-edit-link:hover {
 	background-color: rgb(236,120,80);
 }
 
+/* Tribe calendar styling fixes to account for moving the links in JS to disable their broken JS events */
+#tribe-events-footer a:nth-of-type(2) {
+    float: right;
+}
+
+#tribe-events-footer > a {
+    font-weight: bold;
+    font-size: 1.6em;
+}
 
 /*--------------------------------------------------------------
 ## Print Media Query

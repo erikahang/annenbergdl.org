@@ -404,11 +404,11 @@ button,
 input,
 select,
 textarea {
-	color: #666666;
-	font-size: 16px;
+	color: #444;
+	font-size: 20px;
 	font-size: 1rem;
 	line-height: 1.5;
-	font-weight: 400;
+	font-weight: 200;
 }
 
 h1,
@@ -418,16 +418,25 @@ h4,
 h5,
 h6 {
 	clear: both;
-	margin: 16px 0 32px 0;
+	margin: 16px 0;
 }
 
 h2 {
 	font-size: 32px;
-	margin: 16px 0 32px 0;
+	margin: 16px 0;
 }
 
 p {
-	margin-bottom: 1.5em;
+    font-size: 20px;
+    font-weight: 300;
+    color: #444;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+li {
+	font-size: 20px;
+	font-weight: 200;
 }
 
 dfn,
@@ -1134,14 +1143,15 @@ a:active {
 
 .entry-content a,
 .staff-bio a {
-	border-bottom: 1px solid rgba(0, 0, 0, .5);
-	transition: color .18s ease, border-color .18s ease;
+    border-bottom: 1px solid rgba(246, 53, 5, 0.5);
+    transition: color .18s ease, border-color .18s ease;
+    color: #ff2d06;
 }
 
 .entry-content a:hover,
 .entry-content a:focus {
-	color: #ff2d06;
-	border-bottom-color: #ff2d06;
+	color: #000;
+	border-bottom-color: #000;
 }
 
 .entry-content a:hover,
@@ -1446,6 +1456,21 @@ a:hover img, a:focus img {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.page .entry-header .entry-title {
+	color: #ff2d06;
+	margin: 0 0 16px 0;
+	font-size: 64px;
+}
+
+.page .alignright, .page .alignleft {
+	margin-bottom: 32px;
+}
+
+.page .entry-content h2 {
+	margin: 16px 0;
+	color: #333;
 }
 
 /*--------------------------------------------------------------
@@ -2017,8 +2042,8 @@ object {
 	line-height: 1;
 	font-weight: 200;
 	margin-left: 1.5em;
-  	margin-bottom: .1em;
-  	margin-top: .1em;
+  	margin-bottom: 5px;
+  	margin-top: 0;
 }
 
 .entry-meta .tool-icon {
@@ -2031,7 +2056,7 @@ object {
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 14px;
+	font-size: 18px;
 	color: #555;
 }
 
@@ -2076,7 +2101,7 @@ h1.entry-title {
 .entry-meta .byline,
 .entry-meta .posted-on {
 	color: #555;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 300;
 	text-transform: uppercase;
 }

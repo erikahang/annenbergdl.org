@@ -79,7 +79,7 @@ get_header(); ?>
 									continue;
 								}
 								if ( $first ) {
-									echo '<h4>Experts:</h4>';
+									echo '<h4>Our Experts:</h4>';
 									$first = false;
 								} ?>
 								<?php if ( count_user_posts( $contributor_id, 'tutorials' ) || count_user_posts( $contributor_id ) ) { ?>

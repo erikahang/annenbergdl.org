@@ -346,11 +346,11 @@ button,
 input,
 select,
 textarea {
-	color: #666666;
-	font-size: 16px;
+	color: #444;
+	font-size: 20px;
 	font-size: 1rem;
 	line-height: 1.5;
-	font-weight: 400;
+	font-weight: 200;
 }
 
 h1,
@@ -360,16 +360,26 @@ h4,
 h5,
 h6 {
 	clear: both;
-	margin: 16px 0 32px 0;
+	margin: 16px 0;
+	font-weight: 600;
 }
 
 h2 {
 	font-size: 32px;
-	margin: 16px 0 32px 0;
+	margin: 16px 0;
 }
 
 p {
-	margin-bottom: 1.5em;
+    font-size: 20px;
+    font-weight: 300;
+    color: #444;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+li {
+	font-size: 20px;
+	font-weight: 200;
 }
 
 dfn,
@@ -381,6 +391,8 @@ i {
 
 blockquote {
 	margin: 0 1.5em;
+	padding: 8px 16px;
+	background: #ccc;
 }
 
 address {
@@ -567,16 +579,16 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
+/* general styles */
 a {
 	color: inherit;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #ff2d06;
-	text-decoration: underline;
+	color: #000;
 }
 
 /* For accessibility */
@@ -588,6 +600,28 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+}
+
+/* for content */
+a {
+    border-bottom: 1px solid rgba(246, 53, 5, 0.5);
+    transition: color .18s ease, border-color .18s ease;
+    color: #ff2d06;
+}
+
+a:hover,
+a:focus {
+	color: #000;
+	border-bottom-color: #000;
+}
+
+a img {
+	transition: .2s opacity ease-in-out;
+}
+
+a:hover img,
+a:focus img {
+	opacity: .75;
 }
 
 

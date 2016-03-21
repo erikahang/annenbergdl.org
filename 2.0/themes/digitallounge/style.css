@@ -419,6 +419,7 @@ h5,
 h6 {
 	clear: both;
 	margin: 16px 0;
+	font-weight: 600;
 }
 
 h2 {
@@ -454,6 +455,8 @@ i {
 
 blockquote {
 	margin: 0 1.5em;
+	padding: 8px 16px;
+	background: #ccc;
 }
 
 address {

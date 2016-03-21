@@ -424,6 +424,7 @@ h6 {
 h2 {
 	font-size: 32px;
 	margin: 16px 0;
+	line-height: 1em;
 }
 
 p {
@@ -432,6 +433,11 @@ p {
     color: #444;
 	margin-top: 0;
 	margin-bottom: 1em;
+    line-height: 1.1em;
+}
+
+h3 {
+	line-height: 1em;
 }
 
 li {

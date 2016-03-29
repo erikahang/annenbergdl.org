@@ -2217,7 +2217,7 @@ a.post-edit-link:hover {
 .single-tutorials h4,
 .single-tutorials h5,
 .single-tutorials h6 {
-	clear: none; /* Reset clear: both so that text wraps around the table of contents.
+	clear: none; /* Reset clear: both so that text wraps around the table of contents. */
 }
 
 /*--------------------------------------------------------------

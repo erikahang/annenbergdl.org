@@ -66,7 +66,7 @@ add_action( 'after_setup_theme', 'digitallounge_setup' );
  * Enqueue scripts and styles.
  */
 function digitallounge_scripts() {
-	wp_enqueue_style( 'digitallounge-style', get_stylesheet_uri(), array(), '2016-02-22-00' );
+	wp_enqueue_style( 'digitallounge-style', get_stylesheet_uri(), array(), '2016-03-28-00' );
 	
 
 	wp_enqueue_script( 'digitallounge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

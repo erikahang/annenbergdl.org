@@ -10,7 +10,7 @@ global $post;
 	<?php echo digitallounge_get_the_post_thumbnail( 'digitallounge-full-width' ); ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<div class="entry-meta">
+		<div class="entry-meta" id="top">
 			<?php $tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id ); ?>
 			<a href="<?php echo get_term_link( $tool_id, 'tool' ) ?>">
 				<img src="<?php echo get_term_meta( $tool_id, 'tool_icon', true ); ?>" class="tool-icon"/>

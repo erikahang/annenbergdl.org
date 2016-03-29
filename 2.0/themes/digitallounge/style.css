@@ -1486,7 +1486,7 @@ a:hover img, a:focus img {
 .page .entry-header .entry-title {
 	color: #ff2d06;
 	margin: 0 0 16px 0;
-	font-size: 64px;
+	font-size: 48px;
 }
 
 .page .alignright, .page .alignleft {
@@ -2171,6 +2171,53 @@ a.post-edit-link:hover {
 .tags-links {
 	font-weight: bold;
 	font-size: 1.1em;
+}
+
+/* Table of Contents */
+.table-of-contents {
+	width: 33%;
+	min-width: 310px;
+	float: right;
+	font-size: 16px;
+	padding: 0 0 16px 16px;
+	margin: 0;
+}
+
+.table-of-contents h2 {
+	font-size: 24px;
+	margin: 0 0 8px 0;
+	color: #666;
+	border-bottom: 4px solid;
+	line-height: 1;
+}
+
+.table-of-contents .items {
+	margin: 0;
+	padding-left: 16px;
+}
+
+.table-of-contents li {
+	font-size: 18px;
+	color: #666;
+}
+
+.table-of-contents li a {
+	color: #666;
+	border-bottom-color: rgba(102, 102, 102,.5);
+}
+
+.table-of-contents ul ul {
+	margin-left: 16px;
+	padding-left: 16px;
+}
+
+.single-tutorials h1,
+.single-tutorials h2,
+.single-tutorials h3,
+.single-tutorials h4,
+.single-tutorials h5,
+.single-tutorials h6 {
+	clear: none; /* Reset clear: both so that text wraps around the table of contents.
 }
 
 /*--------------------------------------------------------------

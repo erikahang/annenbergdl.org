@@ -1472,9 +1472,15 @@ a:hover img, a:focus img {
 	margin: 1.5em 0 0;
 }
 
+.page-links a {
+	border: 1px solid;
+	padding: 4px 8px;
+}
+
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0;
+	font-size: 20px;
 }
 
 .page .entry-header .entry-title {

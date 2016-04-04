@@ -23,10 +23,16 @@ global $post;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php
+			wp_link_pages( array(
+				'before' => '<div class="page-links"><span class="pages-label">' . __( 'Pages:', 'digitallounge' ) . '</span>',
+				'after'  => '</div>',
+			) );
+		?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'digitallounge' ),
+				'before' => '<div class="page-links"><span class="pages-label">' . __( 'Pages:', 'digitallounge' ) . '</span>',
 				'after'  => '</div>',
 			) );
 		?>

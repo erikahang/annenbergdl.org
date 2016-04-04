@@ -2216,6 +2216,16 @@ a.post-edit-link:hover {
 	padding-left: 16px;
 }
 
+@media screen and (max-width:520px) {
+	.table-of-contents {
+		float: none;
+		width: 90%;
+	}
+	.table-of-contents h2 {
+		margin-top: 16px;
+	}
+}
+
 .single-tutorials h1,
 .single-tutorials h2,
 .single-tutorials h3,
@@ -2730,6 +2740,10 @@ a.post-edit-link:hover {
 	ul,
 	ol {
 		margin: 0 0 .5em .5em;
+	}
+
+	li {
+		line-height: 1.5;
 	}
 
 	.home #primary {

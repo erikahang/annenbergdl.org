@@ -1312,6 +1312,11 @@ a:hover img, a:focus img {
 	width: 50%;
 }
 
+.entry-nav {
+	clear: both;
+	overflow: hidden;
+}
+
 .entry-nav a {
 	display: block;
 	width: 50%;

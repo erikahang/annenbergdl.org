@@ -28,8 +28,8 @@
 
 			element.focus();
 
-			// Repositions the window on jump-to-anchor to account for header height.
-			window.scrollBy( 0, -64 );
+			// Repositions the window on jump-to-anchor to account for header height, and accounts for the admin bar.
+			window.scrollBy( 0, -64 - $( '#wpadminbar' ).height() );
 		}
 	} );
 

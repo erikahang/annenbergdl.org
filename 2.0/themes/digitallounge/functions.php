@@ -69,7 +69,7 @@ function digitallounge_scripts() {
 	wp_enqueue_style( 'digitallounge-style', get_stylesheet_uri(), array(), '2016-03-28-00' );
 	
 
-	wp_enqueue_script( 'digitallounge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'digitallounge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20160411', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

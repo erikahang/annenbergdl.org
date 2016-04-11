@@ -1606,7 +1606,10 @@ object {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+    margin: 0;
+    font-size: .5em;
+    font-weight: 100;
+    font-style: italic;
 }
 
 /*--------------------------------------------------------------
@@ -2184,7 +2187,7 @@ a.post-edit-link:hover {
 	min-width: 310px;
 	float: right;
 	font-size: 16px;
-	padding: 0 0 16px 16px;
+	padding: 0 0 20px 20px;
 	margin: 0;
 }
 

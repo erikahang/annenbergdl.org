@@ -1607,7 +1607,7 @@ object {
 
 .wp-caption .wp-caption-text {
     margin: 0;
-    font-size: .5em;
+    font-size: 14px;
     font-weight: 100;
     font-style: italic;
 }

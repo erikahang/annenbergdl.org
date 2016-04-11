@@ -1479,12 +1479,12 @@ a:hover img, a:focus img {
 
 .page-links a {
 	border: 1px solid;
-	padding: 4px 8px;
+	padding: 0 8px 4px;
 }
 
 .page-links {
 	clear: both;
-	margin: 0;
+	margin: 0 0 10px 0;
 	font-size: 20px;
 }
 

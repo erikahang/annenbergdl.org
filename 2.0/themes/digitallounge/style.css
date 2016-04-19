@@ -1023,7 +1023,10 @@ textarea {
 }
 
 .home-search-filter-bar .search-field {
-	width: 512px;
+	max-width: 512px;
+	width: calc(100% - 50px);
+	background: #fff;
+	border-color: #bbb;
 	margin: 16px;
 	border-radius: 0;
 	font-size: 20px;
@@ -1129,7 +1132,7 @@ textarea {
 }
 
 @media screen and (max-width: 1040px) {
-	.home-search-filter-bar {
+	.home-search-filter-bar .filter-bar-menu {
 		display: none;
 	}
 }
@@ -1745,9 +1748,10 @@ object {
 }
 .archive .section-title {
 	width: 100%;
-	font-size: 60px;
+	font-size: 48px;
 	font-weight: 200;
 	font-style: normal;
+	line-height: 1.2;
 }
 
 .search .inner-container,
@@ -2590,6 +2594,15 @@ a.post-edit-link:hover {
 		font-size: 1.4em;
 	}
 
+	.archive-header .tool-icon,
+	.archive-header .avatar {
+		width: 128px;
+		margin: 8px;
+	}
+	
+	.archive-header .archive-description-container {
+		margin-left: 146px;
+	}
 
 }
 /*Ipad*/
@@ -2716,6 +2729,24 @@ a.post-edit-link:hover {
 	.site-title {
 		left: 150px;
 	}
+	
+	.archive-header .tool-icon,
+	.archive-header .avatar {
+		float: left;
+		position: relative;
+	}
+	
+	.archive-header .page-title {
+		clear: none;
+	}
+	
+	.archive-header .taxonomy-description p {
+		clear: both;
+	}
+	
+	.archive-header .avatar {
+		margin-bottom: 16px;
+	}
 }
 
 /*Iphone 4 sideways*/
@@ -2732,20 +2763,6 @@ a.post-edit-link:hover {
 
 /*Iphone 6 Plus, 6 verticle*/
 @media (max-width: 414px) {
-
-	body {
-		line-height: 1em;
-	}
-
-	ul,
-	ol {
-		margin: 0 0 .5em .5em;
-	}
-
-	li {
-		line-height: 1.5;
-	}
-
 	.home #primary {
 		padding: 0px 0px 24px 0px;
 	}
@@ -2762,17 +2779,12 @@ a.post-edit-link:hover {
 	}
 
 	#colophon li {
-	margin-right: 0px;
+		margin-right: 0px;
 	}
-
 
 	time.icon{
 		margin: -24px 8px 0px -26px;
 		transform: scale(.35, .35);
-	}
-
-	#daynumber {
-		font-size: 4em;
 	}
 
 	.usclogo {
@@ -2785,24 +2797,26 @@ a.post-edit-link:hover {
 	.main-navigation {
 		top: -82px;
 	}
+
 	.site-title {
 		font-size: 1.3em;
 		left: 90px;
-		top: 11px;
+		top: 6px;
+		width: 160px;
+		margin: 0;
 	}
+
 	.collection .inner-container > .collection-article:first-child {
 		width: 192px;
 	}
 
-
 	.arrow-container {
-	margin: 8px 32px 0px 0px;
-	z-index: 500;
-	float: right;
-  	width: auto;
-  	height: auto;
+		margin: 8px 32px 0px 0px;
+		z-index: 500;
+		float: right;
+		width: auto;
+		height: auto;
 	}
-
 
 	.facebook, .instagram, .twitter, .youtube, .pinterest {
 		margin-top: 0;
@@ -2813,13 +2827,38 @@ a.post-edit-link:hover {
 		text-align: center;
 		position: relative;
 		bottom: -53px;
-		}
+	}
 
 	.site-info {
 		position: relative;
 		top: 57px;
 	}
 
+	.taxonomy-description {
+		margin: 0 16px;
+	}
+	
+	.archive-header {
+		width: 100%;
+	}
+	
+	.archive-header .tool-icon,
+	.archive-header > .avatar {
+	    clear: both;
+	    float: none;
+	    left: 50%;
+	    margin-left: -64px;
+	    margin-top: 0;
+	    margin-bottom: -32px;
+	}
+	
+	.archive-header .archive-description-container {
+		margin-left: 16px;
+	}
+	
+	.archive-header .page-title {
+		text-align: center;
+	}
 }
 
 /*Iphone 6 verticle*/

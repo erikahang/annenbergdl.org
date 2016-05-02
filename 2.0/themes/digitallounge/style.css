@@ -1071,6 +1071,11 @@ textarea {
 	position: relative;
 	height: 72px;
 	margin-bottom: 16px;
+	display: none; /* hidden by default */
+}
+
+.home .home-search-filter-bar {
+	display: block; /* always visible on home page */
 }
 
 .home-search-filter-bar .filter-bar-menu {

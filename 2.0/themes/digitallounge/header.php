@@ -87,3 +87,17 @@
 	</div>
 
 	<div id="content" class="site-content paper-back">
+		<section class="home-search-filter-bar paper-front">
+			<?php get_search_form(); ?>
+			<ul class="filter-bar-menu">
+				<li class="tools"><button type="button">Tools</button>
+					<ul><?php wp_list_categories( array( 'taxonomy' => 'tool', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
+				</li>
+				<li class="tutorial_tags"><button type="button">Collections</button>
+					<ul><?php wp_list_categories( array( 'taxonomy' => 'tutorial_tag', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
+				</li>
+				<li class="difficulties"><button type="button">Skill Level</button>
+					<ul><?php wp_list_categories( array( 'taxonomy' => 'difficulty', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
+				</li>
+			</ul>
+		</section>

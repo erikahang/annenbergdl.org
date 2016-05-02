@@ -91,10 +91,19 @@
 			<?php get_search_form(); ?>
 			<ul class="filter-bar-menu">
 				<li class="tools"><button type="button">Tools</button>
-					<ul><?php wp_list_categories( array( 'taxonomy' => 'tool', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
+					<ul>
+					<?php $tools = get_terms( array(
+					    'taxonomy' => 'tool',
+					    'hide_empty' => true,
+					) ); 
+					foreach ( $tools as $tool ) {
+						echo '<li><a href="' . get_term_link( $tool->term_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool->term_id, 'tool_icon', true ) . '" class="tool-icon"/></a></li>';
+					}
+					?></ul>
+					<!--<ul><?php wp_list_categories( array( 'taxonomy' => 'tool', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>-->
 				</li>
 				<li class="tutorial_tags"><button type="button">Collections</button>
-					<ul><?php wp_list_categories( array( 'taxonomy' => 'tutorial_tag', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
+					<ul><?php wp_list_categories( array( 'taxonomy' => 'tutorial_tag', 'title_li' => '', 'show_count' => 0, 'orderby' => 'name', 'order' => 'desc' ) ); ?></ul>
 				</li>
 				<li class="difficulties"><button type="button">Skill Level</button>
 					<ul><?php wp_list_categories( array( 'taxonomy' => 'difficulty', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>

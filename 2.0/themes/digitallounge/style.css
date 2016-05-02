@@ -1114,7 +1114,7 @@ textarea {
 .filter-bar-menu > li > ul {
 	display: none;
     position: absolute;
-    top: 71px;
+    top: 70px;
     left: 0;
     width: 256px;
     margin: 0;
@@ -1150,6 +1150,57 @@ textarea {
 
 .filter-bar-menu > li > ul > li:last-child a {
 	border-bottom: none;
+	margin-bottom: 16px;
+}
+
+.filter-bar-menu li > ul {
+    width:  98vw;
+    position: absolute;
+    left: -564px;
+    overflow: hidden;
+    top: 72px;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.filter-bar-menu .tutorial_tags > ul {
+	left: -675px; /* magic number depends on size of text */
+}
+
+.filter-bar-menu .difficulties > ul {
+	left: -855px; /* magic number depends on size of text */
+}
+
+.filter-bar-menu li li {
+    float: left;
+}
+
+.filter-bar-menu li li a {
+    margin: 16px 0 0 16px;
+    padding: 8px 20px 8px 8px;
+	background: #eee;
+	color: #333;
+	transition: .12s all ease-in-out;
+}
+
+.filter-bar-menu li li a:hover,
+.filter-bar-menu li li a:focus {
+	background: #c23c47;
+	color: #fff;
+}
+
+.filter-bar-menu li.tools a {
+    margin: 16px 0 0 16px;
+    padding: 0;
+    height: 64px;
+    width: 64px;
+	background: transparent;
+}
+
+.filter-bar-menu .tools a img {
+    margin: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 1040px) {

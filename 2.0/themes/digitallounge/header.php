@@ -62,22 +62,16 @@
 		</div><!-- .site-branding -->
 		<div id="navbuttons">
 			<ul>
-			<li><div id="binoculars"><a href='javascript:;' onclick="toggleSearch()"><img src="<?php bloginfo('template_directory'); ?>/img/binoc.svg" width="50" height="50"></a>
+			<?php if ( ! is_front_page() ) { ?>
+			<li><div id="header-menu"><a href='javascript:;'><img src="<?php bloginfo('template_directory'); ?>/img/menu.png" width="50" height="50"></a>
 			</div></li>
+			<?php } ?>
 			<li><div class="usclogo">
-				<a href="http://www.usc.edu" alt="usclogo" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/usclogo.svg" width="50" height="50"></a>
+				<a href="http://www.usc.edu" alt="usclogo" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/usclogo.svg?v=1" width="50" height="50"></a>
 			</div></li>
 			</ul>
 		</div>
 	</header><!-- #masthead -->
-	<div id="search-window" class="window animated fadeIn">
-		<div class="window-title search-title">Explore
-			<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
-		</div>
-		<div class="search-string">
-			<?php get_search_form(); ?>
-		</div>
-	</div>
 	<div id="calendar-window" class="window window-calendar animated fadeIn">
 			<div class="window-title calendar-title">
 				<a href='javascript:;' onclick="toggleClose()" class="window-close">X</a>
@@ -103,7 +97,7 @@
 					<!--<ul><?php wp_list_categories( array( 'taxonomy' => 'tool', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>-->
 				</li>
 				<li class="tutorial_tags"><button type="button">Collections</button>
-					<ul><?php wp_list_categories( array( 'taxonomy' => 'tutorial_tag', 'title_li' => '', 'show_count' => 0, 'orderby' => 'name', 'order' => 'desc' ) ); ?></ul>
+					<ul><?php wp_list_categories( array( 'taxonomy' => 'tutorial_tag', 'title_li' => '', 'show_count' => 0, 'orderby' => 'name', 'order' => 'asc' ) ); ?></ul>
 				</li>
 				<li class="difficulties"><button type="button">Skill Level</button>
 					<ul><?php wp_list_categories( array( 'taxonomy' => 'difficulty', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>

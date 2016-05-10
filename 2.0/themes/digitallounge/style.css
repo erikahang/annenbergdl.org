@@ -1068,14 +1068,16 @@ textarea {
 }
 
 .home-search-filter-bar {
-	position: relative;
 	height: 72px;
 	margin-bottom: 16px;
 	display: none; /* hidden by default */
+    position: fixed; /* Sticky by default */
+    width: 100%;
 }
 
 .home .home-search-filter-bar {
 	display: block; /* always visible on home page */
+	position: relative; /* Not sticky on home page */
 }
 
 .home-search-filter-bar .filter-bar-menu {
@@ -1158,10 +1160,11 @@ textarea {
     position: absolute;
     left: -564px;
     overflow: hidden;
-    top: 72px;
+    top: 71px;
     margin: 0;
     padding: 0;
     height: auto;
+	border-top: 1px solid #ccc;
 }
 
 .filter-bar-menu .tutorial_tags > ul {

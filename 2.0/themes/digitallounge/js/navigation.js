@@ -12,7 +12,7 @@
 	 *
 	 * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
 	 */
-	_window.on( 'hashchange.twentyfourteen', function() {
+	_window.on( 'hashchange', function() {
 		var hash = location.hash.substring( 1 ), element;
 
 		if ( ! hash ) {
@@ -33,5 +33,8 @@
 		}
 	} );
 
+	$( '#header-menu' ).on( 'click', function() {
+		$( '.home-search-filter-bar' ).toggle();
+	} );
 
 } )();

@@ -161,7 +161,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 1em 0;
 }
 
 hr {
@@ -1465,13 +1465,13 @@ a:hover img, a:focus img {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: 1em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: 1em;
 }
 
 .aligncenter {
@@ -1670,7 +1670,7 @@ object {
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 	max-width: 100%;
 }
 
@@ -1681,10 +1681,13 @@ object {
 
 .wp-caption-text {
 	text-align: center;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.2;
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: 0.8075em 0 0 0;
 }
 
 /*--------------------------------------------------------------

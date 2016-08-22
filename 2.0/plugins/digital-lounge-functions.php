@@ -39,6 +39,25 @@ function digitallounge_change_post_object() {
 add_action( 'admin_menu', 'digitallounge_change_post_label' );
 add_action( 'init', 'digitallounge_change_post_object' );
 
+
+/**
+ * Show additional post types on archives.
+ */
+function digitallounge_add_custom_types_to_archives( $query ) {
+	if ( $query->is_author() && empty( $query->query_vars['suppress_filters'] ) ) {
+		$query->set( 'post_type', array(
+			'post', 'tutorials', 'course'
+		));
+	} elseif ( $query->is_search() && empty( $query->query_vars['supress_filters'] ) ) {
+		$query->set( 'post_type', array(
+			'post', 'page', 'tutorials', 'course', 'tribe_events'
+		));
+	}
+	return $query;
+}
+add_filter( 'pre_get_posts', 'digitallounge_add_custom_types_to_archives' );
+
+
 /**
  * Tweak user roles' capability assignments.
  *

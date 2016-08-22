@@ -14,20 +14,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area paper-back">
 		<main id="main" class="site-main" role="main">
-		<section class="home-search-filter-bar paper-front">
-			<?php get_search_form(); ?>
-			<ul class="filter-bar-menu">
-				<li class="tools"><button type="button">Tools</button>
-					<ul><?php wp_list_categories( array( 'taxonomy' => 'tool', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
-				</li>
-				<li class="tutorial_tags"><button type="button">Collections</button>
-					<ul><?php wp_list_categories( array( 'taxonomy' => 'tutorial_tag', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
-				</li>
-				<li class="difficulties"><button type="button">Skill Level</button>
-					<ul><?php wp_list_categories( array( 'taxonomy' => 'difficulty', 'title_li' => '', 'show_count' => 0, 'orderby' => 'count', 'order' => 'desc' ) ); ?></ul>
-				</li>
-			</ul>
-		</section>
 		<section class="query-container news-collection animated slideInLeft delay1-2sec paper-front" data-type="post_type" data-post_type="post" data-page="1" data-visible_page="1" data-content_size="1744">
 				<div class="news-title">
 					<h2 class="section-title">News</h2>

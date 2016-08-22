@@ -76,7 +76,7 @@ class ANNDL_TOC {
 				$first = false;
 			}
 
-			$replacement .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s <a href="#%2$s" class="anchor">#</a></%1$s>', $tag, $id, $item[2] );
+			$replacement .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s', $tag, $id, $item[2] ); // <a href="#%2$s" class="anchor">#</a></%1$s>', $tag, $id, $item[2] ); Removed discoverable link location for direct heading links.
 			$replacements[] = $replacement;
 		}
 

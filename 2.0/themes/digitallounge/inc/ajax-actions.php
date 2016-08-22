@@ -106,7 +106,7 @@ function anndl_load_archive_posts_ajax() {
 		'offset'         => 6 * $page - 6,
 		'orderby'        => 'date',
 		'order'          => 'DESC',
-		'post_type'      => array( 'tutorials', 'post' ),
+		'post_type'      => array( 'tutorials', 'post', 'course' ),
 	);
 
 	$passed_args = $_POST['args'];
@@ -138,7 +138,7 @@ function anndl_load_archive_posts_ajax() {
 			$args = array(
 				'numberposts' => 6, // This MUST match what's initially rendered from the first pageload
 				'offset'      => 6 * $page - 6,
-				'post_type'   => array( 'post', 'page', 'tutorials', 'tribe_events' ),
+				'post_type'   => array( 'post', 'page', 'tutorials', 'course', 'tribe_events' ),
 				's'           => $passed_args['searchterm'],
 			);
 			break;

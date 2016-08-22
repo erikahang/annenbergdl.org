@@ -82,7 +82,7 @@ get_header(); ?>
 									echo '<h4>Our Experts:</h4>';
 									$first = false;
 								} ?>
-								<?php if ( count_user_posts( $contributor_id, 'tutorials' ) || count_user_posts( $contributor_id ) ) { ?>
+								<?php if ( count_user_posts( $contributor_id, 'tutorials' ) || count_user_posts( $contributor_id, 'course' ) || count_user_posts( $contributor_id ) ) { ?>
 									<a href="<?php echo get_author_posts_url( $contributor_id ); ?>">
 										<?php echo get_avatar( $contributor_id ); ?></a>
 									</a>
@@ -136,10 +136,11 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="featured-image"><?php echo digitallounge_get_the_post_thumbnail(); ?></a>
-					<?php if ( 'tutorials' === $post->post_type ) {
+					<?php if ( 'tutorials' === $post->post_type || 'course' === $post->post_type ) {
 						$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
-						if ( $tool_id )
+						if ( $tool_id ) {
 							echo '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
+						}
 					} ?>
 					<header class="entry-header">
 						<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>

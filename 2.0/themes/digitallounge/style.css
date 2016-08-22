@@ -694,7 +694,8 @@ time.icon
 	margin-top: 64px;
 }
 
-#primary {
+#primary,
+.archive.tax-semester #primary {
 	width: 100%;
 	max-width: 998px; /* With padding, results in content width of 934px */
 	padding: 32px;
@@ -3114,6 +3115,80 @@ a.post-edit-link:hover {
 
 .search .page-title {
 	margin-left: 48px;
+}
+
+/*--------------------------------------------------------------
+## Course Registration Styles
+--------------------------------------------------------------*/
+.tax-semester .type-course .entry-header .tool-icon {
+	float: right;
+	width: 64px;
+}
+
+.tax-semester .type-course .entry-title {
+	clear: none;
+	font-size: 24px;
+}
+
+.tax-semester .type-course {
+	border-bottom: 1px solid #ddd;
+}
+
+.tax-semester .type-course .entry-header .entry-meta {
+	margin-left: 0;
+}
+
+.tax-semester .type-course .entry-meta .byline {
+	font-size: 18px;
+	line-height: 48px;
+	margin-right: 16px;
+}
+
+.tax-semester .type-course .entry-meta .author:after {
+	content: "|";
+	margin-left: 16px;
+}
+
+.tax-semester .type-course .entry-content {
+	margin-top: 0;
+}
+
+#registration-form label {
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 2;
+	margin-top: 1em;
+}
+
+#submit-registration {
+	border: 2px solid #222 !important;
+	padding: 8px 16px;
+	margin-top: 24px;
+	text-shadow: none;
+}
+
+#submit-registration:hover, #submit-registration:focus {
+	background: #222 !important;
+	color: #fff;
+}
+
+#registration-notices .notice {
+	padding: 16px;
+	margin: 16px 0 0 0;
+	border-left: 8px solid #ff0;
+	background: #ffd;
+	color: #000;
+}
+
+#registration-notices .notice.error {
+	border-left-color: #f00;
+	background: #fee;
+}
+
+#registration-notices .notice.success {
+	border-left-color: #0c0;
+	background: #efe;
 }
 
 /*--------------------------------------------------------------

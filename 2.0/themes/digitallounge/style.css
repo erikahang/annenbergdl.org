@@ -865,6 +865,8 @@ time.icon
 	float: left;
 }
 
+/* Sticky Footer 
+
 @media screen and (min-height:650px) and (min-width:800px) {
 	.home #colophon,
 	.search #colophon,
@@ -878,6 +880,7 @@ time.icon
 		margin-bottom: 128px;
 	}
 }
+*/
 
 .menu-footer-menu-container {
 

@@ -68,10 +68,10 @@ function tutorials_activation() {
 }
 
 // Include tutorials in author and date archives. Note that this can't play nicely with other plugins trying to do the same thing.
-function tutorials_include_in_archives( $query ) {
+/*function tutorials_include_in_archives( $query ) {
     if ( $query->is_author() || $query->is_date() ) {
         $query->set( 'post_type', array( 'tutorials', 'post' ) );
 	}
     remove_action( 'pre_get_posts', 'tutorials_include_in_archives' );
 }
-add_action( 'pre_get_posts', 'tutorials_include_in_archives' );
+add_action( 'pre_get_posts', 'tutorials_include_in_archives' );*/

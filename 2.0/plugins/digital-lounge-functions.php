@@ -44,9 +44,9 @@ add_action( 'init', 'digitallounge_change_post_object' );
  * Show additional post types on archives.
  */
 function digitallounge_add_custom_types_to_archives( $query ) {
-	if ( $query->is_author() && empty( $query->query_vars['suppress_filters'] ) ) {
+	if ( $query->is_author() && $query->is_main_query() ) {
 		$query->set( 'post_type', array(
-			'post', 'tutorials', 'course'
+			'post', 'tutorials', 'course',
 		));
 	} elseif ( $query->is_search() && empty( $query->query_vars['supress_filters'] ) ) {
 		$query->set( 'post_type', array(

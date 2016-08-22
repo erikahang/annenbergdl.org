@@ -1764,8 +1764,10 @@ object {
 .search .tutorials,
 .search .tribe_events,
 .search .post,
+.search .course,
 .search .page,
 .archive .post,
+.archive .course,
 .archive .tutorials {
 	width: 288px;
 	padding: 0 15px 0 15px;
@@ -1787,8 +1789,10 @@ object {
 .search .tutorials:after,
 .search .tribe_events:after,
 .search .post:after,
+.search .course:after,
 .search .page:after,
 .archive .post:after,
+.archive .course:after,
 .archive .tutorials:after {
 	content: "";
 	height: calc(100% - 16px);
@@ -1801,6 +1805,7 @@ object {
 
 .home .post:first-child,
 .home .tutorials:first-child,
+.search .course:first-child,
 .search .tutorials:first-child,
 .search .tribe_events:first-child,
 .search .post:first-child,
@@ -1814,7 +1819,9 @@ object {
 .home .tutorials:last-child:after,
 .search .tutorials:last-child:after,
 .search .tribe_events:last-child:after,
+.search .course:last-child:after,
 .search .post:last-child:after,
+.archive .course:last-child:after,
 .archive .post:last-child:after,
 .archive .tutorials:last-child:after {
 	display: none;
@@ -1885,6 +1892,15 @@ object {
 	float: right;
 	opacity: 1;
 	line-height: 1;
+}
+
+.archive .type-course .tool-icon {
+	width: 128px;
+	float: none;
+	margin-top: -128px;
+	top: -48px;
+	left: 50%;
+	margin-left: -64px;
 }
 
 .search #primary,

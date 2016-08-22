@@ -49,7 +49,7 @@ function anndl_courses_registration_form( $term ) {
 	</label>
 	<label>
 		<input type="checkbox" id="course-policies" value="1">
-		<?php _e( ' I have read the course policies and agree to attand all sessions and take the exam at the end of the semester.', 'anndl-courses' ); ?><br>
+		<?php _e( ' I have read the course policies and agree to attend all sessions and take the exam at the end of the semester.', 'anndl-courses' ); ?><br>
 	</label>
 	<button type="button" id="submit-registration" class="button"><?php _e( 'Register' ); ?></button>
 </form>

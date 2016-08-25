@@ -1767,7 +1767,7 @@ object {
 .search .course,
 .search .page,
 .archive .post,
-.archive .course,
+.archive:not(.tax-semester) .course,
 .archive .tutorials {
 	width: 288px;
 	padding: 0 15px 0 15px;
@@ -1792,7 +1792,7 @@ object {
 .search .course:after,
 .search .page:after,
 .archive .post:after,
-.archive .course:after,
+.archive:not(.tax-semester) .course:after,
 .archive .tutorials:after {
 	content: "";
 	height: calc(100% - 16px);
@@ -1821,7 +1821,7 @@ object {
 .search .tribe_events:last-child:after,
 .search .course:last-child:after,
 .search .post:last-child:after,
-.archive .course:last-child:after,
+.archive:not(.tax-semester) .course:last-child:after,
 .archive .post:last-child:after,
 .archive .tutorials:last-child:after {
 	display: none;
@@ -1894,7 +1894,7 @@ object {
 	line-height: 1;
 }
 
-.archive .type-course .tool-icon {
+.archive:not(.tax-semester) .type-course .tool-icon {
 	width: 128px;
 	float: none;
 	margin-top: -128px;

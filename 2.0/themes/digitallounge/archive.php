@@ -139,19 +139,37 @@ get_header(); ?>
 					<?php if ( 'tutorials' === $post->post_type || 'course' === $post->post_type ) {
 						$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
 						if ( $tool_id ) {
-							echo '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
+							echo '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/></a>';
 						}
 					} ?>
 					<header class="entry-header">
-						<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+						<?php if ( 'course' === $post->post_type ) {
+							echo '<h1 class="entry-title">' . get_the_title() . ', ' . get_post_meta( $post->ID, 'course-time', true ) . '</h1>';
+						} else {
+							the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
+						}
+						?>
 
 						<div class="entry-meta">
-							<?php digitallounge_posted_on(); ?>
+						<?php if ( 'course' === $post->post_type ) {
+							$byline = sprintf(
+								_x( 'With %s', 'post author', 'digitallounge' ),
+								'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+							);
+							$semester = get_the_term_list( $post->ID, 'semester', '', ', ' );
+							echo '<span class="byline">' . $byline . ', ' . $semester . '</span>';
+						} else {
+							digitallounge_posted_on(); 
+						} ?>
 						</div><!-- .entry-meta -->
 					</header><!-- .entry-header -->
 
 					<div class="entry-excerpt">
-						<?php echo get_the_excerpt(); ?>
+						<?php if ( 'course' === $post->post_type ) {
+							echo '<p>' . anndl_courses_registered_status( $post->ID ) . '</p>';
+						} else {
+							echo get_the_excerpt();
+						} ?>
 					</div><!-- .entry-excerpt -->
 				</article><!-- #post-## -->
 

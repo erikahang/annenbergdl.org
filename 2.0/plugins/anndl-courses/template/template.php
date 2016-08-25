@@ -42,7 +42,8 @@ function anndl_courses_registration_form( $term ) {
 				$id = $course->ID;
 				$title = get_the_title( $course );
 				$time = get_post_meta( $id, 'course-time', true );
-				$instructor = get_the_author( $id );
+				$author_id = $course->post_author;
+				$instructor = get_the_author_meta( 'display_name', $author_id );
 				echo '<option value="' . $id . '">' . $title . ', ' . $time . __( ' with ', 'anndl-courses' ) . $instructor . ' (' . anndl_courses_registered_status( $id ) . ')</option>';
 			} ?>
 		</select>

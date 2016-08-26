@@ -2168,6 +2168,12 @@ object {
 	line-height: 1;
 }
 
+.tax-semester .archive-header .archive-description-container {
+	margin: 0 auto;
+	max-width: 998px;
+	padding: 0 32px;
+}
+
 
 /*--------------------------------------------------------------
 ## Single Content

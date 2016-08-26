@@ -78,6 +78,8 @@ function digitallounge_activate_adjust_roles() {
 	// Contributor.
 	$contributor = get_role( 'contributor' );
 	$contributor->add_cap( 'upload_files' ); // Allows media to be uploaded (which technically allows them to publish attachment posts).
+	$contributor->add_cap( 'edit_others_posts' ); // Allow contributors to manage course registration.
+	$contributor->add_cap( 'edit_published_posts' ); // Allow contributors to manage course registration.
 }
 register_activation_hook( __FILE__, 'digitallounge_activate_adjust_roles' );
 

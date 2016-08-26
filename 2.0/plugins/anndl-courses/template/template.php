@@ -7,7 +7,7 @@
  * Display a registration form for all of the courses offered in the current term.
  */
 function anndl_courses_registration_form( $term ) {
-	wp_enqueue_script( 'course-registration', plugins_url( '/course-registration.js', __FILE__), array ( 'jquery', 'wp-util' ), '', true );
+	wp_enqueue_script( 'course-registration', plugins_url( '/course-registration.js', __FILE__), array ( 'jquery', 'wp-util' ), '20160825', true );
 ?>
 <div id="course-registration-form">
 <h2><?php _e( 'Register for a Course', 'anndl-courses' ); ?></h2>
@@ -59,6 +59,7 @@ function anndl_courses_registration_form( $term ) {
 	<p class="notice success" id="registered"><?php _e( 'You have successfully registered for this course.' ); ?></p>
 	<p class="notice warning" id="waitlist"><?php _e( 'You have successfully been added to the waitlist for this course. Annenberg Digital Lounge staff will contact you if a space opens up.' ); ?></span>
 	<p class="notice error" id="non-usc-email"><?php _e( 'You must register with your USC email address.' ); ?></p>
+	<p class="notice error" id="invalid-email"><?php _e( 'Your email did not work.' ); ?></p>
 	<p class="notice error" id="invalid-name"><?php _e( 'Please provide your first and last name.' ); ?></p>
 	<p class="notice error" id="invalid-id"><?php _e( 'Please check your USC ID number.' ); ?></p>
 	<p class="notice error" id="invalid-major"><?php _e( 'Please select your major, minor or Annenberg course.' ); ?></p>

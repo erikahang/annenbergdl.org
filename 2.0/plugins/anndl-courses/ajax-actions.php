@@ -43,8 +43,18 @@ function anndl_courses_register_student() {
 	}
 	
 	// Make sure the student hasn't registered for any other courses this semester.
-	// @todo get all courses in this semester and check their students
-	
+	$term = absint( get_the_terms( $course_id, 'semester' )[0]->term_id );
+	$courses = anndl_courses_get_courses_in_term( $term );
+	foreach ( $courses as $course ) {
+		$other_students = get_post_meta( $course->ID, '_students', true );
+		if ( '' === $students ) {
+			$other_students = array();
+		}
+		if ( array_key_exists( $email, $other_students ) ) {
+			wp_send_json_error( 'already_registered' );
+		}		
+	}
+
 	$student = array(
 		'name' => $name,
 		'id' => $id,

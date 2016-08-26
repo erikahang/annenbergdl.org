@@ -64,6 +64,8 @@ var courses = {};
 					courses.notices.find( '#invalid-email' ).show();
 				} else if ( 'invalid_id' === response ) {
 					courses.notices.find( '#invalid-id' ).show();
+				} else if ( 'already_registered' === response ) {
+					courses.notices.find( '#already-registered' ).show();
 				} else {
 					courses.notices.find( '#unknown' ).show()
 					                                  .text( response );

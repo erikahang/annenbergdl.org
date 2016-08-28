@@ -46,8 +46,7 @@ Please be aware that if you miss 4 classes or more, you may be banned from takin
 We look forward to seeing you next week!
 
 Thanks,
-Creative Media Team
-http://annenbergdl.org/';
+Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 
@@ -72,8 +71,7 @@ Unfortunately, the {Course} with {Instructor} on {Date Time} is currently at cap
 You will be notified if a space opens up.
 
 Thanks,
-Creative Media Team
-http://annenbergdl.org/';
+Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 
@@ -98,8 +96,7 @@ You have been removed from the {Course} with {Instructor} on {Date Time}.
 If you are receiving this message by mistake, please reply to this email ASAP.
 
 Thanks,
-Creative Media Team
-http://annenbergdl.org/';
+Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 
@@ -132,8 +129,7 @@ Please be aware that if you miss 4 classes or more, you may be banned from takin
 We look forward to seeing you next week!
 
 Thanks,
-Creative Media Team
-http://annenbergdl.org/';
+Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 

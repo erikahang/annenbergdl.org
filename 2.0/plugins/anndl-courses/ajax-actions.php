@@ -85,7 +85,7 @@ function anndl_courses_register_student() {
 			}
 		}
 	} else {
-		wp_send_json_error( 'unknown_error' );
+		wp_send_json_error( 'error_updating_post_meta' . var_dump( $students ) . $course->ID );
 	}
 
 }

@@ -34,7 +34,7 @@ function anndl_courses_students_meta_box( $post ) {
 	wp_nonce_field( 'anndl_students_nonce', 'anndl_students_nonce' );
 	
 	$students = get_post_meta( $post->ID, '_students', true );
-	if ( '' === $students ) {
+	if ( empty( $students ) ) {
 		_e( 'No students are registered yet.' );
 	} else {
 		?>
@@ -162,7 +162,7 @@ function anndl_course_list_custom_meta_contents( $column, $post_id ) {
 		echo get_post_meta( $post_id, 'course-time', true );
 	} elseif ( 'registered' === $column ) {
 		$registered = get_post_meta( $post_id, '_students', true );
-		if ( '' === $registered ) {
+		if ( empty( $registered ) ) {
 			$registered = 0;
 		} else {
 			$registered = count( $registered );

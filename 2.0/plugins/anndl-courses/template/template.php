@@ -97,7 +97,7 @@ function anndl_courses_major_options() {
  */
 function anndl_courses_registered_status( $course_id ) {
 	$registered = get_post_meta( $course_id, '_students', true );
-	if ( '' === $registered ) {
+	if ( empty( $registered ) ) {
 		$registered = 0;
 	} else {
 		$registered = count( $registered );

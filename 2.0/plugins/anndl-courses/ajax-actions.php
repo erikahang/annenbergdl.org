@@ -17,7 +17,7 @@ function anndl_courses_register_student() {
 	}
 
 	$students = get_post_meta( $course_id, '_students', true );
-	if ( '' === $students ) {
+	if ( empty( $students ) ) {
 		$students = array();
 	} else {
 		$students = $students;

@@ -45,9 +45,9 @@ function anndl_courses_register_student() {
 	// Make sure the student hasn't registered for any other courses this semester.
 	$term = absint( get_the_terms( $course_id, 'semester' )[0]->term_id );
 	$courses = anndl_courses_get_courses_in_term( $term );
-	foreach ( $courses as $course ) {
-		$other_students = get_post_meta( $course->ID, '_students', true );
-		if ( '' === $students ) {
+	foreach ( $courses as $other_course ) {
+		$other_students = get_post_meta( $other_course->ID, '_students', true );
+		if ( empty( $students ) ) {
 			$other_students = array();
 		}
 		if ( array_key_exists( $email, $other_students ) ) {

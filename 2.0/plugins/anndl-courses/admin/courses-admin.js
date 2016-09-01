@@ -16,7 +16,11 @@ var courses = {};
 			courses.waitlist = courses.container.find( '#courses-waitlist' );
 
 			courses.container.on( 'click', '.remove-student', function( e ) {
-				courses.removeStudent( e.currentTarget );
+				if ( confirm( 'Are you sure you want to remove this student from this course (cannot be undone)?' ) ) {
+					courses.removeStudent( e.currentTarget );
+				} else { // User canceled the confirm modal.
+					return;
+				}
 			});
 		},
 

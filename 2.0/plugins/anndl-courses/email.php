@@ -50,7 +50,7 @@ Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 
-	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <creative@usc.edu>' );
+	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <wordpress@annenbergdl.org>' );
 	
 	$success = wp_mail( $email, $subject, $message, $headers );
 
@@ -75,7 +75,7 @@ Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 
-	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <creative@usc.edu>' );
+	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <wordpress@annenbergdl.org>' );
 	
 	$success = wp_mail( $email, $subject, $message, $headers );
 
@@ -100,7 +100,7 @@ Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 
-	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <creative@usc.edu>' );
+	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <wordpress@annenberdgl.org>' );
 	
 	$success = wp_mail( $email, $subject, $message, $headers );
 
@@ -133,7 +133,7 @@ Creative Media Team';
 
 	$message = anndl_courses_parse_email_data( $message, $course_id, $student );
 
-	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <creative@usc.edu>' );
+	$headers = array( 'Reply-To: creative@usc.edu', 'From: Creative Media Team <wordpress@annenbergdl.org>' );
 	
 	$success = wp_mail( $email, $subject, $message, $headers );
 

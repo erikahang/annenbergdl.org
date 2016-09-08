@@ -45,6 +45,7 @@ function digitallounge_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'footer' => __( 'Footer Menu', 'digitallounge' ),
+		'featured' => __( 'Featured Content', 'digitallounge' ),
 	) );
 
 	/*
@@ -160,6 +161,16 @@ function digitallounge_wp_trim_excerpt( $text ) {
 remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 add_filter( 'get_the_excerpt', 'digitallounge_wp_trim_excerpt' );
 
+
+// Add home body class to featured bands page.
+function anndl_featured_bands_body_class( $body_classes ) {
+	if ( is_page_template( 'page-bands.php' ) ) {
+		$body_classes[] = 'home';
+		$body_classes = array_diff( $body_classes, array( 'page' ) );
+	}
+	return $body_classes;
+}
+add_filter( 'body_class', 'anndl_featured_bands_body_class' );
 
 /**
  * Custom template tags for this theme.

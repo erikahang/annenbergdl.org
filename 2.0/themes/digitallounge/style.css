@@ -1851,7 +1851,7 @@ object {
     overflow: initial;
 }
 
-.home h1.entry-title,
+.home article .entry-header h1.entry-title,
 .search h1.entry-title,
 .archive h1.entry-title {
 	font-size: 1.2em;

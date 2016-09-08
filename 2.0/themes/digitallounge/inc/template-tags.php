@@ -181,3 +181,137 @@ function digitallounge_get_post_image( $size = 'post-thumbnail' ) {
 		}
 	}
 }
+
+
+/**
+ * Custom home page featured content bands.
+ */
+
+/**
+ * Create HTML list of nav menu items.
+ *
+ * @since 3.0.0
+ * @uses Walker
+ */
+class Featured_Bands_Walker extends Walker_Nav_Menu {
+	
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$output .= '<div class="band-container">';
+	}
+	
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$output .= '</div>';
+	}
+
+	/**
+	 * Start the element output.
+	 *
+	 * @see Nav_Menu_Walker::start_el()
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param object $item   Menu item data object.
+	 * @param int    $depth  Depth of menu item. Used for padding.
+	 * @param array  $args   An array of arguments. @see wp_nav_menu()
+	 * @param int    $id     Current item ID.
+	 */
+	 public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+
+		if ( 'taxonomy' !== $item->type ) {
+			return;
+		}
+
+		$term_id = $item->object_id;
+		$taxonomy = $item->object;
+
+		/**
+		 * Filter the ID applied to a menu item's list item element.
+		 *
+		 * @since 3.0.1
+		 * @since 4.1.0 The `$depth` parameter was added.
+		 *
+		 * @param string $menu_id The ID that is applied to the menu item's `<li>` element.
+		 * @param object $item    The current menu item.
+		 * @param array  $args    An array of {@see wp_nav_menu()} arguments.
+		 * @param int    $depth   Depth of menu item. Used for padding.
+		 */
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
+		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+		/** This filter is documented in wp-includes/post-template.php */
+		$title = apply_filters( 'the_title', $item->title, $item->ID );
+
+		$term = get_term( $term_id, $taxonomy );
+		if ( $term ) {
+			// Query for tutorials in this tag.
+			$posts = get_posts( array(
+				'numberposts'      => 6,
+				'suppress_filters' => false,
+				'post_type'        => 'any',
+				'tax_query'        => array(
+					array(
+						'field'    => 'term_id',
+						'taxonomy' => $taxonomy,
+						'terms'    => $term->term_id,
+					),
+				),
+			) );
+			if ( $posts ) {
+				global $post; 
+				ob_start();
+				?>
+
+				<section id="<?php echo $id; ?>" class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="<?php echo $taxonomy; ?>" data-term="<?php echo $term->term_id; ?>" data-post_type="any" data-page="1" data-visible_page="1" data-content_size="1782">
+					<div class="<?php echo $term->slug; ?> title">
+						<h2 class="section-title"><a href="<?php echo get_term_link( $term, $taxonomy ); ?>"><?php echo $title; ?></a></h2>
+						<div class="arrow-container"><img src="/wp-includes/images/spinner.gif" class="spinner"/><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button>
+						</div>
+					</div>
+					<div class="inner-container">
+					<?php foreach( $posts as $post ) { ?>
+						<?php setup_postdata( $post ); // Allows the_* functions to work without passing an ID. ?>
+						<article class="collection-article" id="tutorial-<?php echo $post->ID; ?>" <?php post_class( null, $post->ID ); ?>>
+							<a href="<?php the_permalink(); ?>" rel="bookmark" class="featured-image"><?php echo digitallounge_get_the_post_thumbnail(); ?></a>
+							<?php if ( 'tutorials' === $post->post_type || 'course' === $post->post_type ) {
+								$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
+								if ( $tool_id ) {
+									echo '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
+								}
+							} ?>
+							<header class="entry-header">
+								<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+								<div class="entry-meta">
+									<?php digitallounge_posted_on(); ?>
+								</div><!-- .entry-meta -->
+							</header><!-- .entry-header -->
+							<div class="entry-excerpt">
+								<?php echo get_the_excerpt(); ?>
+							</div><!-- .entry-excerpt -->
+						</article><!-- #tutorial-## -->
+					<?php } ?>
+					</div>
+				</section>
+				<?php
+				
+				$output .= ob_get_clean();
+			}
+		}
+	}
+
+	/**
+	 * Ends the element output.
+	 *
+	 * @see Walker::end_el()
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param object $item   Page data object. Not used.
+	 * @param int    $depth  Depth of page. Not Used.
+	 * @param array  $args   An array of arguments. @see wp_nav_menu()
+	 */
+	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+		if ( 'taxonomy' !== $item->type ) {
+			return;
+		}
+		$output .= "</section>\n";
+	}
+}
+

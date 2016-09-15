@@ -5,7 +5,7 @@
 
 // Add courses meta boxes.
 function anndl_courses_add_meta_boxes() {
-	add_meta_box( 'anndl_courses_students', __( 'Registered Students', 'anndl-courses' ), 'anndl_courses_students_meta_box', 'course', 'normal', 'high' );
+	add_meta_box( 'anndl_courses_students', __( 'Registered Students', 'anndl-courses' ), 'anndl_courses_students_meta_box', 'course', 'advanced', 'high' );
 	add_meta_box( 'anndl_courses_meta', __( 'Course Information', 'anndl-courses' ), 'anndl_courses_meta_box', 'course', 'side', 'default' );
 }
 add_action( 'add_meta_boxes', 'anndl_courses_add_meta_boxes' );
@@ -74,7 +74,16 @@ function anndl_courses_students_meta_box( $post ) {
 				<td><?php echo $email . '@usc.edu'; ?></td>
 				<td><?php echo $info['id']; ?></td>
 				<td><?php echo $majors[$info['major']]; ?></td>
-				<td><?php echo ( 'no' === $info['certified'] ) ? 'Not Certified' : 'Certified'; ?></td>
+				<td><select class="change-certification-status" data-email="<?php echo $email; ?>">
+					<?php foreach ( anndl_courses_get_certification_statuses() as $code => $status ) {
+						if ( $info['certified'] === $code ) {
+							$selected = ' selected="selected"';
+						} else {
+							$selected = '';
+						}
+						echo '<option value="' . $code . '"' . $selected . '>' . $status . '</option>';
+					} ?>
+				</select></td>
 				<td><button type="button" class="button-link remove-student" data-email="<?php echo $email; ?>"><?php _e( 'Remove' ); ?></button></td>
 			</tr>
 			<?php
@@ -174,14 +183,44 @@ function anndl_course_list_custom_meta_contents( $column, $post_id ) {
 			echo $registered . ' / ' . $capacity;
 		}
 	} elseif ( 'certified' === $column ) {
-		// @todo find # of students that passed the course.
-		$passed = '0';
-		$capacity = get_post_meta( $post_id, 'capacity', true );
-		if ( ! $capacity ) {
+		$registered = get_post_meta( $post_id, '_students', true );
+		if ( empty( $registered ) ) {
+			$registered = array();
+		} else {
+			$passed = 0;
+			foreach( $registered as $student ) {
+				if ( 'pass' === $student['certified'] ) {
+					$passed++;
+				}
+			}
+		}
+
+		if ( empty( $registered ) ) {
 			echo 'N/A';
 		} else {
-			echo $passed . ' / ' . $capacity;
+			echo $passed . ' / ' . count( $registered );
 		}
 	}
 }
 add_action( 'manage_course_posts_custom_column', 'anndl_course_list_custom_meta_contents', 10, 2 );
+
+// Returns an array of certification statuses.
+function anndl_courses_get_certification_statuses() {
+	$statuses = array(
+		'no' => __( 'Did Not Take Exam', 'anndl-courses' ),
+		'pass' => __( 'Passed', 'anndl-courses' ),
+		'fail' => __( 'Failed', 'anndl-courses' ),
+		'drop' => __( 'Dropped', 'anndl-courses' ),
+	);
+	return $statuses;
+}
+
+// Move all "advanced" metaboxes above the editor.
+function anndl_courses_move_meta_boxes() {
+	global $post, $wp_meta_boxes;
+	if ( 'course' === get_post_type( $post ) ) {
+		do_meta_boxes( get_current_screen(), 'advanced', $post );
+		unset( $wp_meta_boxes[get_post_type( $post )]['advanced']);
+	}
+}
+add_action( 'edit_form_after_title', 'anndl_courses_move_meta_boxes' );

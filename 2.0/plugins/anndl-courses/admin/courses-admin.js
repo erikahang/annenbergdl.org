@@ -22,6 +22,10 @@ var courses = {};
 					return;
 				}
 			});
+
+			courses.container.on( 'change', '.change-certification-status', function( e ) {
+				courses.updateStatus( e.currentTarget );
+			});
 		},
 
 		/**
@@ -94,6 +98,41 @@ var courses = {};
 				alert( 'Error processing request. Please try again. Error code:' + response );
 				row.css( 'opacity', 1 );
 				// @todo hide spinner
+			} );
+		},
+
+		/**
+		 * Update a student's certification status, via Ajax.
+		 */
+		updateStatus: function( el ) {
+			var data;
+
+			// Pull data from the form.
+			data = {
+				'email': $( el ).data( 'email' ),
+				'status': $( el ).val(),
+				'course': courses.registered.data( 'courseid' ),
+				'anndl-students-nonce': $( '#anndl_students_nonce' ).val()
+			};
+
+			// Show the form as loading.
+			$( el ).css( 'opacity', '.5' );
+
+			// Send data to the server, and receive a response.
+			wp.ajax.send( 'anndl-courses-change-certification-status', {
+				data: data
+			} )
+			.done( function( response ) {
+				if ( 'updated' === response ) {
+					$( el ).css( 'opacity', '1' );
+				} else {
+					alert( 'Error processing request. Please try again. Error code: ' + response );
+					$( el ).css( 'opacity', 1 );
+				}
+			} )
+			.fail( function( response ) {
+				alert( 'Error processing request. Please try again. Error code:' + response );
+				$( el ).css( 'opacity', 1 );
 			} );
 		}
 	}

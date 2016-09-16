@@ -145,7 +145,6 @@ function anndl_courses_maybe_promote_from_waitlist( $course_id, $position ) {
 	}
 }
 
-
 /**
  * Update a student's certification status.
  *
@@ -182,3 +181,37 @@ function anndl_courses_change_certification_status() {
 	}
 }
 add_action( 'wp_ajax_anndl-courses-change-certification-status', 'anndl_courses_change_certification_status' );
+
+/**
+ * Update a student's absences.
+ *
+ * Only authenticated users can update absences.
+ */
+function anndl_courses_update_absences() {
+	check_ajax_referer( 'anndl_students_nonce', 'anndl-students-nonce' );
+
+	$course_id = absint( $_POST['course'] );
+	$course = get_post( $course_id );
+	if ( ! $course || is_wp_error( $course ) ) {
+		wp_send_json_error( 'invalid_course' );
+	}
+
+	$absences = absint( $_POST['absences'] );
+
+	$student = sanitize_text_field( $_POST['email'] );
+	$students = get_post_meta( $course_id, '_students', true );
+	if ( '' === $students || ! array_key_exists( $student, $students ) ) {
+		wp_send_json_error( 'invalid_student' );
+	} else {
+		$student_info = $students[$student];
+		$student_info['absences'] = $absences;
+		$students[$student] = $student_info;
+	}
+	$result = update_post_meta( $course->ID, '_students', $students ); // Automatically re-serializes the array. $course_id does not work here for some reason.
+	if ( $result ) {
+		wp_send_json_success( 'updated' );
+	} else {
+		wp_send_json_error( 'could_not_update_student_data' );
+	}
+}
+add_action( 'wp_ajax_anndl-courses-update-absences', 'anndl_courses_update_absences' );

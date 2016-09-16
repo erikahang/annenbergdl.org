@@ -15,7 +15,7 @@ function anndl_courses_admin_scripts() {
     global $post_type, $post;
     if ( 'course' === $post_type ) {
     	// Enqueue scripts & styles.
-		wp_enqueue_script( 'courses-admin', plugins_url( '/courses-admin.js', __FILE__), '', '', true );
+		wp_enqueue_script( 'courses-admin', plugins_url( '/courses-admin.js', __FILE__), '', '20160915', true );
 
 		// Load data into JS, including translated strings.
 		wp_localize_script( 'courses-admin', 'coursesOptions', array(
@@ -45,6 +45,7 @@ function anndl_courses_students_meta_box( $post ) {
 			<th><?php _e( 'Email' ); ?></th>
 			<th><?php _e( 'USC ID' ); ?></th>
 			<th><?php _e( 'Major' ); ?></th>
+			<th><?php _e( 'Absences' ); ?></th>
 			<th><?php _e( 'Certification Status' ); ?></th>
 			<th><?php _e( 'Remove Student' ); ?></th>
 		</tr></thead><tbody>
@@ -52,6 +53,11 @@ function anndl_courses_students_meta_box( $post ) {
 		$i = 1;
 		$majors = anndl_courses_major_options();
 		foreach ( $students as $email => $info ) {
+			// Set the default absences value, as it isn't set on registration.
+			if ( ! array_key_exists( 'absences', $info ) ) {
+				$info['absences'] = 0;
+			}
+
 			if ( $i - 1 == get_post_meta( $post->ID, 'capacity', true ) ) {
 				// Make a separate waitlist list. ?>
 				</tbody></table>
@@ -62,18 +68,23 @@ function anndl_courses_students_meta_box( $post ) {
 					<th><?php _e( 'Email' ); ?></th>
 					<th><?php _e( 'USC ID' ); ?></th>
 					<th><?php _e( 'Major' ); ?></th>
+					<th><?php _e( 'Absences' ); ?></th>
 					<th><?php _e( 'Certification Status' ); ?></th>
 					<th><?php _e( 'Remove Student' ); ?></th>
 				</tr></thead><tbody>
 				<?php
 			}
 			?>
-			<tr class="student">
+			<tr class="student" data-email="<?php echo $email; ?>">
 				<td class="number"><?php echo $i; ?></td>
 				<td><?php echo $info['name']; ?></td>
 				<td><?php echo $email . '@usc.edu'; ?></td>
 				<td><?php echo $info['id']; ?></td>
 				<td><?php echo $majors[$info['major']]; ?></td>
+				<td style="min-width: 76px"><button type="button" class="button subtract-absence">-</button>
+					<span class="num-absences"><?php echo $info['absences']; ?></span>
+					<button type="button" class="button add-absence">+</button>
+				</td>
 				<td><select class="change-certification-status" data-email="<?php echo $email; ?>">
 					<?php foreach ( anndl_courses_get_certification_statuses() as $code => $status ) {
 						if ( $info['certified'] === $code ) {

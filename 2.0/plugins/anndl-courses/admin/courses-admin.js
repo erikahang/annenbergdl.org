@@ -26,6 +26,10 @@ var courses = {};
 			courses.container.on( 'change', '.change-certification-status', function( e ) {
 				courses.updateStatus( e.currentTarget );
 			});
+
+			courses.container.on( 'click', '.add-absence, .subtract-absence', function( e ) {
+				courses.updateAbsences( e.currentTarget );
+			});
 		},
 
 		/**
@@ -125,6 +129,52 @@ var courses = {};
 			.done( function( response ) {
 				if ( 'updated' === response ) {
 					$( el ).css( 'opacity', '1' );
+				} else {
+					alert( 'Error processing request. Please try again. Error code: ' + response );
+					$( el ).css( 'opacity', 1 );
+				}
+			} )
+			.fail( function( response ) {
+				alert( 'Error processing request. Please try again. Error code:' + response );
+				$( el ).css( 'opacity', 1 );
+			} );
+		},
+
+		/**
+		 * Update a student's absences, via Ajax.
+		 */
+		updateAbsences: function( el ) {
+			var data, row = $( el ).closest( 'tr' ), change, absences;
+
+			if ( $( el ).hasClass( 'add-absence' ) ) {
+				change = 1;
+			} else {
+				change = -1;
+			}
+			absences = change + parseInt( row.find( '.num-absences' ).text() );
+			if ( absences < 0 ) {
+				return;
+			}
+
+			// Pull data from the form.
+			data = {
+				'email': row.data( 'email' ),
+				'absences': absences,
+				'course': courses.registered.data( 'courseid' ),
+				'anndl-students-nonce': $( '#anndl_students_nonce' ).val()
+			};
+
+			// Show the form as loading.
+			$( el ).css( 'opacity', '.5' );
+
+			// Send data to the server, and receive a response.
+			wp.ajax.send( 'anndl-courses-update-absences', {
+				data: data
+			} )
+			.done( function( response ) {
+				if ( 'updated' === response ) {
+					$( el ).css( 'opacity', '1' );
+					row.find( '.num-absences' ).text( absences );
 				} else {
 					alert( 'Error processing request. Please try again. Error code: ' + response );
 					$( el ).css( 'opacity', 1 );

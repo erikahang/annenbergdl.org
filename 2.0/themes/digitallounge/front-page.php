@@ -48,65 +48,18 @@ get_header(); ?>
 				<?php endif; ?>
 				</div>
 			</section><!-- .news-collection -->
-			<?php /* @todo - this is completely untested pseudo-code, to be implemented when custom homepages are built out
-			if ( is_logged_in_user() && get_usermeta( current_user_id(), 'custom_homepage_terms' ) ) {
-				$terms = get_usermeta( current_user_id(), 'custom_homepage_terms' );
-			} else { */
-			$terms = explode( ',', get_theme_mod( 'featured_tutorial_tags', '' ) );
-			if ( $terms ) {
-				foreach ( $terms as $term ) {
-					$term = get_term_by( 'name', trim( $term ), 'tutorial_tag' );
-					if ( $term ) {
-						// Query for tutorials in this tag.
-						$posts = get_posts( array(
-							'numberposts'      => 6,
-							'suppress_filters' => false,
-							'post_type'        => 'tutorials',
-							'tax_query'        => array(
-								array(
-									'field'    => 'term_id',
-									'taxonomy' => 'tutorial_tag',
-									'terms'    => $term->term_id,
-								),
-							),
-						) );
-						if ( $posts ) { ?>
 
-							<section class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="tutorial_tag" data-term="<?php echo $term->term_id; ?>" data-post_type="tutorials" data-page="1" data-visible_page="1" data-content_size="1782">
-								<div class="<?php echo $term->slug; ?> title">
-									<h2 class="section-title"><a href="<?php echo get_term_link( $term, 'tutorial_tag' ); ?>"><?php echo $term->name; ?></a></h2>
-									<div class="arrow-container"><img src="/wp-includes/images/spinner.gif" class="spinner"/><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button>
-									</div>
-								</div>
-								<div class="inner-container">
-								<?php foreach( $posts as $post ) { ?>
-									<?php setup_postdata( $post ); // Allows the_* functions to work without passing an ID. ?>
-									<article class="collection-article" id="tutorial-<?php echo $post->ID; ?>" <?php post_class( null, $post->ID ); ?>>
-										<a href="<?php the_permalink(); ?>" rel="bookmark" class="featured-image"><?php echo digitallounge_get_the_post_thumbnail(); ?></a>
-										<?php if ( 'tutorials' === $post->post_type ) {
-											$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id );
-											if ( $tool_id )
-												echo '<a href="' . get_term_link( $tool_id, 'tool' ) . '" class="tool-icon-link"><img src="' . get_term_meta( $tool_id, 'tool_icon', true ) . '" class="tool-icon"/>';
-										} ?>
-										<header class="entry-header">
-											<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-											<div class="entry-meta">
-												<?php digitallounge_posted_on(); ?>
-											</div><!-- .entry-meta -->
-										</header><!-- .entry-header -->
-										<div class="entry-excerpt">
-											<?php echo get_the_excerpt(); ?>
-										</div><!-- .entry-excerpt -->
-									</article><!-- #tutorial-## -->
-								<?php } ?>
-								</div>
-							</section>
-							<?php
-						}
-					}
-				}
-			}
+			<?php
+			// Featured content bands.
+			$walker = new Featured_Bands_Walker();
+			wp_nav_menu( array(
+				'depth' => 0,
+				'walker' => $walker,
+				'theme_location' => 'featured',
+				'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>',
+			));
 			?>
+
 		</main><!-- #main -->
 		<script type="text/html" id="tmpl-archive-grid-view">
 			<article id="post-{{ data.id }}" <?php post_class(); ?>>

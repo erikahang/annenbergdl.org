@@ -47,6 +47,10 @@ require( plugin_dir_path( __FILE__ ) . '/template/template.php' );
 // Load email functions.
 require( plugin_dir_path( __FILE__ ) . '/email.php' );
 
+// Load email functions.
+require( plugin_dir_path( __FILE__ ) . '/admin/user-lookup.php' );
+
+
 // Load Translations
 add_action( 'plugins_loaded', 'anndl_courses_load_textdomain' );
 function anndl_courses_load_textdomain() {

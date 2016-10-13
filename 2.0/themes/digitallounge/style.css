@@ -1047,7 +1047,6 @@ textarea {
 	padding: 4px 8px;
 	line-height: 1;
 	float: left;
-	z-index: 1;
 }
 
 .home-search-filter-bar .search-submit {
@@ -1072,6 +1071,7 @@ textarea {
 	display: none; /* hidden by default */
     position: fixed; /* Sticky by default */
     width: 100%;
+	z-index: 1;
 }
 
 .home .home-search-filter-bar {

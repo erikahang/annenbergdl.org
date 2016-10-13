@@ -1047,6 +1047,7 @@ textarea {
 	padding: 4px 8px;
 	line-height: 1;
 	float: left;
+	z-index: 1;
 }
 
 .home-search-filter-bar .search-submit {

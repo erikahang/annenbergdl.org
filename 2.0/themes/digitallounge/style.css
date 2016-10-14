@@ -2965,6 +2965,10 @@ a.post-edit-link:hover {
 	.archive-header .page-title {
 		text-align: center;
 	}
+
+	#header-menu {
+		visibility: hidden;
+	}
 }
 
 /*Iphone 6 verticle*/

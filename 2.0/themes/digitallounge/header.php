@@ -45,15 +45,6 @@
 			</time>
 			</a>
 		</div>
-		<div id="eventreadout" class="animated fadeInLeft">
-		<?php echo do_shortcode('[tribe_events_list limit="1"]'); ?>
-		<!-- <span class="big">1</span>
-			<span class="small"> PM </span>
-			<span class="pipe">|</span>
-			<span class="eventheadline">Photoshop</span>
-			<span>,</span>
-			<span class="smalleritalic">How to make a poster...</span> -->
-		</div>
 		<div class="site-branding">
 			<h1 class="site-title">
 			<a class="animated pulse" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>

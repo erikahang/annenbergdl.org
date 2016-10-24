@@ -682,7 +682,8 @@ time.icon
 	font-feature-settings: "ss03" 1;
 	position: absolute;
 	top: -12px;
-	left: 40%;
+	width: 100%;
+	margin: 0 auto;
 }
 
 
@@ -967,7 +968,6 @@ textarea {
 #navbuttons {
 	height: 64px;
 	float: right;
-  	margin-top: -64px;
 }
 
 #navbuttons ul {
@@ -2655,7 +2655,6 @@ a.post-edit-link:hover {
 	.site-title {
 		font-size: 1.3em;
 		top: 4px;
-		left: 37%;
 	}
 
 	.site-info {
@@ -2719,10 +2718,6 @@ a.post-edit-link:hover {
 
 	}
 
-	.site-title {
-		left: 35%;
-	}
-
 	#navbuttons {
 		margin-bottom: 18px;
 	}
@@ -2766,7 +2761,6 @@ a.post-edit-link:hover {
 	.site-title {
 		font-size: 1.4em;
 		top: 0px;
-		left: 250px;
 	}
 	.single .site-footer {
 		margin-top: 128px;
@@ -2822,7 +2816,6 @@ a.post-edit-link:hover {
 	}
 
 	.site-title {
-		left: 200px;
 		font-size: 1.4em;
 		top:0px;
 	}
@@ -2831,10 +2824,6 @@ a.post-edit-link:hover {
 
 }
 @media (max-width:568px) {
-
-	.site-title {
-		left: 150px;
-	}
 	
 	.archive-header .tool-icon,
 	.archive-header .avatar {
@@ -2857,11 +2846,6 @@ a.post-edit-link:hover {
 
 /*Iphone 4 sideways*/
 @media (max-width:480px) {
-
-	.site-title {
-		left: 18%;
-	}
-
 	#colophon {
 	    padding: 0px 16px 64px;
 	}
@@ -2906,10 +2890,6 @@ a.post-edit-link:hover {
 
 	.site-title {
 		font-size: 1.3em;
-		left: 90px;
-		top: 6px;
-		width: 160px;
-		margin: 0;
 	}
 
 	.collection .inner-container > .collection-article:first-child {
@@ -2968,14 +2948,6 @@ a.post-edit-link:hover {
 
 	#header-menu {
 		visibility: hidden;
-	}
-}
-
-/*Iphone 6 verticle*/
-
-@media (max-width: 375px) {
-	.site-title {
-		left: 70px;
 	}
 }
 

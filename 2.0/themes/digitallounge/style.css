@@ -666,7 +666,7 @@ time.icon
 }
 
 .site-branding {
-    width: 40%;
+    width: calc(100% - 256px);
     display: flex;
     justify-content: center;
 }
@@ -685,14 +685,11 @@ time.icon
 	-o-font-feature-settings: "ss03" 1;
 	-webkit-font-feature-settings: "ss03" 1;
 	font-feature-settings: "ss03" 1;
-	position: absolute;
-	top: -12px;
-	width: 100%;
-	margin: 0 auto;
+	line-height: 64px;
 }
 
 .event-content {
-	width: 30%;
+	width: 128px;
 }
 
 .admin-bar #masthead {
@@ -775,7 +772,6 @@ time.icon
  	overflow: hidden;
  	padding: 0px 0px 15px 0px;
  	margin-bottom: .8em;
-
 }
 
 
@@ -809,7 +805,6 @@ time.icon
   	width: 32px;
   	height: 32px;
   	margin-left: 6px;
-
 }
 
  .arrow-next {
@@ -831,11 +826,9 @@ time.icon
   width: 1px;
 }
 
-
 .collection  h1.entry-title {
 	text-transform: uppercase;
 }
-
 
 .collection article {
   width: 254px;
@@ -975,7 +968,7 @@ textarea {
 
 #navbuttons {
 	height: 64px;
-	width: 30%;
+	width: 128px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -1697,14 +1690,11 @@ object {
 }
 
 .wp-caption .wp-caption-text {
-<<<<<<< HEAD
     margin: 0;
     font-size: 14px;
     font-weight: 100;
     font-style: italic;
-=======
 	margin: 0.8075em 0 0 0;
->>>>>>> origin/master
 }
 
 /*--------------------------------------------------------------
@@ -2663,6 +2653,7 @@ a.post-edit-link:hover {
 /*For 800x600 older or small laptops pcs*/
 @media (max-width:900px) {
 
+	/* Switch to font sizes based on calc(5vh - pixel_amount)*/
 	.site-title {
 		font-size: 1.3em;
 		top: 4px;
@@ -2679,10 +2670,6 @@ a.post-edit-link:hover {
 
 @media (max-width: 799px) {
 
-	#eventreadout  {
-		max-width: 240px;
-
-	}
 	.site-header .tribe-mini-calendar-event .list-info .entry-title {
 
 		font-size: .8em;
@@ -2705,11 +2692,6 @@ a.post-edit-link:hover {
 		margin-top: 0px;
 	}
 
-	.site-title {
-		margin-top:13px;
-		font-size: 1.4em;
-	}
-
 	.archive-header .tool-icon,
 	.archive-header .avatar {
 		width: 128px;
@@ -2723,15 +2705,6 @@ a.post-edit-link:hover {
 }
 /*Ipad*/
 @media (max-width: 768px) {
-
-	#eventreadout {
-
-
-	}
-
-	#navbuttons {
-		margin-bottom: 18px;
-	}
 
 	.collection {
 		width: 95vw;
@@ -2759,20 +2732,15 @@ a.post-edit-link:hover {
 /*Iphone 6s sideways*/
 @media (max-width:736px) {
 
-	#eventreadout {
-		visibility: hidden;
-	}
 	.main-navigation {
 	position: relative;
 	top: -35px;
 	}
+	
 	.chatwithus {
 		visibility: hidden;
 	}
-	.site-title {
-		font-size: 1.4em;
-		top: 0px;
-	}
+
 	.single .site-footer {
 		margin-top: 128px;
 	}
@@ -2825,15 +2793,8 @@ a.post-edit-link:hover {
 	.chatwithus {
 		visibility: hidden;
 	}
-
-	.site-title {
-		font-size: 1.4em;
-		top:0px;
-	}
-
-
-
 }
+
 @media (max-width:568px) {
 	
 	.archive-header .tool-icon,
@@ -2888,19 +2849,8 @@ a.post-edit-link:hover {
 		transform: scale(.35, .35);
 	}
 
-	.usclogo {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		width: 60px;
-	}
-
 	.main-navigation {
 		top: -82px;
-	}
-
-	.site-title {
-		font-size: 1.3em;
 	}
 
 	.collection .inner-container > .collection-article:first-child {

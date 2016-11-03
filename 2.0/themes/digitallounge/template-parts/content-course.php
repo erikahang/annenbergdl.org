@@ -6,10 +6,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php $tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id ); ?>
-		<a href="<?php echo get_term_link( $tool_id, 'tool' ) ?>">
-			<img src="<?php echo get_term_meta( $tool_id, 'tool_icon', true ); ?>" class="tool-icon"/>
-		</a>
+		<?php if ( is_array( get_the_terms( $post->ID, 'tool' ) ) ) :
+			$tool_id = absint( get_the_terms( $post->ID, 'tool' )[0]->term_id ); ?>
+			<a href="<?php echo get_term_link( $tool_id, 'tool' ) ?>">
+				<img src="<?php echo get_term_meta( $tool_id, 'tool_icon', true ); ?>" class="tool-icon"/>
+			</a>
+		<?php endif; ?>
 		<h1 class="entry-title"><?php echo get_the_title() . ', ' . get_post_meta( $post->ID, 'course-time', true ); ?></h1>
 		<div class="entry-meta">
 			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">

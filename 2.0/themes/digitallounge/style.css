@@ -675,7 +675,7 @@ time.icon
 .site-title {
 	font-family: National;
 	font-weight: 900;
-	font-size: 48px;
+	font-size: 36px;
 	color: #fff;
 	text-shadow: 1px 1px 0px #666;
 	text-rendering: optimizeLegibility;
@@ -2658,7 +2658,7 @@ a.post-edit-link:hover {
 
 	.site-title {
 		font-size: 5vw;
-		line-height: 21px;
+		line-height: 19px;
 	}
 
 	.site-info {

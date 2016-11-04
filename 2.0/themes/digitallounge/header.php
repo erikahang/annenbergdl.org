@@ -36,7 +36,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'digitallounge' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div>
+		<div class="event-content">
 			<a id="calendarhref" href="<?php echo esc_url( home_url( '/events/' ) ); ?>">
 			<time id="calendaricon" datetime="2014-09-20" class="icon">
 			  <em id="dayofweek"></em>

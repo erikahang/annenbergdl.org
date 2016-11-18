@@ -66,6 +66,7 @@ function anndl_courses_registration_form( $term ) {
 	<p class="notice error" id="invalid-course"><?php _e( 'Please select a course to register for.' ); ?></p>
 	<p class="notice error" id="invalid-policy"><?php _e( 'Please agree to the course policies.' ); ?></p>
 	<p class="notice error" id="already-registered"><?php _e( 'You are already registered for a course this semester. If you would like to register for this course instead, ask the Digital Lounge helpdesk staff to remove you from the other course, then try again.' ); ?></p>
+	<p class="notice error" id="banned-student"><?php _e( 'Sorry, you have been banned from registering for courses. This is likely due to excessive absensences for past courses that you registered for. If you have questions, please email creative@usc.edu or talk to the helpdesk staff in ANN 301.' ); ?></p>
 	<p class="notice error" id="unknown"></p>
 </div>
 </div><?php

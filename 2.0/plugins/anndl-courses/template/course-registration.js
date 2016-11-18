@@ -66,6 +66,8 @@ var courses = {};
 					courses.notices.find( '#invalid-id' ).show();
 				} else if ( 'already_registered' === response ) {
 					courses.notices.find( '#already-registered' ).show();
+				} else if ( 'banned_student' === response ) {
+					courses.notices.find( '#banned-student' ).show();
 				} else {
 					courses.notices.find( '#unknown' ).show()
 					                                  .text( response );

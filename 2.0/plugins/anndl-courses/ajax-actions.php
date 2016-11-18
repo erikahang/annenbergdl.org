@@ -55,6 +55,11 @@ function anndl_courses_register_student() {
 		}		
 	}
 
+	// Make sure that the student is allowed to register for courses.
+	if ( in_array( $email, anndl_courses_get_banned_emails() ) ) {
+		wp_send_json_error( 'banned_student' );
+	}
+
 	$student = array(
 		'name' => $name,
 		'id' => $id,

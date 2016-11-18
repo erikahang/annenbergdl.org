@@ -18,6 +18,7 @@ function digitallounge_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'footer_text', array(
 		'sanitize_callback' => '',
+		'transport' => 'postMessage',
 	) );
 	
 	$wp_customize->add_control( 'footer_text', array(
@@ -47,3 +48,13 @@ function digitallounge_customize_register( $wp_customize ) {
 	) ) );
 }
 add_action( 'customize_register', 'digitallounge_customize_register' );
+
+/**
+ * Binds JS handlers to make the Customizer preview reload changes asynchronously.
+ *
+ * @return void
+ */
+function linework_customize_preview_js() {
+	wp_enqueue_script( 'anndl_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20161117', true );
+}
+add_action( 'customize_preview_init', 'linework_customize_preview_js' );

@@ -48,7 +48,7 @@ require( plugin_dir_path( __FILE__ ) . '/template/template.php' );
 require( plugin_dir_path( __FILE__ ) . '/email.php' );
 
 // Load email functions.
-require( plugin_dir_path( __FILE__ ) . '/admin/user-lookup.php' );
+require( plugin_dir_path( __FILE__ ) . '/admin/student-lookup.php' );
 
 
 // Load Translations

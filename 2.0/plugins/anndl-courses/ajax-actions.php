@@ -220,3 +220,91 @@ function anndl_courses_update_absences() {
 	}
 }
 add_action( 'wp_ajax_anndl-courses-update-absences', 'anndl_courses_update_absences' );
+
+/**
+ * Load information about a student.
+ *
+ * Loops through all courses looking for their information.
+ */
+function anndl_courses_load_student_info() {
+	check_ajax_referer( 'anndl_students_nonce', 'anndl-students-nonce' );
+
+	$student = sanitize_text_field( $_POST['email'] );
+	$courses = get_posts( array(
+		'post_type' => 'course',
+		'numberposts' => -1,
+		'fields' => 'ids'
+	) );
+	$student_info = false;
+	$student_courses = array();
+
+	foreach ( $courses as $course ) {
+		$students = get_post_meta( $course, '_students', true );	
+		if ( '' !== $students && array_key_exists( $student, $students ) ) {
+			$student_courses[$course] = $students[$student]['certified'];
+			if ( ! $student_info ) {
+				$student_info = $students[$student];
+			}
+		}
+	}
+
+	if ( ! $student_info ) {
+		wp_send_json_error( 'invalid_student' );
+	} else {
+		$courses_taken = array();
+		foreach ( $student_courses as $course_id => $status ) {
+			$instructor = get_post_field( 'post_author', $course_id );
+			$semester = get_the_terms( $course_id, 'semester' )[0]->name;
+			$courses_taken[] = array(
+				'title' => get_the_title( $course_id ),
+				'info' => $semester . ', ' . get_post_meta( $course_id, 'course-time', true ) . _x( ' with ', 'course time with instructor' ) . get_the_author_meta( 'display_name', $instructor ),
+				'result' => anndl_courses_get_certification_statuses()[$status],
+			);
+		}
+		$data = array(
+			'name' => $student_info['name'],
+			'email' => $student . '@usc.edu',
+			'uscid' => $student_info['id'],
+			'major' => anndl_courses_major_options()[$student_info['major']],
+			'courses' => $courses_taken,
+		);
+		wp_send_json_success( $data );
+	}
+}
+add_action( 'wp_ajax_anndl-courses-load-student-info', 'anndl_courses_load_student_info' );
+
+/**
+ * Update the banned users.
+ *
+ * Banned students can't register for any courses.
+ */
+function anndl_courses_update_banned_emails() {
+	check_ajax_referer( 'anndl_students_nonce', 'anndl-students-nonce' );
+
+	$emails = strip_tags( sanitize_text_field( $_POST['emails'] ) );
+	$emails = explode( ',', $emails );
+	$emails = implode( ',', $emails );
+	if ( $emails !== trim( $_POST['emails'] ) ) {
+		wp_send_json_error( 'invalid formatting in banned students list' );
+	} else {
+		if ( update_option( 'anndl_courses_banned_students', $emails ) ) {
+			wp_send_json_success( 'updated' );
+		} else {
+			wp_send_json_error( 'failed updating option' );
+		}
+	}
+}
+add_action( 'wp_ajax_anndl-courses-update-banned-emails', 'anndl_courses_update_banned_emails' );
+
+/**
+ * Get an array of student emails that aren't allowed to register for courses.
+ */
+function anndl_courses_get_banned_emails() {
+	$emails = get_option( 'anndl_courses_banned_students' );
+	$emails = explode( ',', $emails );
+	$banned_emails = array();
+	foreach ( $emails as $email ) {
+		$banned_emails[] = trim( sanitize_text_field( $email ) );
+	}
+	return $banned_emails;
+}

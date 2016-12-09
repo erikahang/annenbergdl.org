@@ -51,17 +51,17 @@ var courses = {};
 		updateNumbers: function() {
 			var i = 1;
 			courses.registered.find( 'tr' ).each( function( i, el ) {
-				if ( el.hasClass( 'heading' ) ) {
+				if ( $( el ).hasClass( 'heading' ) ) {
 					return;
 				}
-				el.find( '.number' ).text( i );
+				$( el ).find( '.number' ).text( i );
 				i = i + 1;
 			});
 			courses.waitlist.find( 'tr' ).each( function( i, el ) {
-				if ( el.hasClass( 'heading' ) ) {
+				if ( $( el ).hasClass( 'heading' ) ) {
 					return;
 				}
-				el.find( '.number' ).text( i );
+				$( el ).find( '.number' ).text( i );
 				i = i + 1;
 			});
 		},

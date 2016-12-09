@@ -15,7 +15,7 @@ function anndl_courses_admin_scripts() {
     global $post_type, $post;
     if ( 'course' === $post_type ) {
     	// Enqueue scripts & styles.
-		wp_enqueue_script( 'courses-admin', plugins_url( '/courses-admin.js', __FILE__), '', '20160915', true );
+		wp_enqueue_script( 'courses-admin', plugins_url( '/courses-admin.js', __FILE__), '', '20161209', true );
 
 		// Load data into JS, including translated strings.
 		wp_localize_script( 'courses-admin', 'coursesOptions', array(

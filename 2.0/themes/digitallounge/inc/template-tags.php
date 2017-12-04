@@ -216,7 +216,7 @@ class Featured_Bands_Walker extends Walker_Nav_Menu {
 	 */
 	 public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
-		if ( 'taxonomy' !== $item->type ) {
+		if ( 'taxonomy' !== $item->type && 'post_type_archive' !== $item->type ) {
 			return;
 		}
 
@@ -241,20 +241,29 @@ class Featured_Bands_Walker extends Walker_Nav_Menu {
 		$title = apply_filters( 'the_title', $item->title, $item->ID );
 
 		$term = get_term( $term_id, $taxonomy );
-		if ( $term ) {
-			// Query for tutorials in this tag.
-			$posts = get_posts( array(
-				'numberposts'      => 6,
-				'suppress_filters' => false,
-				'post_type'        => 'any',
-				'tax_query'        => array(
-					array(
-						'field'    => 'term_id',
-						'taxonomy' => $taxonomy,
-						'terms'    => $term->term_id,
+		if ( $term || 'post_type_archive' === $item->type ) {
+			if ( 'post_type_archive' === $item->type ) {
+				$posts = get_posts( array (
+					'numberposts'      => 8,
+					'suppress_filters' => false,
+					'post_type'        => $item->object,
+				) );
+			} else {
+				// Query for tutorials in this tag.
+				$posts = get_posts( array(
+					'numberposts'      => 8,
+					'suppress_filters' => false,
+					'post_type'        => 'any',
+					'tax_query'        => array(
+						array(
+							'field'    => 'term_id',
+							'taxonomy' => $taxonomy,
+							'terms'    => $term->term_id,
+						),
 					),
-				),
-			) );
+				) );
+			}
+
 			if ( $posts ) {
 				global $post; 
 				ob_start();
@@ -262,7 +271,7 @@ class Featured_Bands_Walker extends Walker_Nav_Menu {
 
 				<section id="<?php echo $id; ?>" class="<?php echo $term->slug; ?> query-container collection animated slideInRight delay1-2sec paper-front" data-type="taxonomy" data-taxonomy="<?php echo $taxonomy; ?>" data-term="<?php echo $term->term_id; ?>" data-post_type="any" data-page="1" data-visible_page="1" data-content_size="1782">
 					<div class="<?php echo $term->slug; ?> title">
-						<h2 class="section-title"><a href="<?php echo get_term_link( $term, $taxonomy ); ?>"><?php echo $title; ?></a></h2>
+						<h2 class="section-title"><a href="<?php echo get_term_link( $term, $taxonomy ); ?>"><?php echo $title; ?> <span class="see-more-button">See More</span></a></h2>
 						<div class="arrow-container"><img src="/wp-includes/images/spinner.gif" class="spinner"/><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button>
 						</div>
 					</div>

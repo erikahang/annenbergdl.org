@@ -17,7 +17,6 @@ get_header(); ?>
 		<section class="query-container news-collection animated slideInLeft delay1-2sec paper-front" data-type="post_type" data-post_type="post" data-page="1" data-visible_page="1" data-content_size="1744">
 				<div class="news-title">
 					<h2 class="section-title">News</h2>
-					<div class="arrow-container"><img src="/wp-includes/images/spinner.gif" class="spinner"/><button type="button" class="arrow-previous animated fadeIn "></button><button type="button" class="arrow-next animated fadeIn "></button></div></div>
 				<div class="inner-container">
 				<?php if ( have_posts() ) : ?>
 

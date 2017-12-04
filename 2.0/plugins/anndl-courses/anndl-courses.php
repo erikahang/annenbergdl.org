@@ -47,7 +47,10 @@ require( plugin_dir_path( __FILE__ ) . '/template/template.php' );
 // Load email functions.
 require( plugin_dir_path( __FILE__ ) . '/email.php' );
 
-// Load email functions.
+// Load email options page.
+require( plugin_dir_path( __FILE__ ) . '/admin/email-settings.php' );
+
+// Load student lookup page.
 require( plugin_dir_path( __FILE__ ) . '/admin/student-lookup.php' );
 
 

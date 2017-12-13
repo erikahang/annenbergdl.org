@@ -55,18 +55,34 @@ function anndl_courses_registration_form( $term ) {
 	<button type="button" id="submit-registration" class="button"><?php _e( 'Register' ); ?></button>
 </form>
 <div id="registration-notices">
-	<p class="notice error" id="input-error"><?php _e( 'Something looks wrong with your information, please double-check it.' ); ?></p>
-	<p class="notice success" id="registered"><?php _e( 'You have successfully registered for this course.' ); ?></p>
-	<p class="notice warning" id="waitlist"><?php _e( 'You have successfully been added to the waitlist for this course. Annenberg Digital Lounge staff will contact you if a space opens up.' ); ?></span>
-	<p class="notice error" id="non-usc-email"><?php _e( 'You must register with your USC email address.' ); ?></p>
-	<p class="notice error" id="invalid-email"><?php _e( 'Your email did not work.' ); ?></p>
-	<p class="notice error" id="invalid-name"><?php _e( 'Please provide your first and last name.' ); ?></p>
-	<p class="notice error" id="invalid-id"><?php _e( 'Please check your USC ID number.' ); ?></p>
-	<p class="notice error" id="invalid-major"><?php _e( 'Please select your major, minor or Annenberg course.' ); ?></p>
-	<p class="notice error" id="invalid-course"><?php _e( 'Please select a course to register for.' ); ?></p>
-	<p class="notice error" id="invalid-policy"><?php _e( 'Please agree to the course policies.' ); ?></p>
-	<p class="notice error" id="already-registered"><?php _e( 'You are already registered for a course this semester. If you would like to register for this course instead, ask the Digital Lounge helpdesk staff to remove you from the other course, then try again.' ); ?></p>
-	<p class="notice error" id="banned-student"><?php _e( 'Sorry, you have been banned from registering for courses. This is likely due to excessive absensences for past courses that you registered for. If you have questions, please email creative@usc.edu or talk to the helpdesk staff in ANN 301.' ); ?></p>
+	<?php $notices = array_merge( array(
+			'input_error' => __( 'Something looks wrong with your information, please double-check it.' ),
+			'registered' => __( 'You have successfully registered for this course.' ),
+			'waitlist' => __( 'You have successfully been added to the waitlist for this course. Annenberg Digital Lounge staff will contact you if a space opens up.' ),
+			'non_domain_email' => __( 'You must register with your USC email address.' ),
+			'invalid_email' => __( 'Your email did not work.' ),
+			'invalid_name' => __( 'Please provide your first and last name.' ),
+			'invalid_id' => __( 'Please check your USC ID number.' ),
+			'invalid_major' => __( 'Please select your major, minor or Annenberg course.' ),
+			'invalid_course' => __( 'Please select a course to register for.' ),
+			'invalid_policy' => __( 'Please agree to the course policies.' ),
+			'already_registered' => __( 'You are already registered for a course this semester. If you would like to register for this course instead, ask the Digital Lounge helpdesk staff to remove you from the other course, then try again.' ),
+			'banned_student' => __( 'Sorry, you have been banned from registering for courses. This could be due to excessive absences or not taking an exam. If you have questions, please email AnnenbergDL@usc.edu.' ),
+		),
+		explode( get_option( 'anndl_courses_notice_strings', '' ), ',' ) // @todo: set up admin settings page with UI to change this `option` array
+	); ?>
+	<p class="notice error" id="input-error"><?php echo $notices['input_error']; ?></p>
+	<p class="notice success" id="registered"><?php echo $notices['registered']; ?></p>
+	<p class="notice warning" id="waitlist"><?php echo $notices['waitlist']; ?></p>
+	<p class="notice error" id="non-usc-email"><?php echo $notices['non_domain_email']; ?></p>
+	<p class="notice error" id="invalid-email"><?php echo $notices['invalid_email']; ?></p>
+	<p class="notice error" id="invalid-name"><?php echo $notices['invalid_name']; ?></p>
+	<p class="notice error" id="invalid-id"><?php echo $notices['invalid_id']; ?></p>
+	<p class="notice error" id="invalid-major"><?php echo $notices['invalid_major']; ?></p>
+	<p class="notice error" id="invalid-course"><?php echo $notices['invalid_course']; ?></p>
+	<p class="notice error" id="invalid-policy"><?php echo $notices['invalid_policy']; ?></p>
+	<p class="notice error" id="already-registered"><?php echo $notices['already_registered']; ?></p>
+	<p class="notice error" id="banned-student"><?php echo $notices['banned_student']; ?></p>
 	<p class="notice error" id="unknown"></p>
 </div>
 </div><?php
